@@ -1,1 +1,123 @@
 // Specific CSS for your home-page
+.homepage-banner {
+  color: #fff;
+  height:100vh;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 200px 0px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.banner-content h1 {
+  color: $green;
+}
+
+.banner-content {
+  font-weight: bold;
+  color: rgba(255,255,255, 0.85);
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.banner-content p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+//FEATURES CARDS
+.homepage-card {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.features {
+  margin-top: 60px;
+}
+
+.banner .btn-danger:hover {
+  opacity: 0.7;
+}
+
+.features .fa-lock {
+  font-size: 60px;
+  color: white;
+}
+
+.features .fa-check-square-o {
+  font-size: 60px;
+  color: white;
+}
+
+.features .fa-heart {
+  font-size: 60px;
+  color: white;
+}
+
+.feature-red {
+  background-color: $red;
+  padding: 50px;
+  width: 160px;
+  height: 160px;
+  box-shadow: 2px 2px 2px lightgrey;
+  border-radius: 50%;
+
+}
+
+.feature-blue {
+  background-color: $blue;
+  padding: 50px;
+  width: 160px;
+  height: 160px;
+  box-shadow: 2px 2px 2px lightgrey;
+  border-radius: 50%;
+}
+
+.feature-green {
+  background-color: $green;
+  padding: 50px;
+  width: 160px;
+  height: 160px;
+  box-shadow: 2px 2px 2px lightgrey;
+  border-radius: 50%;
+}
+
+.features .row {
+  margin: 0 auto;
+}
+
+// BUTTON SCROLL DOWN
+
+.arrow {
+  color: $green;
+  opacity: 0.4;
+}
+
+.bounce {
+  -moz-animation: bounce 1s infinite;
+  -webkit-animation: bounce 1s infinite;
+  animation: bounce 2.5s infinite;
+}
+
+.link-arrow {
+  position: absolute;
+  bottom: 2em;
+}
+
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}

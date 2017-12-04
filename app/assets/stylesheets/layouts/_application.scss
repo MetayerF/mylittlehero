@@ -1,0 +1,45 @@
+body {
+  background-image: asset-url('bg.jpg');
+}
+
+.container {
+  background-color: $white;
+}
+
+.wrapper {
+  background-color: #fff;
+}
+
+.form-container {
+  margin: 20px 5px;
+  background-color: $white;
+  border-radius: 5px;
+  padding: 50px;
+  // height: 100vh;
+}
+
+.fix-footer {
+  min-height: calc(100vh - 170px);
+}
+
+// SEARCH BAR
+
+// .inner-addon {
+//   position: relative;
+//   color: $green;
+// }
+
+// /* style glyph */
+// .inner-addon .glyphicon {
+//   position: absolute;
+//   padding: 10px;
+//   pointer-events: none;
+// }
+
+// /* align glyph */
+// .left-addon .glyphicon  { left:  0px;}
+// .right-addon .glyphicon { right: 0px;}
+
+// /* add padding  */
+// .left-addon input  { padding-left:  30px; }
+// .right-addon input { padding-right: 30px; }

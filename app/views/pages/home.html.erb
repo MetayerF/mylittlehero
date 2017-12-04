@@ -1,2 +1,56 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% content_for :title, 'Your little hero 👶' %>
+
+
+ <style>
+    .navbar-wagon { display: none; }
+ </style>
+
+<div class="homepage-banner" style="background-image: linear-gradient(-225deg, rgba(250, 92, 100,0.8) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/poloduf/image/upload/v1511963751/pexels-photo-206347-1_qhywyq.jpg');">
+  <div class="banner-content text-center">
+    <h1>Welcome on Babynb</h1>
+    <p>Click on the link below to see all the baby for rent</p>
+    <%#= link_to 'See all the Babies', babies_path, class: 'btn btn-danger btn-lg' %>
+  </div>
+  <a class="link-arrow" href="#features">
+    <i class="fa fa-hand-o-down arrow fa-2x bounce"></i>
+  </a>
+</div>
+
+<div class="wrapper">
+  <div class="container">
+    <div id="features" class="features">
+      <h1 class="text-center">Features</h1>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="text-center">
+            <div class="homepage-card">
+              <i class="fa fa-heart feature-red" aria-hidden="true"></i>
+            </div>
+            <h2>Find a baby</h2>
+            <p>Easily find your baby and bring him/her during a period chosen</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="text-center">
+            <div class="homepage-card">
+             <i class="fa fa-check-square-o feature-blue" aria-hidden="true"></i>
+           </div>
+           <h2>Book it</h2>
+           <p>The first website to book a baby</p>
+         </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="text-center">
+            <div class="homepage-card">
+               <i class="fa fa-lock feature-green" aria-hidden="true"></i>
+           </div>
+           <h2>Secure your booking(s)</h2>
+           <p>100% safe</p>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
