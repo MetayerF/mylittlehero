@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   has_many :relatives
   has_many :heros
   # Include default devise modules. Others available are:
