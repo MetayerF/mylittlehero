@@ -12,6 +12,9 @@ gem 'rails', '5.0.6'
 gem 'redis'
 
 #own gems
+## image upload
+gem 'cloudinary'
+gem 'carrierwave',  '~> 1.2'
 
 
 # assets
