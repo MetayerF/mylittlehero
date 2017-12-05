@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :heros, only: [:index, :new, :create, :edit, :update, :destroy] do
+  resources :heros do
     resources :adventures do
       resources :comments
     end
