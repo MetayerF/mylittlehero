@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def styleguide
-    @base_font   = "Open Sans"
-    @header_font = "Raleway"
+    @base_font   = 'Montserrat'
+    @header_font = 'Grand Hotel'
   end
 end

@@ -9,5 +9,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  validates :firstname, :lastname, :email, :gender, presence: true
+  validates :firstname, :lastname, :gender, presence: true, on: :update
 end
