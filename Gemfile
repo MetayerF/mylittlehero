@@ -12,6 +12,8 @@ gem 'rails', '5.0.6'
 gem 'redis'
 
 #own gems
+gem "pundit"
+
 ## image upload
 gem 'cloudinary'
 gem 'carrierwave',  '~> 1.2'
