@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def styleguide
+    @base_font   = 'Montserrat'
+    @header_font = 'Grand Hotel'
+  end
 end

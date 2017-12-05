@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get 'styleguide', to: 'pages#styleguide'
+
+  devise_for :users
+
+  resources :heros, only: [:index, :new, :create, :edit, :update, :destroy] do
+    resources :adventures do
+      resources :comments
+    end
+    resources :relatives do
+      member do
+        patch :accept
+        patch :decline
+      end
+    end
+  end
 end
+
