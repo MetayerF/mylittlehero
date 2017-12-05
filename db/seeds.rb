@@ -183,7 +183,7 @@ puts "Création de relatives..."
     )
 
   constance_fanny = Relative.create!(
-  user: pauline,
+  user: constance,
   hero: fanny,
   family_link: 'soeur',
   mother_side: true,
