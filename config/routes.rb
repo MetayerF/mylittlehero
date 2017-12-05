@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   get 'styleguide', to: 'pages#styleguide'
 
   devise_for :users
+  resource :profile, only: [:show, :edit, :update]
 
   resources :heros do
     resources :adventures do
       resources :comments
     end
+
     resources :relatives do
       member do
         patch :accept
