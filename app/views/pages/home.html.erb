@@ -1,50 +1,126 @@
-<% content_for :title, 'Your little hero 👶' %>
+<% content_for :title, 'Bienvenue sur My Little Hero - Partagez les aventures de votre héro 👶' %>
 
  <style>
     .navbar-wagon { display: none; }
  </style>
 
-<div class="homepage-banner" style="background-image: linear-gradient(-225deg, rgba(250, 92, 100,0.8) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/poloduf/image/upload/v1511963751/pexels-photo-206347-1_qhywyq.jpg');">
-  <div class="banner-content text-center">
-    <h1>Share your baby stories</h1>
-    <p>Gather your relatives only around his first adventures</p>
-    <%#= link_to 'See all the Babies', babies_path, class: 'btn btn-danger btn-lg' %>
+<div class="row">
+  <div class="col-xs-12 col-sm-4 col-md-8">
+    <div class="homepage-banner" style="background-image: linear-gradient(-225deg, rgba(250, 92, 100,0.4) 0%, rgba(0,36,61,0.5) 50%), url('http://res.cloudinary.com/poloduf/image/upload/v1512481071/home_page_banner_bs3ete.jpg');">
+      <div class="banner-content text-center">
+        <h1>My Little Hero</h1>
+        <p><strong>Partagez les aventures de votre héro</strong>
+        <br>
+        Réunissez vos proches autour des aventures de votre héro !</p>
+       <%= link_to "En savoir plus", root_path, class: "btn btn-danger" %>
+      </div>
+    </div>
   </div>
-  <a class="link-arrow" href="#features">
-    <i class="fa fa-hand-o-down arrow fa-2x bounce"></i>
-  </a>
-</div>
+
+<!-- SIGNUP FORM -->
+  <div class="col-xs-12 col-sm-4 col-md-4">
+      <div class="signup-form">
+        <ul class="tab-group">
+          <li class="tab active"><a href="#signup">Je n'ai pas de compte</a></li>
+          <li class="tab"><a href="#login">J'ai déja un compte</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="signup">
+            <h1>Inscrivez-vous gratuitement</h1>
+
+            <form action="/" method="post">
+
+            <div class="top-row">
+              <div class="field-wrap">
+                <label>
+                  Prénom<span class="req">*</span>
+                </label>
+                <input type="text" required autocomplete="off" />
+              </div>
+
+              <div class="field-wrap">
+                <label>
+                  Nom<span class="req">*</span>
+                </label>
+                <input type="text"required autocomplete="off"/>
+              </div>
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Email<span class="req">*</span>
+              </label>
+              <input type="email"required autocomplete="off"/>
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Mot de passe<span class="req">*</span>
+              </label>
+              <input type="password"required autocomplete="off"/>
+            </div>
+
+            <button type="submit" class="button button-block"/>C'est partis !</button>
+
+            </form>
+
+          </div>
+          <div id="login">
+            <h1>Content de vous revoir!</h1>
+            <form action="/" method="post">
+              <div class="field-wrap">
+                <label>
+                  Email<span class="req">*</span>
+                </label>
+                <input type="email"required autocomplete="off"/>
+              </div>
+
+              <div class="field-wrap">
+                <label>
+                  Mot de passe<span class="req">*</span>
+                </label>
+                <input type="password"required autocomplete="off"/>
+              </div>
+             <p class="forgot"><a href="#">Forgot Password?</a></p>
+             <button class="button button-block"/>Log In</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+<!-- END OF SIGNUP FORM -->
 
 <div class="wrapper">
   <div class="container">
     <div id="features" class="features">
-      <h1 class="text-center">Features</h1>
+      <h1 class="text-center">Fonctionnalités</h1>
       <div class="row">
         <div class="col-xs-12 col-sm-4">
-          <div class="text-center">
+          <div class="features-card text-center">
             <div class="homepage-card">
               <i class="fa fa-heart feature-red" aria-hidden="true"></i>
             </div>
-            <h2>Find a baby</h2>
-            <p>Easily find your baby and bring him/her during a period chosen</p>
+            <h2>Créer un espace dédié à son enfant</h2>
+            <p>Partagez rapidement et simplement les aventures de votre héro avec vos proches</p>
           </div>
         </div>
         <div class="col-xs-12 col-sm-4">
-          <div class="text-center">
+          <div class="features-card text-center">
             <div class="homepage-card">
              <i class="fa fa-check-square-o feature-blue" aria-hidden="true"></i>
            </div>
-           <h2>Book it</h2>
-           <p>The first website to book a baby</p>
+           <h2>Invitez vos proche à venir réagir avec vous des exploits de votre héro</h2>
+           <p>Une dent de perdue, un séjour à la plage, un week-end avec Papie et Mamie ? Tenez au courant votre entourage à l'aide de photos et/ou anecdotes autour de votre petit héro.</p>
          </div>
         </div>
         <div class="col-xs-12 col-sm-4">
-          <div class="text-center">
+          <div class="features-card text-center">
             <div class="homepage-card">
                <i class="fa fa-lock feature-green" aria-hidden="true"></i>
            </div>
-           <h2>Secure your booking(s)</h2>
-           <p>100% safe</p>
+           <h2>Espace totalement privé et sécurisé</h2>
+           <p>Seul les personnes ayant reçu une invitation pourront accéder au contenu de votre enfants. Plusieurs niveau de modération possible.</p>
          </div>
         </div>
       </div>
@@ -53,3 +129,51 @@
 </div>
 
 
+
+<%= content_for(:after_js) do %>
+  <script type="text/javascript">
+    $('.form').find('input, textarea').on('keyup blur focus', function (e) {
+
+  var $this = $(this),
+      label = $this.prev('label');
+
+    if (e.type === 'keyup') {
+      if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+      if( $this.val() === '' ) {
+        label.removeClass('active highlight');
+      } else {
+        label.removeClass('highlight');
+      }
+    } else if (e.type === 'focus') {
+
+      if( $this.val() === '' ) {
+        label.removeClass('highlight');
+      }
+      else if( $this.val() !== '' ) {
+        label.addClass('highlight');
+      }
+    }
+
+});
+
+$('.tab a').on('click', function (e) {
+
+  e.preventDefault();
+
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+
+  $(target).fadeIn(600);
+
+});
+  </script>
+<% end %>
