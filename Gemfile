@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.3.5'
 
+
+# general
 gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
@@ -9,6 +11,13 @@ gem 'puma'
 gem 'rails', '5.0.6'
 gem 'redis'
 
+#own gems
+## image upload
+gem 'cloudinary'
+gem 'carrierwave',  '~> 1.2'
+
+
+# assets
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
