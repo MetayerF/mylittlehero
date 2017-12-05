@@ -40,4 +40,8 @@ class AdventuresController < ApplicationController
     @adventure = @hero.adventures.find(params[:id])
     authorize @adventure
   end
+
+  def adventure_params
+    params.require(:adventure).permit(:title, :description, :location, :date)
+  end
 end
