@@ -2,7 +2,6 @@
 
 puts "Création d'utilisateurs..."
 pauline = User.create!(
-  hero: fanny,
   firstname: 'Pauline',
   lastname: 'Dufourcq',
   nickname: 'Polo',
@@ -14,11 +13,10 @@ pauline = User.create!(
   favorite_song: 'Outkast - Hey Ya',
   favorite_movie: 'Shot Caller',
   my_job: 'Journaliste',
-  photo: File.open(Rails.root.join('db/fixtures/images/pauline.jpg'))
+  photo: File.open(Rails.root.join('db/fixtures/images/users/pauline.jpg'))
   )
 
 constance = User.create!(
-  user: pauline,
   firstname: 'Constance',
   lastname: 'Menard',
   nickname: 'Nanard',
@@ -30,11 +28,10 @@ constance = User.create!(
   favorite_song: 'Laurent Garnier - Crispy Bacon',
   favorite_movie: 'La cité de la peur',
   my_job: 'Etudiante',
-  photo: File.open(Rails.root.join('db/fixtures/images/constance.jpg'))
+  photo: File.open(Rails.root.join('db/fixtures/images/users/constance.jpg'))
   )
 
 amelie = User.create!(
-  user: pauline,
   firstname: 'Amelie',
   lastname: 'Boulanger',
   nickname: 'mèl',
@@ -46,11 +43,10 @@ amelie = User.create!(
   favorite_song: 'The Weekend - Starboy',
   favorite_movie: 'Les trois frères',
   my_job: 'Infirmière',
-  photo: File.open(Rails.root.join('db/fixtures/images/amelie.jpg'))
+  photo: File.open(Rails.root.join('db/fixtures/images/users/amelie.jpg'))
   )
 
 baptiste = User.create!(
-  user: pauline,
   firstname: 'Baptiste',
   lastname: 'Ordureau',
   nickname: 'Bapt',
@@ -62,11 +58,10 @@ baptiste = User.create!(
   favorite_song: 'Johnny Halliday - Allumer le feu',
   favorite_movie: 'Les trois mousquetaires',
   my_job: 'Informaticien',
-  photo: File.open(Rails.root.join('db/fixtures/images/baptiste.jpg'))
+  photo: File.open(Rails.root.join('db/fixtures/images/users/baptiste.jpg'))
   )
 
 kevin = User.create!(
-  user: pauline,
   firstname: 'Kevin',
   lastname: 'Buffard',
   nickname: 'Alex',
@@ -78,7 +73,7 @@ kevin = User.create!(
   favorite_song: 'Francky Vincent - Tu veux mon zizi',
   favorite_movie: 'Rubber',
   my_job: 'Commercial chez Belin',
-  photo: File.open(Rails.root.join('db/fixtures/images/kevin.jpg'))
+  photo: File.open(Rails.root.join('db/fixtures/images/users/kevin.jpg'))
   )
 
 #HEROS
@@ -97,7 +92,7 @@ fanny = Hero.create!(
   favorite_toy: 'Sophie la girafe',
   date_of_birth: '20/01/2017',
   place_of_birth: 'Nantes',
-  photo: File.open(Rails.root.join('db/fixtures/images/fanny.jpg'))
+  photo: File.open(Rails.root.join('db/fixtures/images/heros/fanny.jpg'))
   )
 
 # AVENTURES
@@ -108,16 +103,60 @@ fanny_a_saint_jean = Adventure.create!(
   title: "Fanny à Saint Jean de Luz",
   description: "Premier bain salé pour notre Fanny Chérie.. !",
   location: "Saint Jean de Luz",
-  date: "27/07/2017"
+  date: "2017-07-27"
+  )
+
+#PHOTOS
+Photo.create!(
+  adventure: fanny_a_saint_jean,
+  photo: File.open(Rails.root.join('db/fixtures/images/adventures/fanny_saint_jean.jpg'))
   )
 
 #RELATIVES
 puts "Création de relatives..."
+  pauline_fanny = Relative.create!(
+  user: pauline,
+  hero: fanny,
+  family_link: 'parent',
+  mother_side: true,
+  role: 'admin',
+  invitation_status: 'accepted',
+    )
+
+  baptiste_fanny = Relative.create!(
+  user: baptiste,
+  hero: fanny,
+  family_link: 'parent',
+  mother_side: false,
+  role: 'admin',
+  invitation_status: 'accepted',
+    )
+
   constance_fanny = Relative.create!(
   user: pauline,
   hero: fanny,
   family_link: 'soeur',
   mother_side: true,
   role: 'viewer',
-  invitation_status: 'en attente',
+  invitation_status: 'pending',
     )
+
+  kevin_fanny = Relative.create!(
+  user: kevin,
+  hero: fanny,
+  family_link: 'frere',
+  mother_side: true,
+  role: 'editor',
+  invitation_status: 'pending',
+    )
+
+  amelie_fanny = Relative.create!(
+  user: amelie,
+  hero: fanny,
+  family_link: 'cousine',
+  mother_side: true,
+  role: 'viewer',
+  invitation_status: 'accepted',
+    )
+
+
