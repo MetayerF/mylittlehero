@@ -1,3 +1,6 @@
+puts "Cleaning database..."
+User.destroy.all
+
 #URSERS
 
 puts "Création d'utilisateurs..."
