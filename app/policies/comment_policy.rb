@@ -9,10 +9,6 @@ class CommentPolicy < ApplicationPolicy
     relative? && (relative.admin? || relative.editor? || relative.viewer?)
   end
 
-  def index?
-    relative? && (relative.admin? || relative.editor? || relative.viewer?)
-  end
-
   def create?
     relative? && (relative.admin? || relative.editor? || relative.viewer?)
   end

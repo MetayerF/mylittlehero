@@ -1,7 +1,7 @@
 class HeroPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      user.heros
     end
   end
 
@@ -9,9 +9,9 @@ class HeroPolicy < ApplicationPolicy
     relative? && (relative.admin? || relative.editor? || relative.viewer?)
   end
 
-  def index?
-    relative? && (relative.admin? || relative.editor? || relative.viewer?)
-  end
+  # def index?
+  #   relative? && (relative.admin? || relative.editor? || relative.viewer?)
+  # end
 
   def create?
     relative? && relative.admin?

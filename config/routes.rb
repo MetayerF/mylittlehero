@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :heros do
     resources :adventures do
-      resources :comments
+      resources :comments, except: [:index, :show]
     end
 
     resources :relatives do

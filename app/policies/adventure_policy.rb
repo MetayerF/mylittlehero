@@ -1,6 +1,7 @@
 class AdventurePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
+      #TODO Adventure controller -> policy_scope(@hero.adventures)
       scope.all
     end
   end
@@ -9,14 +10,14 @@ class AdventurePolicy < ApplicationPolicy
     relative? && (relative.admin? || relative.editor? || relative.viewer?)
   end
 
-  def index?
-    relative? && (relative.admin? || relative.editor? || relative.viewer?)
-  end
+  # def index?
+  #   relative? && (relative.admin? || relative.editor? || relative.viewer?)
+  # end
 
   def create?
     relative? && (
       relative.admin? ||
-      (relative.editor? && record.user == user)
+      relative.editor?
     )
   end
 

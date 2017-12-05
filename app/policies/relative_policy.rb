@@ -1,6 +1,7 @@
 class RelativePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
+       #TODO Adventure controller -> policy_scope(@hero.relatives)
       scope.all
     end
   end
@@ -9,32 +10,29 @@ class RelativePolicy < ApplicationPolicy
     relative? && (relative.admin? || relative.editor? || relative.viewer?)
   end
 
-  def index?
-    relative? && (relative.admin? || relative.editor? || relative.viewer?)
-  end
+  # def index?
+  #   relative? && (relative.admin? || relative.editor? || relative.viewer?)
+  # end
 
   def create?
     relative? && relative.admin?
   end
 
   def update?
-    relative? && (relative.admin? || relative.editor? || relative.viewer?)
+    relative? && relative.admin?
   end
 
   def destroy?
-    relative? && (
-      relative.admin? ||
-      (relative.editor? && record.user == user) ||
-      (relative.viewer? && record.user == user)
-    )
+    relative? && relative.admin?
+
   end
 
   def accept
-    relative? && (relative.admin? || relative.editor? || relative.viewer?)
+    record.user == user
   end
 
   def decline
-    relative? && (relative.admin? || relative.editor? || relative.viewer?)
+    record.user == user
   end
 
   private
@@ -44,6 +42,6 @@ class RelativePolicy < ApplicationPolicy
   end
 
   def relative
-    @relative ||= record.find_by_user_id(user.id)
+    @relative ||= record.hero.relatives.find_by_user_id(user.id)
   end
 end
