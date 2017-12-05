@@ -7,7 +7,7 @@ puts "Création d'utilisateurs..."
 pauline = User.create!(
   password: "123456",
   firstname: 'Pauline',
-  lastname: 'Dufourcq',
+  lastname: 'Dupont',
   nickname: 'Polo',
   email: 'pauline.dufourcq@gmail.com',
   date_of_birth: '1982-01-20',
@@ -89,8 +89,8 @@ puts "Création de heroes..."
 fanny = Hero.create!(
   user: pauline,
   firstname: 'Fanny',
-  lastname: 'Jordan',
-  nickname: 'Fafa',
+  lastname: 'Dupont',
+  nickname: 'Mon Berlingot',
   gender: 'Féminin',
   weight: '3,54 kg',
   size: '49 cm',
