@@ -4,5 +4,4 @@ class Adventure < ApplicationRecord
   has_many :photos, dependent: :destroy
 
   validates :user_id, :hero_id, :title, :date, presence: true
-
 end
