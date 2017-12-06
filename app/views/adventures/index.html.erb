@@ -1,19 +1,40 @@
 <div class="container">
   <% adventure = @adventures.first %>
   <div id="grid5">
-    <div class="big-adv adventure-card" id="item16">
+    <div class="big-adv left-item-full adventure-card">
       <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="big-paysage"></div>
-
       <div class="adventure-card-description text-center">
         <h3><%= adventure.title %></h3>
         <p><%= adventure.description %></p>
         <p><%= adventure.location %> - <%= adventure.date %></p>
       </div>
     </div>
-
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item17"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item18"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item19"></div>
+    <div class="medium-adv right-item-half adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-portrait"></div>
+      <div class="adventure-card-description text-center">
+        <h3><%= adventure.title %></h3>
+        <p><%= adventure.description %></p>
+        <p class='basic-adv-infos'><%= adventure.location %> - <%= adventure.date %></p>
+      </div>
+    </div>
+    <div class="small-adv right-item-up adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
+        <div class="hidden adventure-card-description text-center">
+          <h3><%= adventure.title %></h3>
+          <p><%= adventure.location %></p>
+          <p><strong><%= adventure.date %></strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="small-adv right-item-down adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
+        <div class=" hidden adventure-card-description text-center">
+          <h3><%= adventure.title %></h3>
+          <p><%= adventure.location %></p>
+          <p><strong><%= adventure.date %></strong></p>
+        </div>
+      </div>
+    </div>
   </div>
 
 
