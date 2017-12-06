@@ -39,11 +39,23 @@
 .medium-adv .adventure-card-description h3 {
   font-size: 22px;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .medium-adv .adventure-card-description p {
   font-size: 12px;
+  line-height: 12px;
+}
+
+.medium-advs .adventure-card-description h3 {
+  font-size: 30px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.medium-advs .adventure-card-description p {
+  font-size: 15px;
+  line-height: 12px;
 }
 
 /* SMALL ADV */
