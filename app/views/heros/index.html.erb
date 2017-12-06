@@ -1,9 +1,9 @@
-<% content_for :title, "Create & find your heros| MyLittleHero" %>
+<% content_for :title, "Vos héros| MyLittleHero" %>
 
 <div class="container">
   <div class="hero-title">
-  <h1 class= "text-center" > Vos héros: </h1>
-  <p class= "text-center" > Créer et manager vos héros </p>
+    <h1 class= "text-center" > Vos héros: </h1>
+    <p class= "text-center" > Créer et manager vos héros </p>
   </div>
   <div class="hero-category">
     <h2> Mes héros </h2>
@@ -19,18 +19,13 @@
             <div class="hero-age">
              <p><%= pluralize age_count_for(hero), "month" %></p>
              </div>
-            <%= link_to hero_path(hero), class: 'hero-card-link btn-primary' do %>
-            <!-- <a class="card-link" href=""> -->
-              </button>
-            <!-- </a> -->
+            <%= link_to hero_path(hero), class: 'hero-card-link' do %>
             <% end %>
           </div>
           <div class="card-footer">
             <div class="controls">
               <a href="#" class="btn-success">Profil</a>
               <a href="#" class="btn-primary">Aventure</a>
-                <!-- <a href="#"><i class="fa fa-cog"></i></a></li>
-                <a href="#"><i class="fa fa-plus-circle"></i></a></li> -->
             </div>
           </div>
         </div>
@@ -38,7 +33,7 @@
     <% end %>
       <div class="col-xs-12 col-sm-4">
         <div class="heros">
-          <div class="hero-new">
+          <div class="hero-new  ">
         <div class="plus-button">
           <%= link_to new_hero_path do %>
           <i class="fa fa-plus-circle" aria-hidden="true"></i>
