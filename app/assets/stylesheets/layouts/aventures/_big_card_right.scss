@@ -1,4 +1,4 @@
-#grid3 {
+#big-card-right {
   margin-top: 10px;
   display: grid;
   grid-gap: 10px;
@@ -6,30 +6,22 @@
   grid-auto-flow: column dense;
 }
 
-#item8 {
-  background-color: red;
+.right-item-full {
   grid-row: 1 / span 4 ;
   grid-column: 2 / span 3;
-  min-height: 800px;
 }
 
-#item9 {
-  background-color: yellow;
+#left-item-half {
   grid-row: 1 / span 2 ;
   grid-column: 1 / span 1;
-  min-height: 400px;
 }
 
-#item10 {
-  background-color: blue;
+.left-item-up  {
   grid-row: 3 / span 1 ;
   grid-column: 1 / span 1;
-  min-height: 200px;
 }
 
-#item11 {
-  background-color: green;
+.left-item-down {
   grid-row: 4 / span 1 ;
   grid-column: 1 / span 1;
-  min-height: 200px;
 }

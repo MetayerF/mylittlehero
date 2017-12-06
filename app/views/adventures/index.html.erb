@@ -1,12 +1,12 @@
 <div class="container">
   <% adventure = @adventures.first %>
-  <div id="grid5">
+  <div id="big-card-left">
     <div class="big-adv left-item-full adventure-card">
       <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="big-paysage"></div>
       <div class="adventure-card-description text-center">
         <h3><%= adventure.title %></h3>
         <p><%= adventure.description %></p>
-        <p><%= adventure.location %> - <%= adventure.date %></p>
+        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
       </div>
     </div>
     <div class="medium-adv right-item-half adventure-card">
@@ -14,7 +14,7 @@
       <div class="adventure-card-description text-center">
         <h3><%= adventure.title %></h3>
         <p><%= adventure.description %></p>
-        <p class='basic-adv-infos'><%= adventure.location %> - <%= adventure.date %></p>
+        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
       </div>
     </div>
     <div class="small-adv right-item-up adventure-card">
@@ -36,42 +36,152 @@
       </div>
     </div>
   </div>
-
-
-  <div id="grid1">
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item1"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item2"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item3"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item4"></div>
+  <div id="medium-card-left">
+    <div class="medium-adv left-item-2r adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-paysage">
+      </div>
+      <div class="adventure-card-description text-center">
+        <h3><%= adventure.title %></h3>
+        <p><%= adventure.description %></p>
+        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
+      </div>
+    </div>
+    <div class="medium-adv center-item-half adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-portrait"></div>
+      <div class="adventure-card-description text-center">
+        <h3><%= adventure.title %></h3>
+        <p><%= adventure.description %></p>
+        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
+      </div>
+    </div>
+    <div class="small-adv md-right-item-up adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
+        <div class="hidden adventure-card-description text-center">
+          <h3><%= adventure.title %></h3>
+          <p><%= adventure.location %></p>
+          <p><strong><%= adventure.date %></strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="small-adv md-right-item-down adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
+        <div class=" hidden adventure-card-description text-center">
+          <h3><%= adventure.title %></h3>
+          <p><%= adventure.location %></p>
+          <p><strong><%= adventure.date %></strong></p>
+        </div>
+      </div>
+    </div>
   </div>
-
-
-
-  <div id="grid3">
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item8"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item9"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item10"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item11"></div>
+  <div id="big-card-right">
+    <div class="big-adv right-item-full adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="big-paysage"></div>
+      <div class="adventure-card-description text-center">
+        <h3><%= adventure.title %></h3>
+        <p><%= adventure.description %></p>
+        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
+      </div>
+    </div>
+    <div class="medium-adv left-item-half adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-portrait"></div>
+      <div class="adventure-card-description text-center">
+        <h3><%= adventure.title %></h3>
+        <p><%= adventure.description %></p>
+        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
+      </div>
+    </div>
+    <div class="small-adv left-item-up adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
+        <div class=" hidden adventure-card-description text-center">
+          <h3><%= adventure.title %></h3>
+          <p><%= adventure.location %></p>
+          <p><strong><%= adventure.date %></strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="small-adv left-item-down adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
+        <div class=" hidden adventure-card-description text-center">
+          <h3><%= adventure.title %></h3>
+          <p><%= adventure.location %></p>
+          <p><strong><%= adventure.date %></strong></p>
+        </div>
+      </div>
+    </div>
   </div>
-
-
-  <div id="grid4">
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item12"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item13"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item14"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item15"></div>
+  <div id="medium-card-right">
+    <div class="medium-adv right-item-2r adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-paysage">
+      </div>
+      <div class="adventure-card-description text-center">
+        <h3><%= adventure.title %></h3>
+        <p><%= adventure.description %></p>
+        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
+      </div>
+    </div>
+    <div class="medium-adv left-item-half adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-portrait"></div>
+      <div class="adventure-card-description text-center">
+        <h3><%= adventure.title %></h3>
+        <p><%= adventure.description %></p>
+        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
+      </div>
+    </div>
+    <div class="small-adv md-left-item-up adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
+        <div class="hidden adventure-card-description text-center">
+          <h3><%= adventure.title %></h3>
+          <p><%= adventure.location %></p>
+          <p><strong><%= adventure.date %></strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="small-adv md-left-item-down adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
+        <div class=" hidden adventure-card-description text-center">
+          <h3><%= adventure.title %></h3>
+          <p><%= adventure.location %></p>
+          <p><strong><%= adventure.date %></strong></p>
+        </div>
+      </div>
+    </div>
   </div>
-
-
-
-  <div id="grid5">
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item16"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item17"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item18"></div>
-    <div style="background-image: url('https://picsum.photos/900/900');" id="item19"></div>
+  <div id="big-card-left">
+    <div class="big-adv left-item-full adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="big-paysage"></div>
+      <div class="adventure-card-description text-center">
+        <h3><%= adventure.title %></h3>
+        <p><%= adventure.description %></p>
+        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
+      </div>
+    </div>
+    <div class="medium-adv right-item-half adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-portrait"></div>
+      <div class="adventure-card-description text-center">
+        <h3><%= adventure.title %></h3>
+        <p><%= adventure.description %></p>
+        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
+      </div>
+    </div>
+    <div class="small-adv right-item-up adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
+        <div class="hidden adventure-card-description text-center">
+          <h3><%= adventure.title %></h3>
+          <p><%= adventure.location %></p>
+          <p><strong><%= adventure.date %></strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="small-adv right-item-down adventure-card">
+      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
+        <div class=" hidden adventure-card-description text-center">
+          <h3><%= adventure.title %></h3>
+          <p><%= adventure.location %></p>
+          <p><strong><%= adventure.date %></strong></p>
+        </div>
+      </div>
+    </div>
   </div>
-
-
 </div>
 
 
