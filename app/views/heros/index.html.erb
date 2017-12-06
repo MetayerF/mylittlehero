@@ -2,8 +2,8 @@
 
 <div class="container">
   <div class="hero-title">
-    <h1 class= "text-center" > Vos héros: </h1>
-    <p class= "text-center" > Créer et manager vos héros </p>
+    <h1 class= "text-center">Vos héros: </h1>
+    <p class= "text-center">Créer et manager vos héros </p>
   </div>
   <div class="hero-category">
     <h2> Mes héros </h2>
@@ -14,9 +14,9 @@
       <div class="heros">
         <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hero.photo, height: 200 %>');">
           <div class="hero-description">
-           <h1><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h1>
-         </div>
-         <div class="hero-age">
+            <h1><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h1>
+          </div>
+        <div class="hero-age">
           <p><%= pluralize age_count_for(hero), "month" %></p>
         </div>
         <%= link_to hero_path(hero), class: 'hero-card-link' do %>
@@ -36,8 +36,8 @@
       <div class="hero-new  ">
         <div class="plus-button">
           <%= link_to new_hero_path do %>
-          <i class="fa fa-plus-circle" aria-hidden="true"></i>
-          <p> Nouveau héro</p>
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <p> Nouveau héro</p>
           <% end %>
         </div>
       </div>
