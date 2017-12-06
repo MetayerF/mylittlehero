@@ -1,0 +1,86 @@
+<% content_for :title, 'Voici les proches de votre héro ' + @hero.firstname + ' ! | MyLittleHero.com' %>
+
+<div class="container">
+  <div class="header-relatives text-center">
+    <h1>Ma Famille</h1>
+    <p>Toutes les personnes ci-dessous représentent mes proches</p>
+  </div>
+  <div class="relatives-banner">
+    <div class="relatives-banner-content">
+      <h2>Mes parents</h2>
+            <div class="relatives-avatar">
+              <% @relatives.where(family_link: "parent").each do |relative|%>
+                <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
+                  <%= image_tag relative.user.photo %>
+                  <p><%= relative.user.nickname %></p>
+                <% end %>
+              <% end %>
+            </div>
+      <h2>Mes frères et soeurs</h2>
+            <div class="relatives-avatar">
+              <% @relatives.where(family_link: "soeur").each do |relative|%>
+                <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
+                  <%= image_tag relative.user.photo %>
+                  <p><%= relative.user.nickname %></p>
+                <% end %>
+              <% end %>
+            </div>
+      <h2>Mes grand-parents</h2>
+          <div class="relatives-avatar">
+            <% @relatives.where(family_link: "grand-parents").each do |relative|%>
+              <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
+                <%= image_tag relative.user.photo %>
+                <p><%= relative.user.nickname %></p>
+              <% end %>
+            <% end %>
+            <div class="plus-button-relatives">
+              <%= link_to new_hero_relative_path do %>
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </div>
+      <h2>Mes oncles et tantes</h2>
+          <div class="relatives-avatar">
+            <% @relatives.where(family_link: "oncle").each do |relative|%>
+              <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
+                <%= image_tag relative.user.photo %>
+                <p><%= relative.user.nickname %></p>
+              <% end %>
+            <% end %>
+            <div class="plus-button-relatives">
+              <%= link_to new_hero_relative_path do %>
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </div>
+      <h2>Mes cousins et cousines</h2>
+        <div class="relatives-avatar">
+          <% @relatives.where(family_link: "cousine").each do |relative|%>
+            <%= link_to hero_relative_path(@hero, relative) do %>
+              <%= image_tag relative.user.photo %>
+            <% end %>
+          <% end %>
+            <div class="plus-button-relatives">
+              <%= link_to new_hero_relative_path do %>
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+              <% end %>
+            </div>
+        </div>
+      <h2>Les amis de ma famille</h2>
+          <div class="relatives-avatar">
+            <% @relatives.where(family_link: "amis").each do |relative|%>
+              <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
+                <%= image_tag relative.user.photo %>
+                <p><%= relative.user.nickname %></p>
+              <% end %>
+            <% end %>
+            <div class="plus-button-relatives">
+              <%= link_to new_hero_relative_path do %>
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
