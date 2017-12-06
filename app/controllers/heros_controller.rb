@@ -1,9 +1,6 @@
 class HerosController < ApplicationController
 
   def index
-    @heros = Hero.all
+    @heros = policy_scope(Hero)
   end
-
-
-
 end
