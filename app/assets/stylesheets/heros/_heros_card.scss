@@ -6,17 +6,23 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   margin: 15px;
 }
-.heros:hover {
-  padding-top: 5px;
-}
+
 .hero {
   height: 175px;
+  filter: grayscale(60%);
+  filter: blur(1px);
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+  z-index: 0;
 }
+.hero:hover{
+  filter: grayscale(0%);
+  filter: blur(0px);
+}
+
 .hero-new {
   height: 175px;
   background-size: cover !important;
@@ -60,7 +66,7 @@
   justify-content: center;
 }
 .hero-card-link:hover {
-  opacity: 0.3;
+  opacity: 0;
   background-color: white;
   text-decoration: none;
 }
@@ -99,21 +105,20 @@
 
 }
 .plus-button i{
-  color: $light-gray;
-  font-size: 150px;
+  color: $blue;
+  opacity: 0.8;
+  font-size: 145px;
+  transition: all 0.3s ease;
 }
 .plus-button i:hover{
-  color: $green;
+  color: $blue;
   font-size: 150px;
 }
 .plus-button a{
   color: $light-gray;
   text-decoration: none;
 }
-.plus-button a:hover{
-  color: $green;
-  text-decoration: none;
-}
+
 .hero-category{
   background-color: #fff;
   border-bottom: 1px solid rgba(150, 150, 150, 0.3);
@@ -136,5 +141,6 @@
 .hero-title{
   line-height: 0px;
   margin-bottom: 30px;
+  font-weight: lighter;
 }
 
