@@ -191,6 +191,7 @@ puts "Création de relatives..."
   invitation_status: 'pending',
     )
 
+
   kevin_fanny = Relative.create!(
   user: kevin,
   hero: fanny,
