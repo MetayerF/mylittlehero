@@ -9,7 +9,7 @@ pauline = User.create!(
   firstname: 'Pauline',
   lastname: 'Dupont',
   nickname: 'Polo',
-  email: 'pauline.dufourcq@gmail.com',
+  email: 'pauline.dupont@gmail.com',
   date_of_birth: '1982-01-20',
   place_of_birth: 'Nantes',
   gender: 'Feminin',
