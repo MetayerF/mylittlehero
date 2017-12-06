@@ -1,0 +1,51 @@
+<% content_for :title, "Create & find your heros| MyLittleHero" %>
+
+<div class="container">
+  <div class="hero-title">
+  <h1 class= "text-center" > Vos héros: </h1>
+  <p class= "text-center" > Créer et manager vos héros </p>
+  </div>
+  <div class="hero-category">
+    <h2> Mes héros </h2>
+  </div>
+  <div class="row">
+    <% @heros.each do |hero|%>
+      <div class="col-xs-12 col-sm-4">
+        <div class="heros">
+          <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hero.photo, height: 200 %>');">
+            <div class="hero-description">
+             <h1><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h1>
+            </div>
+            <div class="hero-age">
+             <p><%= pluralize age_count_for(hero), "month" %></p>
+             </div>
+            <%= link_to hero_path(hero), class: 'hero-card-link btn-primary' do %>
+            <!-- <a class="card-link" href=""> -->
+              </button>
+            <!-- </a> -->
+            <% end %>
+          </div>
+          <div class="card-footer">
+            <div class="controls">
+              <a href="#" class="btn-success">Profil</a>
+              <a href="#" class="btn-primary">Aventure</a>
+                <!-- <a href="#"><i class="fa fa-cog"></i></a></li>
+                <a href="#"><i class="fa fa-plus-circle"></i></a></li> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="heros">
+          <div class="hero-new">
+        <div class="plus-button">
+          <%= link_to new_hero_path do %>
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          <p> Nouveau héro</p>
+        <% end %>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
