@@ -10,37 +10,37 @@
   </div>
   <div class="row">
     <% @heros.each do |hero|%>
-      <div class="col-xs-12 col-sm-4">
-        <div class="heros">
-          <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hero.photo, height: 200 %>');">
-            <div class="hero-description">
-             <h1><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h1>
-            </div>
-            <div class="hero-age">
-             <p><%= pluralize age_count_for(hero), "month" %></p>
-             </div>
-            <%= link_to hero_path(hero), class: 'hero-card-link' do %>
-            <% end %>
-          </div>
-          <div class="card-footer">
-            <div class="controls">
-              <a href="#" class="btn-success">Profil</a>
-              <a href="#" class="btn-primary">Aventure</a>
-            </div>
-          </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="heros">
+        <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hero.photo, height: 200 %>');">
+          <div class="hero-description">
+           <h1><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h1>
+         </div>
+         <div class="hero-age">
+          <p><%= pluralize age_count_for(hero), "month" %></p>
+        </div>
+        <%= link_to hero_path(hero), class: 'hero-card-link' do %>
+        <% end %>
+      </div>
+      <div class="card-footer">
+        <div class="controls">
+          <a href="#" class="btn-success">Profil</a>
+          <a href="#" class="btn-primary">Aventure</a>
         </div>
       </div>
-    <% end %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="heros">
-          <div class="hero-new  ">
+    </div>
+  </div>
+  <% end %>
+  <div class="col-xs-12 col-sm-4">
+    <div class="heros">
+      <div class="hero-new  ">
         <div class="plus-button">
           <%= link_to new_hero_path do %>
           <i class="fa fa-plus-circle" aria-hidden="true"></i>
           <p> Nouveau héro</p>
-        <% end %>
+          <% end %>
         </div>
       </div>
-      </div>
+    </div>
   </div>
 </div>
