@@ -5,6 +5,7 @@ class HerosController < ApplicationController
     @heros = policy_scope(Hero)
   end
 
+
   def show
   end
 
