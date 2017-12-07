@@ -14,9 +14,12 @@
         Mot de passe<span class="req">*</span>
       </label>
       <%= f.input :password_confirmation, required: true %>
+      <%= f.input :remember_me, inline_label: 'Se souvenir de moi' %>
     </div>
 
       <p class="forgot"><a href="#">Mot de passe oublié ?</a></p>
     <button class="button button-block"/>M'identifier</button>
   </form>
 </div>
+
+
