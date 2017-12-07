@@ -18,7 +18,7 @@
             <% else  %>
             <h1><%= @hero.firstname.capitalize %> <%= @hero.lastname.capitalize %></h1>
             <% end %>
-            <h3><%= @hero.nickname %></h3>
+            <h3>Mon Tableaux de bord</h3>
         </div>
 
       </div>
@@ -27,8 +27,9 @@
 <!-- HEAD HERO END -->
 <!-- COUNTER -->
   <div class="counter-adventure-relative-photo text-center">
+    <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="counter-adventure">
           <div class="figure-plus">
             <h2><%= Adventure.count %></h2>
@@ -38,7 +39,7 @@
             <p>Aventures</p>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="counter-relative">
           <div class="figure-plus">
             <h2><%= Relative.count %></h2>
@@ -48,7 +49,7 @@
             <p>Membres dans votre famille</p>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="counter-photo">
           <div class="figure-plus">
             <h2><%= Photo.count %></h2>
@@ -57,58 +58,25 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
-<!-- COUNTER END -->
-  <!-- BODY HERO -->
-  <div class="body-hero-description">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="age-hero">
-          <div class="age-hero-content">
-            <% if @hero.gender == "Féminin" %>
-              <i class="gender-font-girl fa fa-venus" aria-hidden="true"></i>
-              <% else %>
-              <i class="gender-font-man fa fa-mars" aria-hidden="true"></i>
-              <% end %>
-          </div>
 
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="toy-hero">
-          <div class="toy-hero-content">
-            <ul>
-              <li><%= @hero.weight.to_f %> kg</li>
-              <li><%= @hero.size %> cm</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="astro-hero">
-          <div class="astro-hero-content">
-             <ul>
-              <li><%= @hero.favorite_toy %></li>
-              <li><%= @hero.eyes_color %></li>
-              <li><%= @hero.hair_color %></li>
-              <li><%= @hero.astro_sign %></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="size-hero">
-          <div class="size-hero-content">
-            <ul>
-              <li><i class="fa fa-calendar" aria-hidden="true"></i>: <%= @hero.date_of_birth.strftime("%d/%m/%Y") %></li>
-              <li><i class="fa fa-map-marker" aria-hidden="true"></i>: <%= @hero.place_of_birth.capitalize %></li>
-              <li><i class="fa fa-superpowers" aria-hidden="true"></i>: <%= @hero.astro_sign.capitalize %></li>
-            </ul>
-          </div>
-        </div>
+<!-- COUNTER END -->
+<!-- BODY HERO -->
+<div class="hero-book">
+  <div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="hero-book-content text-center">
+        <h2> Carnet de bord de <%= @hero.firstname.capitalize %></h2>
+        <p> Je m'appelle <%= @hero.firstname.capitalize %> <%= @hero.lastname.capitalize %>, mais ma famille me surnomme <%= @hero.nickname.capitalize %>. Je suis une jolie <%= @hero.gender %> né(e) dans la ville de <%= @hero.place_of_birth.capitalize %> le <%= @hero.date_of_birth.strftime("%d/%m/%Y") %>. Mon signe astrologique est donc <%= @hero.astro_sign %>. <br>
+        Je suis un joli bébé au yeux <%= @hero.eyes_color %> avec les cheveux <%= @hero.hair_color %>.
+        Je grandis très vite... Déjà <%= @hero.size %> cm  pour <%= @hero.size.to_f %> kg à seulement <%=age_count_for(@hero) %> mois.
+        Je découvre la vie tout doucement et pour occuper mes journées, je joue avec <%= @hero.favorite_toy %>.
+        </p>
       </div>
     </div>
-    </div>
+  </div>
+</div>
 <!-- BODY HERO END -->
 <div class="text-center">
     <%= link_to hero_path do %>

@@ -20,10 +20,9 @@
 // *************COUNTER HERO********************//
 .counter-adventure-relative-photo {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
   margin-bottom: 20px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .figure-plus {
   display: flex;
@@ -41,12 +40,13 @@
 
 // *************COUNTER ADVENTURE ********************//
 .counter-adventure {
-  box-shadow: 0px 0px 1px $light-gray;
-  width: 200px;
   height: 150px;
   display: block;
   justify-content: center;
   align-items: center;
+  background-color: $red;
+  border-radius: 5px;
+  border-bottom: 10px solid $blue;
 }
 .counter-adventure h2 {
   font-size: 50px;
@@ -55,40 +55,44 @@
 .counter-adventure p {
   font-size: 20px;
   font-weight: lighter;
+  color: $blue;
 }
 // *************COUNTER RELATIVE ********************//
 .counter-relative {
-  box-shadow: 0px 0px 1px $light-gray;
-  width: 200px;
   height: 150px;
   display: block;
   justify-content: center;
   align-items: center;
+  background-color: $blue;
+  border-radius: 5px;
+  border-bottom: 10px solid $green;
 }
 .counter-relative h2 {
   font-size: 50px;
-  color: $red;
+  color: $green;
 }
 .counter-relative p {
   font-size: 20px;
   font-weight: lighter;
+  color: $green;
 }
 .padding-plus-deux{
   padding-left: 15px;
-  color: $red;
+  color: $green;
 }
 .padding-plus-deux:hover{
   padding-left: 15px;
-  color: $green;
+  color: $red;
 }
 // *************COUNTER PHOTO ********************//
 .counter-photo {
-  box-shadow: 0px 0px 1px $light-gray;
-  width: 200px;
   height: 150px;
   display: block;
   justify-content: center;
   align-items: center;
+  background-color: $green;
+  border-radius: 5px;
+  border-bottom: 10px solid $red;
 }
 .counter-photo h2 {
   font-size: 50px;
@@ -97,6 +101,7 @@
 .counter-photo p {
   font-size: 20px;
   font-weight: lighter;
+  color: $red;
 }
 // *************BUTTON********************//
 
@@ -106,6 +111,22 @@
   border-radius: 5px;
   color: white;
   padding: 5px;
+}
+// *************HERO BOOK********************//
+.hero-book{
+padding-top: 40px;
+padding-bottom: 40px;
+}
+.hero-book-content{
+background-color: $smooth-gray;
+height: 300px;
+display: block;
+justify-content: space-around;
+align-items: center;
+padding: 20px;
+}
+.hero-book-content h2 {
+  padding-bottom: 30px;
 }
 // *************AGE********************//
 .age-hero{
