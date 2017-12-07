@@ -8,14 +8,17 @@ class AdventuresController < ApplicationController
 
   def new
     @adventure = @hero.adventures.new
-    authorize @adventure # IDEM ds create
+    authorize @adventure
   end
 
   def create
-    @adventure = @hero.adventures.new(adventure_params) # TODO en private
-    authorize @adventure # IDEM ds create
-
-    # TODO: save redirect...
+    @adventure = @hero.adventures.new(adventure_params)
+    authorize @adventure
+    if @adventure.save
+      redirect_to hero_adventures_path
+    else
+      render :new
+    end
   end
 
   def edit

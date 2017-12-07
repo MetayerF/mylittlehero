@@ -1,3 +1,6 @@
+<% content_for :title, "Ma vie pleine d'aventures 👶 "%>
+
+
 <% adventures_presenter = AdventuresPresenter.new(@adventures) %>
 <div class="container">
   <% adventures_presenter.adventures_groups.each_with_index do |adventures_group, index| %>
