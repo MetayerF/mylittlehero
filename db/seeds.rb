@@ -7,9 +7,9 @@ puts "Création d'utilisateurs..."
 pauline = User.create!(
   password: "123456",
   firstname: 'Pauline',
-  lastname: 'Dufourcq',
+  lastname: 'Dupont',
   nickname: 'Polo',
-  email: 'pauline.dufourcq@gmail.com',
+  email: 'pauline.dupont@gmail.com',
   date_of_birth: '1982-01-20',
   place_of_birth: 'Nantes',
   gender: 'Feminin',
@@ -89,9 +89,9 @@ puts "Création de heroes..."
 fanny = Hero.create!(
   user: pauline,
   firstname: 'Fanny',
-  lastname: 'Jordan',
-  nickname: 'Fafa',
-  gender: 'Féminin',
+  lastname: 'Dupont',
+  nickname: 'Mon Berlingot',
+  gender: 'petite fille',
   weight: '3,54 kg',
   size: '49 cm',
   astro_sign: 'Capricorne',
@@ -190,6 +190,7 @@ puts "Création de relatives..."
   role: 'viewer',
   invitation_status: 'pending',
     )
+
 
   kevin_fanny = Relative.create!(
   user: kevin,

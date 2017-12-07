@@ -10,22 +10,31 @@
   background-position: center;
   background-size: cover;
   position: relative;
+  min-height: 100vh;
 }
 
 .banner-content h1 {
   color: $green;
+  font-size: 80px;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  margin-bottom: 150px;
 }
 
 .banner-content {
+  font-size: 22px;
   font-weight: bold;
   color: rgba(255,255,255, 0.85);
   margin: 0 auto;
-  padding: 0 auto;
+  padding-bottom: 160px;
+  margin-top: 100px;
 }
 
 .banner-content p {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  margin-top: 30px;
 }
 
 //FEATURES CARDS
@@ -36,8 +45,13 @@
   justify-content: space-around;
 }
 
+.features-card {
+  margin: 0px 50px;
+}
+
 .features {
   margin-top: 60px;
+  color: $blue;
 }
 
 .banner .btn-danger:hover {
@@ -91,33 +105,4 @@
   margin: 0 auto;
 }
 
-// BUTTON SCROLL DOWN
 
-.arrow {
-  color: $green;
-  opacity: 0.4;
-}
-
-.bounce {
-  -moz-animation: bounce 1s infinite;
-  -webkit-animation: bounce 1s infinite;
-  animation: bounce 2.5s infinite;
-}
-
-.link-arrow {
-  position: absolute;
-  bottom: 2em;
-}
-
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-}

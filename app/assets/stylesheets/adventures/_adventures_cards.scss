@@ -1,0 +1,132 @@
+.adventure-card {
+  box-shadow: 1px 2px 3px $light-gray;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+  height: 30px;
+}
+
+.adventure-card-description h3 {
+  line-height: 20px;
+}
+
+.adventure-card-description p {
+  font-size: 14px;
+
+}
+
+/* BIG ADV*/
+
+.big-adv .adventure-card-description {
+  line-height: 18px;
+}
+
+.big-adv .adventure-card-description h3 {
+  font-size: 70px;
+  margin-bottom: 35px;
+  padding: 10px;
+}
+
+.big-adv .adventure-card-description p {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.big-adv .basic-adv-infos {
+  font-size: 16px;
+}
+
+/* MEDIUM ADV */
+
+.medium-adv .adventure-card-description {
+  line-height: 16px;
+}
+
+.adventure-description {
+  padding-left: 25px;
+}
+
+.medium-adv .adventure-card-description h3 {
+  font-size: 22px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.medium-adv .adventure-card-description p {
+  font-size: 12px;
+  line-height: 12px;
+  margin: 0;
+}
+
+.medium-advs .adventure-card-description h3 {
+  font-size: 30px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.medium-advs .adventure-card-description p {
+  font-size: 15px;
+  line-height: 12px;
+}
+
+/* SMALL ADV */
+
+.small-adv .adventure-card-description {
+  line-height: 16px;
+  padding: 30px 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+.small-adv .adventure-card-description h3 {
+  font-size: 22px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.small-adv .adventure-card-description p {
+  font-size: 12px;
+}
+
+
+/* adventure card img */
+
+.big-paysage{
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+.medium-portrait{
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+
+.medium-paysage{
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 10px
+}
+
+.small-paysage{
+  height: 180px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 10px;
+
+}
+
+
+
+
+

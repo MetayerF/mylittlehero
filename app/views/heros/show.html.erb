@@ -1,0 +1,89 @@
+<% content_for :title, @hero.firstname + "| MyLittleHero" %>
+
+<div class="container">
+<!-- HEAD HERO -->
+  <div class="head-hero">
+    <div class="row">
+      <div class="col-xs-12 col-md-8-col-md-offset-2">
+        <div class="text-center">
+            <% if @hero.photo.blank? %>
+              <%= image_tag("smiling_baby.png", height: 100) %>
+            <% else %>
+            <%= cl_image_tag @hero.photo, class: 'avatar-tlarge' %>
+            <% end %>
+        </div>
+        <div class="text-center">
+            <% if @hero.firstname.nil? || @hero.lastname.nil? %>
+              <h1><%= @hero.firstname %> <%= @hero.lastname %></h1>
+            <% else  %>
+              <h1><%= @hero.firstname.capitalize %> <%= @hero.lastname.capitalize %></h1>
+            <% end %>
+            <h3>Mon Tableaux de bord</h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- HEAD HERO END -->
+<!-- COUNTER -->
+  <div class="counter-adventure-relative-photo text-center">
+    <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="counter-adventure">
+          <div class="figure-plus">
+            <h2><%= Adventure.count %></h2>
+              <%= link_to new_hero_path, class: 'padding-plus' do %><i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <% end %>
+          </div>
+            <p>Aventures</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="counter-relative">
+          <div class="figure-plus">
+            <h2><%= Relative.count %></h2>
+              <%= link_to new_hero_path, class: 'padding-plus-deux' do %><i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <% end %>
+          </div>
+            <p>Membres dans votre famille</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="counter-photo">
+          <div class="figure-plus">
+            <h2><%= Photo.count %></h2>
+          </div>
+            <p>Photos</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+<!-- COUNTER END -->
+<!-- BODY HERO -->
+<div class="hero-book">
+  <div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="hero-book-content text-center">
+        <h2> Carnet de bord de <%= @hero.firstname.capitalize %></h2>
+        <p> Je m'appelle <%= @hero.firstname.capitalize %> <%= @hero.lastname.capitalize %>, mais ma famille me surnomme <%= @hero.nickname.capitalize %>. Je suis une jolie <%= @hero.gender %> né(e) dans la ville de <%= @hero.place_of_birth.capitalize %> le <%= @hero.date_of_birth.strftime("%d/%m/%Y") %>. Mon signe astrologique est donc <%= @hero.astro_sign %>. <br>
+        Je suis un joli bébé aux yeux <%= @hero.eyes_color %> avec les cheveux <%= @hero.hair_color %>.
+        Je grandis très vite... Déjà <%= @hero.size %> cm  pour <%= @hero.size.to_f %> kg à seulement <%=age_count_for(@hero) %> mois.
+        Je découvre la vie tout doucement et pour occuper mes journées, je joue avec <%= @hero.favorite_toy %>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- BODY HERO END -->
+<div class="text-center">
+    <%= link_to hero_path do %>
+      <type="button" class="text-center button-edit btn btn-success">Modifier le profil de <%= @hero.firstname %>
+    <% end %>
+</div>
+<!-- CONTAINER END -->
+  </div>
+
+
