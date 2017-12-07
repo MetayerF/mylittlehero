@@ -1,7 +1,8 @@
 <% content_for :title, @hero.firstname + "| MyLittleHero" %>
 
 <div class="container">
-  <div class="head">
+<!-- HEAD HERO -->
+  <div class="head-hero">
     <div class="row">
       <div class="col-xs-12 col-md-8-col-md-offset-2">
         <div class="text-center">
@@ -19,51 +20,102 @@
             <% end %>
             <h3><%= @hero.nickname %></h3>
         </div>
-        <div class="button-head">
-          <button type="button" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i>   Editer le profil de <%= @hero.firstname.capitalize %></button>
-          <button type="button" class="btn btn-primary"><i class="fa fa-plus-circle" aria-hidden="true"></i>  Ajouter nouvelle aventure</button>
+
+      </div>
+    </div>
+  </div>
+<!-- HEAD HERO END -->
+<!-- COUNTER -->
+  <div class="counter-adventure-relative-photo text-center">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="counter-adventure">
+          <div class="figure-plus">
+            <h2><%= Adventure.count %></h2>
+            <%= link_to new_hero_path, class: 'padding-plus' do %><i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <% end %>
+          </div>
+            <p>Aventures</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="counter-relative">
+          <div class="figure-plus">
+            <h2><%= Relative.count %></h2>
+            <%= link_to new_hero_path, class: 'padding-plus-deux' do %><i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <% end %>
+          </div>
+            <p>Membres dans votre famille</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="counter-photo">
+          <div class="figure-plus">
+            <h2><%= Photo.count %></h2>
+          </div>
+            <p>Photos</p>
         </div>
       </div>
     </div>
   </div>
+<!-- COUNTER END -->
+  <!-- BODY HERO -->
+  <div class="body-hero-description">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="age-hero">
+          <div class="age-hero-content">
+            <% if @hero.gender == "Féminin" %>
+              <i class="gender-font-girl fa fa-venus" aria-hidden="true"></i>
+              <% else %>
+              <i class="gender-font-man fa fa-mars" aria-hidden="true"></i>
+              <% end %>
+          </div>
 
-  <div class="profile">
-    <div class="main">
-      <div class="main-content">
-        <ul class="list-inline">
-          <li><% if @hero.gender == "Féminin" %>
-            <i class="gender-font-girl fa fa-venus" aria-hidden="true"></i>
-          <% else %>
-            <i class="gender-font-man fa fa-mars" aria-hidden="true"></i>
-          <% end %></li>
-          <li><%= @hero.weight.to_f %> kg</li>
-          <li><%= @hero.size %> cm</li>
-          <li></li>
-        </ul>
-
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="toy-hero">
+          <div class="toy-hero-content">
+            <ul>
+              <li><%= @hero.weight.to_f %> kg</li>
+              <li><%= @hero.size %> cm</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="astro-hero">
+          <div class="astro-hero-content">
+             <ul>
+              <li><%= @hero.favorite_toy %></li>
+              <li><%= @hero.eyes_color %></li>
+              <li><%= @hero.hair_color %></li>
+              <li><%= @hero.astro_sign %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="size-hero">
+          <div class="size-hero-content">
+            <ul>
+              <li><i class="fa fa-calendar" aria-hidden="true"></i>: <%= @hero.date_of_birth.strftime("%d/%m/%Y") %></li>
+              <li><i class="fa fa-map-marker" aria-hidden="true"></i>: <%= @hero.place_of_birth.capitalize %></li>
+              <li><i class="fa fa-superpowers" aria-hidden="true"></i>: <%= @hero.astro_sign.capitalize %></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="stat">
-      <div class="stat-content">
-      <ul>
-        <li><i class="fa fa-calendar" aria-hidden="true"></i>: <%= @hero.date_of_birth.strftime("%d/%m/%Y") %></li>
-        <li><i class="fa fa-map-marker" aria-hidden="true"></i>: <%= @hero.place_of_birth.capitalize %></li>
-        <li><i class="fa fa-superpowers" aria-hidden="true"></i>: <%= @hero.astro_sign.capitalize %></li>
-      </ul>
-
-      </div>
     </div>
-    <div class="stat-two">
-      <div class="stat-content-two">
-
-      </div>
-    </div>
-    <div class="toy">
-      <div class="toy-content">
-
-
-      </div>
-    </div>
-
-  </div>
+<!-- BODY HERO END -->
+<div class="text-center">
+    <%= link_to hero_path do %>
+      <type="button" class="text-center button-edit btn btn-success">Modifier le profil de <%= @hero.firstname %>
+    <% end %>
 </div>
+<!-- CONTAINER END -->
+  </div>
+
+

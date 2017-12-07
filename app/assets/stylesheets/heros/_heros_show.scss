@@ -1,85 +1,170 @@
-.head {
+// *************HEAD HERO********************//
+.head-hero {
   display: flex;
   justify-content: space-around;
 }
-
-.head h3{
+.head-hero h3{
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   color: $light-gray;
   font-weight: lighter;
   padding-bottom: 10px;
 }
+// *************BODY HERO********************//
+.body-hero-description{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+// *************COUNTER HERO********************//
+.counter-adventure-relative-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+.figure-plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.padding-plus{
+  padding-left: 15px;
+  color: $blue;
+}
+.padding-plus:hover{
+  padding-left: 15px;
+  color: $green;
+}
 
-.button-head button {
-  height: 30px;
-  width: 250px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-right: 5px;
+// *************COUNTER ADVENTURE ********************//
+.counter-adventure {
+  box-shadow: 0px 0px 1px $light-gray;
+  width: 200px;
+  height: 150px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.counter-adventure h2 {
+  font-size: 50px;
+  border-radius: 50%;
+}
+.counter-adventure p {
+  font-size: 20px;
+  font-weight: lighter;
+}
+// *************COUNTER RELATIVE ********************//
+.counter-relative {
+  box-shadow: 0px 0px 1px $light-gray;
+  width: 200px;
+  height: 150px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.counter-relative h2 {
+  font-size: 50px;
+  color: $red;
+}
+.counter-relative p {
+  font-size: 20px;
+  font-weight: lighter;
+}
+.padding-plus-deux{
+  padding-left: 15px;
+  color: $red;
+}
+.padding-plus-deux:hover{
+  padding-left: 15px;
+  color: $green;
+}
+// *************COUNTER PHOTO ********************//
+.counter-photo {
+  box-shadow: 0px 0px 1px $light-gray;
+  width: 200px;
+  height: 150px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.counter-photo h2 {
+  font-size: 50px;
+  color: $red;
+}
+.counter-photo p {
+  font-size: 20px;
+  font-weight: lighter;
+}
+// *************BUTTON********************//
+
+.button-edit {
+  margin-top: 10px;
+  margin-bottom: 20px;
   border-radius: 5px;
   color: white;
-  font-size: 15px;
   padding: 5px;
-  text-align: center;
-  text-decoration: none;
 }
-.profile {
-  display: grid;
-  grid-template-columns: 350px 1fr 1fr 1fr;
-  grid-template-rows: 25%;
-  height: calc(100vh - 70px);
-  padding: 30px;
-
-}
-.main, .stat, .toy {
-  background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  padding: 50px;
-  margin: 10px;
+// *************AGE********************//
+.age-hero{
+  box-shadow: 0px 0px 1px $light-gray;
+  width: 200px;
+  height: 200px;
   display: flex;
-  align-items: center;
   justify-content: space-around;
-  line-height: 30px;
-  position: relative;
+  align-items: center;
+  background-color: $smooth-gray;
 }
-.profile .main {
-  grid-row: 1 / span 1;
-  grid-column: 1 / span 2;
+// *************TOY********************//
+.toy-hero{
+  box-shadow: 0px 0px 1px $light-gray;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $smooth-gray;
 }
-.profile .stat {
-  grid-row: 1 / span 1;
-  grid-column: 3 / span 1;
-}
-.profile .toy {
-  grid-row: 1 / span 1;
-  grid-column: 4 / span 1;
-}
-
-// CSS specify content
-
-.main-content ul {
+.toy-hero ul{
   list-style: none;
-  font-size: 25px;
 }
-
-.stat-content ul {
+// *************ASTRO********************//
+.astro-hero{
+  box-shadow: 0px 0px 1px $light-gray;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $smooth-gray;
+}
+.astro-hero ul{
   list-style: none;
-  font-size: 15px;
-  padding: 5px;
 }
-.stat-content i{
-  padding-right: 5px;
-  color: $blue;
-  font-size: 15px;
+// *************SIZE********************//
+.size-hero{
+  box-shadow: 0px 0px 1px $light-gray;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $smooth-gray;
 }
+.size-hero ul{
+  list-style: none;
+}
+// *************GENDER FONTAWESOME********************//
 .gender-font-man {
   color: $blue;
-  font-size: 60px;
+  font-size: 50px;
   margin-bottom: 20px;
 }
+
 .gender-font-girl {
   color: $red;
-  font-size: 60px;
+  font-size: 50px;
   margin-bottom: 20px;
 }
