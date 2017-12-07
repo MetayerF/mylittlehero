@@ -6,14 +6,20 @@ class AdventuresController < ApplicationController
     @adventures = policy_scope(@hero.adventures)
   end
 
+  def show
+  end
+
   def new
     @adventure = @hero.adventures.new
     authorize @adventure
+    @adventure.photos.build
   end
 
   def create
     @adventure = @hero.adventures.new(adventure_params)
+    @adventure.user = current_user
     authorize @adventure
+
     if @adventure.save
       redirect_to hero_adventures_path
     else
@@ -22,21 +28,25 @@ class AdventuresController < ApplicationController
   end
 
   def edit
-    # TODO
   end
 
   def update
-    # TODO
+    @adventure.update
+    if @adventure.save
+      redirect_to hero_adventures_path
+    else
+      render :new
+    end
   end
 
   def destroy
-    # TODO
+    @adventure.destroy
   end
 
   private
 
   def set_hero
-    @hero = Hero.find(params[:hero_id])
+    @hero = Hero.eager_load(adventures: :photos).find(params[:hero_id])
   end
 
   def set_adventure
@@ -45,6 +55,6 @@ class AdventuresController < ApplicationController
   end
 
   def adventure_params
-    params.require(:adventure).permit(:title, :description, :location, :date)
+    params.require(:adventure).permit(:title, :description, :location, :date, photos_attributes: [:picture, :picture_cache])
   end
 end
