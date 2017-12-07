@@ -1,0 +1,20 @@
+.relatives-informations p {
+  color: $blue;
+  font-size: 20px;
+}
+
+.relatives-informations {
+  background-color: $green;
+  border-radius: 5%;
+  padding: 50px;
+  border-color: $blue;
+}
+
+.relatives-avatar-show img{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid $blue;
+  margin-bottom: 30px;
+  box-shadow: 5px 0px 15px rgba(34, 79, 109, 0.9);
+}
