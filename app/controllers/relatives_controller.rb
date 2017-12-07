@@ -1,7 +1,7 @@
 class RelativesController < ApplicationController
-
+  before_action :get_hero, only: [:index, :new]
   def index
-    @hero = Hero.find(params[:hero_id])
+
     @relatives = policy_scope(@hero.relatives)
   end
 
@@ -9,13 +9,16 @@ class RelativesController < ApplicationController
     @relative = Relative.find(params[:id])
     authorize @relative
   end
-#   def create
-#     @relative = Relative.new(relative_params)
-#   end
 
-# private
-#   def relative_params
-#     params.require(:relative).permit(:email)
-#   end
+  def new
+    @relative = Relative.new(hero: @hero)
+    authorize @relative
+  end
+
+  private
+
+  def get_hero
+    @hero = Hero.find(params[:hero_id])
+  end
 end
 
