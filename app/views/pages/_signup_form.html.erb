@@ -17,7 +17,7 @@
 
         <div class="field-wrap">
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Mot de passe" %>
-          <%= f.input :password_confirmation, required: true, placeholder: <strong>"Confirmation" %>
+          <%= f.input :password_confirmation, required: true, placeholder: "Confirmation" %>
         </div>
         <button type="submit" class="button button-block"/>C'est parti !</button>
         <% end %>
