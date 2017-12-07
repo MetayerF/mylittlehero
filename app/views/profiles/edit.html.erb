@@ -1,0 +1,23 @@
+<% content_for :title, 'Edite ton profile | MyLittleHero' %>
+
+<div class="container">
+  <div class="edit-profile-form-container">
+      <h1 class="text-center">Edite ton profile</h1>
+    <%= simple_form_for @user, url: profile_path do |f| %>
+          <%= f.input :firstname, placeholder: "Prénom" %>
+          <%= f.input :lastname, placeholder: "Nom" %>
+          <%= f.input :nickname, placeholder: "Surnom" %>
+          <%= f.input :date_of_birth, placeholder: "Date de naissance" %>
+          <%= f.input :place_of_birth, placeholder: "Lieu de naissance" %>
+          <%= f.input :gender, placeholder: "sexe" %>
+          <%= f.input :car, placeholder: "Ma voiture actuelle" %>
+          <%= f.input :favorite_song, placeholder: "Ma musique préférée" %>
+          <%= f.input :favorite_movie, placeholder: "Mon film préféré" %>
+          <%= f.input :job, placeholder: "Mon boulot actuel" %>
+          <%= f.input :photo, label_html: { class: "btn btn-default" } %>
+        <div class="col-xs-6 col-sm-4 col-md-4 text-center">
+          <%= f.submit class: 'btn btn-success btn-form' %>
+        </div>
+    <% end %>
+  </div>
+</div>

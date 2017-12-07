@@ -1,0 +1,32 @@
+<div class="col-xs-12 col-sm-4 col-md-4">
+  <div class="signup-form">
+    <ul class="tab-group">
+      <li class="tab active"><a href="#signup"><strong>Je n'ai pas de compte</strong></a></li>
+      <li class="tab"><a href="#login"><strong>J'ai déja un compte</strong></a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="signup">
+        <h1>Inscrivez-vous gratuitement</h1>
+        <%= simple_form_for(@user, url: registration_path(@user)) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="field-wrap">
+          <%= f.input :email, label: false, required: true, placeholder: "Email", wrapper: false %>
+        </div>
+
+        <div class="field-wrap">
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Mot de passe" %>
+          <%= f.input :password_confirmation, required: true, placeholder: "Confirmation" %>
+        </div>
+        <button type="submit" class="button button-block"/>C'est parti !</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
