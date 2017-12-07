@@ -91,7 +91,7 @@ fanny = Hero.create!(
   firstname: 'Fanny',
   lastname: 'Dupont',
   nickname: 'Mon Berlingot',
-  gender: 'Féminin',
+  gender: 'petite fille',
   weight: '3,54 kg',
   size: '49 cm',
   astro_sign: 'Capricorne',
@@ -190,6 +190,7 @@ puts "Création de relatives..."
   role: 'viewer',
   invitation_status: 'pending',
     )
+
 
   kevin_fanny = Relative.create!(
   user: kevin,
