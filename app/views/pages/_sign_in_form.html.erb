@@ -1,0 +1,22 @@
+<div id="login">
+  <h1>Content de vous revoir!</h1>
+  <form action="/" method="post">
+
+    <div class="field-wrap">
+      <label>
+        Email<span class="req">*</span>
+      </label>
+      <%= f.input :email, required: true %>
+    </div>
+
+    <div class="field-wrap">
+      <label>
+        Mot de passe<span class="req">*</span>
+      </label>
+      <%= f.input :password_confirmation, required: true %>
+    </div>
+
+      <p class="forgot"><a href="#">Mot de passe oublié ?</a></p>
+    <button class="button button-block"/>M'identifier</button>
+  </form>
+</div>
