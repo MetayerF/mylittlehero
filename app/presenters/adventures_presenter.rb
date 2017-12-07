@@ -11,7 +11,7 @@ class AdventuresPresenter
 
   def adventures_groups
     only_12_adventures_for_now = adventures[0..11].compact
-    only_12_adventures_for_now.each_slice(4).to_a
+    only_12_adventures_for_now.each_slice(4)
   end
 
   def build_grid_rules
