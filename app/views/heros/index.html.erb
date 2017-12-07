@@ -19,13 +19,14 @@
         <div class="hero-age">
           <p><%= pluralize age_count_for(hero), "month" %></p>
         </div>
-        <%= link_to hero_path(hero), class: 'hero-card-link' do %>
+        <%= link_to hero_adventures_path(hero), class: 'hero-card-link' do %>
+
         <% end %>
       </div>
       <div class="card-footer">
         <div class="controls">
-          <a href="#" class="btn-success">Profil</a>
-          <a href="#" class="btn-primary">Aventure</a>
+          <%= link_to 'Profil', hero_path(hero), class:'btn-success' %>
+          <%= link_to 'Aventures', hero_adventures_path(hero), class:'btn-primary' %>
         </div>
       </div>
     </div>

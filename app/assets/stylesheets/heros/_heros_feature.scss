@@ -1,0 +1,191 @@
+// *************HEAD HERO********************//
+.head-hero {
+  display: flex;
+  justify-content: space-around;
+}
+.head-hero h3{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: $light-gray;
+  font-weight: lighter;
+  padding-bottom: 10px;
+}
+// *************BODY HERO********************//
+.body-hero-description{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+// *************COUNTER HERO********************//
+.counter-adventure-relative-photo {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.figure-plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.padding-plus{
+  padding-left: 15px;
+  color: $blue;
+}
+.padding-plus:hover{
+  padding-left: 15px;
+  color: $green;
+}
+
+// *************COUNTER ADVENTURE ********************//
+.counter-adventure {
+  height: 150px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background-color: $red;
+  border-radius: 5px;
+  border-bottom: 10px solid $blue;
+}
+.counter-adventure h2 {
+  font-size: 50px;
+  border-radius: 50%;
+}
+.counter-adventure p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: $blue;
+}
+// *************COUNTER RELATIVE ********************//
+.counter-relative {
+  height: 150px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background-color: $blue;
+  border-radius: 5px;
+  border-bottom: 10px solid $green;
+}
+.counter-relative h2 {
+  font-size: 50px;
+  color: $green;
+}
+.counter-relative p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: $green;
+}
+.padding-plus-deux{
+  padding-left: 15px;
+  color: $green;
+}
+.padding-plus-deux:hover{
+  padding-left: 15px;
+  color: $red;
+}
+// *************COUNTER PHOTO ********************//
+.counter-photo {
+  height: 150px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background-color: $green;
+  border-radius: 5px;
+  border-bottom: 10px solid $red;
+}
+.counter-photo h2 {
+  font-size: 50px;
+  color: $red;
+}
+.counter-photo p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: $red;
+}
+// *************BUTTON********************//
+
+.button-edit {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+}
+// *************HERO BOOK********************//
+.hero-book{
+padding-top: 40px;
+padding-bottom: 40px;
+}
+.hero-book-content{
+background-color: $smooth-gray;
+height: 300px;
+display: block;
+justify-content: space-around;
+align-items: center;
+padding: 20px;
+}
+.hero-book-content h2 {
+  padding-bottom: 30px;
+}
+// *************AGE********************//
+.age-hero{
+  box-shadow: 0px 0px 1px $light-gray;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $smooth-gray;
+}
+// *************TOY********************//
+.toy-hero{
+  box-shadow: 0px 0px 1px $light-gray;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $smooth-gray;
+}
+.toy-hero ul{
+  list-style: none;
+}
+// *************ASTRO********************//
+.astro-hero{
+  box-shadow: 0px 0px 1px $light-gray;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $smooth-gray;
+}
+.astro-hero ul{
+  list-style: none;
+}
+// *************SIZE********************//
+.size-hero{
+  box-shadow: 0px 0px 1px $light-gray;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $smooth-gray;
+}
+.size-hero ul{
+  list-style: none;
+}
+// *************GENDER FONTAWESOME********************//
+.gender-font-man {
+  color: $blue;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.gender-font-girl {
+  color: $red;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
