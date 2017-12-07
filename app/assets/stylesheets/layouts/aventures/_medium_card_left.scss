@@ -3,7 +3,6 @@
 .medium-card-left {
   margin-top: 10px;
   display: grid;
-  grid-gap: 10px;
   grid-template: repeat(2, 1fr) / repeat(4, 1fr);
   grid-auto-flow: column dense;
 }
