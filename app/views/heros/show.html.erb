@@ -18,7 +18,6 @@
             <% else  %>
               <h1><%= @hero.firstname.capitalize %> <%= @hero.lastname.capitalize %></h1>
             <% end %>
-            <h3>Mon Tableaux de bord</h3>
         </div>
 
       </div>
@@ -26,7 +25,7 @@
   </div>
 <!-- HEAD HERO END -->
 <!-- COUNTER -->
-  <div class="counter-adventure-relative-photo text-center">
+<!--   <div class="counter-adventure-relative-photo text-center">
     <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4">
@@ -59,20 +58,67 @@
       </div>
     </div>
     </div>
-  </div>
+  </div> -->
 
 <!-- COUNTER END -->
 <!-- BODY HERO -->
-<div class="hero-book">
-  <div class="container">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-      <div class="hero-book-content text-center">
-        <h2> Carnet de bord de <%= @hero.firstname.capitalize %></h2>
-        <p> Je m'appelle <%= @hero.firstname.capitalize %> <%= @hero.lastname.capitalize %>, mais ma famille me surnomme <%= @hero.nickname.capitalize %>. Je suis une jolie <%= @hero.gender %> né(e) dans la ville de <%= @hero.place_of_birth.capitalize %> le <%= @hero.date_of_birth.strftime("%d/%m/%Y") %>. Mon signe astrologique est donc <%= @hero.astro_sign %>. <br>
-        Je suis un joli bébé aux yeux <%= @hero.eyes_color %> avec les cheveux <%= @hero.hair_color %>.
-        Je grandis très vite... Déjà <%= @hero.size %> cm  pour <%= @hero.weight.to_f %> kg à seulement <%=age_count_for(@hero) %> mois.
-        Je découvre la vie tout doucement et pour occuper mes journées, je joue avec <%= @hero.favorite_toy %>.
-        </p>
+<!-- TABS -->
+<div class="container">
+  <div class="hero-tabs">
+    <a class="hero-tab" href="#">
+      <h2><%= @hero.adventures.count %></h2>
+      <p>Aventures</p>
+    </a>
+    <a class="hero-tab" href="#">
+      <h2><%= @hero.photos.count %></h2>
+      <p>Photos</p>
+    </a>
+    <a class="hero-tab" href="#">
+      <h2><%= @hero.relatives.count %></h2>
+      <p>Membres</p>
+    </a>
+  </div>
+</div>
+<!-- BUTTON-->
+<div class="row">
+  <div class="button-show">
+    <div class="text-center">
+        <%= link_to hero_path do %>
+          <type="button" class="text-center button-edit btn btn-success"> <i class="fa fa-plus" aria-hidden="true"></i>      Nouvelle aventure
+        <% end %>
+    </div>
+    <div class="text-center">
+        <%= link_to hero_path do %>
+          <type="button" class="text-center button-edit btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i>      Nouveau membre
+        <% end %>
+    </div>
+  </div>
+</div>
+<!-- BUTTON END-->
+<!-- TABS END -->
+<div class="container">
+  <div class="profile text-center">
+    <div class="main">
+      <p> Je m'appelle <strong><%= @hero.firstname.capitalize %> <%= @hero.lastname.capitalize %></strong>, mais ma famille me surnomme <strong><%= @hero.nickname.capitalize %></strong>. Je suis une jolie <strong><%= @hero.gender %> </strong> aux yeux <%= @hero.eyes_color %> avec les cheveux <%= @hero.hair_color %>. </p>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+        <p> Je suis né(e) dans la ville de <strong><%= @hero.place_of_birth.capitalize %></strong> le <strong><%= @hero.date_of_birth.strftime("%d/%m/%Y") %></strong>. Je suis <%= @hero.astro_sign %>.</p>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+       <p>Je grandis très vite... Déjà <strong><%= @hero.size %> cm</strong>  pour <strong><%= @hero.weight.to_f %> kg</strong> à seulement <strong><%=age_count_for(@hero) %> mois.</strong></p>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+        <p> Je suis toujours accompagné(e) de mon fidèle acolyte, <strong><%= @hero.favorite_toy %></strong>.</p>
+      </div>
+    </div>
+    <div class="description" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "picture_adventure.jpg" %>');">
+      <div class="description-content">
+        <h1>Ma dernière aventure:</h1>
       </div>
     </div>
   </div>
