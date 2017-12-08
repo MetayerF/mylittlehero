@@ -55,9 +55,9 @@ amelie = User.create!(
 baptiste = User.create!(
   password: "123456",
   firstname: 'Baptiste',
-  lastname: 'Ordureau',
+  lastname: 'Dupont',
   nickname: 'Bapt',
-  email: 'baptiste_ordureau@gmail.com',
+  email: 'baptiste.dupont@gmail.com',
   date_of_birth: '1978-01-20',
   place_of_birth: 'Parce sur Sarthe',
   gender: 'Masculin',

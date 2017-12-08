@@ -9,13 +9,13 @@
         </div>
         <%= simple_form_for [@hero, @adventure] do |f| %>
           <div class="row">
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12 col-md-5">
               <%= f.input :title %>
               <%= f.input :description %>
               <%= f.input :location %>
 
             </div>
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12 col-md-5 col-md-offset-2 ">
               <%= f.input :date %>
               <%= f.simple_fields_for :photos do |p| %>
                 <%= p.input :picture, as: :file %>
