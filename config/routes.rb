@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'styleguide', to: 'pages#styleguide'
 
-  devise_for :users, controllers: { registrations: "registrations" }
+  devise_for :users
   resource :profile, only: [:show, :edit, :update]
 
   resources :heros do
