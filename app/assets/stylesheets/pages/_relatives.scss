@@ -1,77 +1,77 @@
-.header-relatives {
-  font-size: 25px;
-  letter-spacing: 2px;
-}
+// .header-relatives {
+//   font-size: 25px;
+//   letter-spacing: 2px;
+// }
 
-.relatives-banner-content {
-  padding: 50px;
-  background-color: $green;
-  box-shadow: 0px 0px 15px rgba(34, 79, 109, 0.7);
-  border-radius: 15%;
-  border: 5px solid $blue;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
+// .relatives-banner-content {
+//   padding: 50px;
+//   background-color: $green;
+//   box-shadow: 0px 0px 15px rgba(34, 79, 109, 0.7);
+//   border-radius: 15%;
+//   border: 5px solid $blue;
+//   margin-top: 50px;
+//   margin-bottom: 50px;
+// }
 
-.relatives-avatar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+// .relatives-avatar {
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-start;
 
-  p {
-    display: none;
-    z-index: 1;
-    position: absolute;
-    font-size: 25px;
-    // top: 35px;
-    // left: 20px;
-    color: $blue;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
-  }
-}
+//   p {
+//     display: none;
+//     z-index: 1;
+//     position: absolute;
+//     font-size: 25px;
+//     // top: 35px;
+//     // left: 20px;
+//     color: $blue;
+//     font-weight: bold;
+//     align-items: center;
+//     justify-content: center;
+//   }
+// }
 
-.relatives-avatar img{
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  border: 2px solid $blue;
-  margin-right: 10px;
-  box-shadow: 5px 0px 15px rgba(34, 79, 109, 0.9);
-}
+// .relatives-avatar img{
+//   height: 100px;
+//   width: 100px;
+//   border-radius: 50%;
+//   border: 2px solid $blue;
+//   margin-right: 10px;
+//   box-shadow: 5px 0px 15px rgba(34, 79, 109, 0.9);
+// }
 
-.relatives-hover:hover p{
-  display: block;
-}
+// .relatives-hover:hover p{
+//   display: block;
+// }
 
-.relatives-hover:hover img{
-  opacity: 0.65;
-}
+// .relatives-hover:hover img{
+//   opacity: 0.65;
+// }
 
-.relatives-hover {
- position: relative;
-}
+// .relatives-hover {
+//  position: relative;
+// }
 
-//BOUTON PLUS
+// //BOUTON PLUS
 
-.plus-button-relatives{
-  opacity: 0.8;
-}
+// .plus-button-relatives{
+//   opacity: 0.8;
+// }
 
-.plus-button-relatives i{
-  color: $blue;
-  opacity: 0.8;
-  font-size: 80px;
-  transition: all 0.3s ease;
-}
+// .plus-button-relatives i{
+//   color: $blue;
+//   opacity: 0.8;
+//   font-size: 80px;
+//   transition: all 0.3s ease;
+// }
 
-.plus-button-relatives i:hover{
-  color: $blue;
-  font-size: 100px;
-}
+// .plus-button-relatives i:hover{
+//   color: $blue;
+//   font-size: 100px;
+// }
 
-.plus-button-relatives a{
-  color: $light-gray;
-  text-decoration: none;
-}
+// .plus-button-relatives a{
+//   color: $light-gray;
+//   text-decoration: none;
+// }
