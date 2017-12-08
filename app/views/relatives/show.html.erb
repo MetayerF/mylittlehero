@@ -1,0 +1,31 @@
+<% content_for :title, 'Voici les information relative à ' + @relative.user.firstname + ' ! | MyLittleHero.com' %>
+
+<div class="container">
+  <div class="relative-infos text-center">
+    <br>
+    <h1>Bienvenue sur le profile de <%= @relative.user.nickname%></h1>
+    <br>
+    <div class="relatives-avatar-show text-center">
+      <%= image_tag @relative.user.photo %>
+      <div class="main-informations-relative">
+        <ul class="list-inline">
+          <li>
+          <h3><%= @relative.user.firstname%></h3>
+          </li>
+          <li>
+          <h3><%= @relative.user.lastname%></h3>
+          </li>
+        </ul>
+          <p><%= @relative.user.date_of_birth.strftime("%d/%m/%Y")%></p>
+        </div>
+    </div>
+    <div class="relatives-informations text-center">
+
+        <div class="second-informations-relative text-center">
+          <p><strong>Lieu de naissance :</strong> <%= @relative.user.place_of_birth%></p>
+          <p><strong>Ma musique préférée :</strong> <%= @relative.user.favorite_song%></p>
+          <p><strong>Mon film préférée  :</strong> <%= @relative.user.favorite_movie%></p>
+          <p><strong>Mon job actuel :</strong> <%= @relative.user.job%></p>
+        </div>
+  </div>
+</div>
