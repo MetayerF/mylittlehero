@@ -1,11 +1,7 @@
 <% content_for :title, 'Bienvenue sur My Little Hero - Partagez les aventures de votre héro 👶' %>
 
- <style>
-    .navbar-wagon { display: none; }
- </style>
-
 <div class="row">
-  <div class="col-xs-12 col-sm-4 col-md-8">
+  <div class="col-xs-12">
     <div class="homepage-banner" style="background-image: linear-gradient(-225deg, rgba(250, 92, 100,0.4) 0%, rgba(0,36,61,0.5) 50%), url('http://res.cloudinary.com/poloduf/image/upload/v1512481071/home_page_banner_bs3ete.jpg');">
       <div class="banner-content text-center">
         <h1>My Little Hero</h1>
@@ -14,20 +10,18 @@
         <p>Créez un carnet de bord digital pour votre nouveau petit héro !</p>
         <br>
         <br>
-        <a class="btn btn-danger" href="#features"> En savoir plus</a>
+          <div class="sign-buttons">
+            <%= link_to "M'identifier", new_user_session_path, class: "btn btn-lg btn-success" %>
+            <%= link_to "M'enregistrer", new_user_registration_path, class: "btn btn-lg btn-primary text-green"%>
+          </div>
+        <div class="see-more">
+<!--           <a class="btn btn-danger" href="#features"> En savoir plus</a> -->
+        </div>
       </div>
     </div>
   </div>
-
-<!-- SIGNUP FORM -->
-  <%= render "signup_form" %>
-<!-- END OF SIGNUP FORM -->
-
-<div class="wrapper">
-  <div class="container">
     <div id="features" class="features">
       <h1 class="text-center">Fonctionnalités</h1>
-      <div class="row">
         <div class="col-xs-12 col-sm-4">
           <div class="features-card text-center">
             <div class="homepage-card">
@@ -50,13 +44,17 @@
           <div class="features-card  text-center">
             <div class="homepage-card">
                <i class="fa fa-lock feature-green" aria-hidden="true"></i>
-           </div>
+            </div>
            <h2>Espace totalement privé et sécurisé</h2>
            <p>Seul les personnes ayant reçu une invitation pourront accéder au contenu de votre enfants. Plusieurs niveau de modération possible.</p>
          </div>
         </div>
-      </div>
-    <div class="col-xs-12 col-sm-4 col-md-4">
+    </div>
+
+
+
+
+    <!-- <div class="col-xs-12 col-sm-4 col-md-4">
       <div class="row">
         <div class="text-center newsletter-form">
         <div class="thumbnail center well well-small text-center">
@@ -74,56 +72,4 @@
         </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
-
-<%= content_for(:after_js) do %>
-  <script type="text/javascript">
-    $('.form').find('input, textarea').on('keyup blur focus', function (e) {
-
-  var $this = $(this),
-      label = $this.prev('label');
-
-    if (e.type === 'keyup') {
-      if ($this.val() === '') {
-          label.removeClass('active highlight');
-        } else {
-          label.addClass('active highlight');
-        }
-    } else if (e.type === 'blur') {
-      if( $this.val() === '' ) {
-        label.removeClass('active highlight');
-      } else {
-        label.removeClass('highlight');
-      }
-    } else if (e.type === 'focus') {
-
-      if( $this.val() === '' ) {
-        label.removeClass('highlight');
-      }
-      else if( $this.val() !== '' ) {
-        label.addClass('highlight');
-      }
-    }
-
-});
-
-$('.tab a').on('click', function (e) {
-
-  e.preventDefault();
-
-  $(this).parent().addClass('active');
-  $(this).parent().siblings().removeClass('active');
-
-  target = $(this).attr('href');
-
-  $('.tab-content > div').not(target).hide();
-
-  $(target).fadeIn(600);
-
-});
-  </script>
-<% end %>
+    </div> -->

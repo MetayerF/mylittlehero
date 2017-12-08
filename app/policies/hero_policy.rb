@@ -6,7 +6,7 @@ class HeroPolicy < ApplicationPolicy
   end
 
   def show?
-    relative? && (relative.admin? || relative.editor? || relative.viewer?)
+    record.user == user || relative? && (relative.admin? || relative.editor? || relative.viewer?)
   end
 
   # def index?
@@ -14,7 +14,8 @@ class HeroPolicy < ApplicationPolicy
   # end
 
   def create?
-    relative? && relative.admin?
+    # relative? && relative.admin? # Pourquoi ?
+    true
   end
 
   def update?
