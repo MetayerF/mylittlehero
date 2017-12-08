@@ -1,14 +1,14 @@
 .header-relatives {
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: 2px;
 }
 
 .relatives-banner-content {
   padding: 50px;
-  background-color: $green;
+  // background-color: $green;
   box-shadow: 0px 0px 15px rgba(34, 79, 109, 0.7);
   border-radius: 15%;
-  border: 5px solid $blue;
+  border: 5px solid $green;
   margin-top: 50px;
   margin-bottom: 50px;
 }
@@ -17,19 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
-  p {
-    display: none;
-    z-index: 1;
-    position: absolute;
-    font-size: 25px;
-    // top: 35px;
-    // left: 20px;
-    color: $blue;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
-  }
+  padding: 5px;
 }
 
 .relatives-avatar img{
@@ -39,10 +27,6 @@
   border: 2px solid $blue;
   margin-right: 10px;
   box-shadow: 5px 0px 15px rgba(34, 79, 109, 0.9);
-}
-
-.relatives-hover:hover p{
-  display: block;
 }
 
 .relatives-hover:hover img{
@@ -64,6 +48,7 @@
   opacity: 0.8;
   font-size: 80px;
   transition: all 0.3s ease;
+  margin-left: 10px;
 }
 
 .plus-button-relatives i:hover{
