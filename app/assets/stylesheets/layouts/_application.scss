@@ -4,6 +4,7 @@ body {
 
 .container {
   background-color: $white;
+  padding-bottom: 50px;
 }
 
 .wrapper {
@@ -19,7 +20,7 @@ body {
 }
 
 .fix-footer {
-  min-height: calc(100vh - 170px);
+  min-height: 100vh;
 }
 
 // SEARCH BAR

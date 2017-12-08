@@ -9,16 +9,15 @@
     <div class="relatives-banner-content">
       <h2>Mes parents</h2>
             <div class="relatives-avatar">
-              <% @relatives.where(family_link: "parent").each do |relative|%>
+              <% @relatives.where(family_link: 'parent').each do |relative|%>
                 <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
                   <%= image_tag relative.user.photo %>
-
                 <% end %>
               <% end %>
             </div>
       <h2>Mes frères et soeurs</h2>
             <div class="relatives-avatar">
-              <% @relatives.where(family_link: "soeur").each do |relative|%>
+              <% @relatives.where(family_link: "Soeur").each do |relative|%>
                 <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
                   <%= image_tag relative.user.photo %>
                 <% end %>
@@ -56,7 +55,6 @@
           <% @relatives.where(family_link: "cousine").each do |relative|%>
             <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
               <%= image_tag relative.user.photo %>
-
             <% end %>
           <% end %>
             <div class="plus-button-relatives">

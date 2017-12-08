@@ -167,7 +167,7 @@ puts "Création de relatives..."
   pauline_fanny = Relative.create!(
   user: pauline,
   hero: fanny,
-  family_link: 'Mère',
+  family_link: 'parent',
   mother_side: true,
   role: 'admin',
   invitation_status: 'accepted',
@@ -176,7 +176,7 @@ puts "Création de relatives..."
   baptiste_fanny = Relative.create!(
   user: baptiste,
   hero: fanny,
-  family_link: 'Père',
+  family_link: 'parent',
   mother_side: false,
   role: 'admin',
   invitation_status: 'accepted',
