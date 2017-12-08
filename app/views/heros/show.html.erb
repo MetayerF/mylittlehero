@@ -83,12 +83,12 @@
 <div class="row">
   <div class="button-show">
     <div class="text-center">
-        <%= link_to hero_path do %>
+        <%= link_to new_hero_adventure_path(@hero) do %>
           <type="button" class="text-center button-edit btn btn-success"> <i class="fa fa-plus" aria-hidden="true"></i>      Nouvelle aventure
         <% end %>
     </div>
     <div class="text-center">
-        <%= link_to hero_path do %>
+        <%= link_to new_hero_relative_path(@hero) do %>
           <type="button" class="text-center button-edit btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i>      Nouveau membre
         <% end %>
     </div>
