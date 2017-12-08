@@ -17,7 +17,6 @@
 .banner-content h1 {
   color: $green;
   font-size: 80px;
-  font-weight: bolder;
   letter-spacing: 5px;
   margin-bottom: 150px;
 }
@@ -43,13 +42,22 @@
 
 .sign-buttons {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   margin-top: 80px;
   a {
-    font-family: $headers-font;
+    font-family: $body-font;
   }
   .text-green {
     color: $green;
+    margin: 15px;
+    width: 150px;
+  }
+
+  .text-white {
+    margin: 15px;
+    width: 150px;
   }
 
   .btn-primary {
@@ -76,6 +84,10 @@
 
 .features {
   margin-top: 60px;
+}
+
+.features h1 {
+  margin-top: 20px;
 }
 
 .banner .btn-danger:hover {
