@@ -22,13 +22,17 @@
                   <%= image_tag relative.user.photo %>
                 <% end %>
               <% end %>
+              <div class="plus-button-relatives">
+                <%= link_to new_hero_relative_path do %>
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                <% end %>
+              </div>
             </div>
       <h2>Mes grand-parents</h2>
           <div class="relatives-avatar">
             <% @relatives.where(family_link: "grand-parents").each do |relative|%>
               <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
                 <%= image_tag relative.user.photo %>
-                <p>%= relative.user.nickname %></p>
               <% end %>
             <% end %>
             <div class="plus-button-relatives">
