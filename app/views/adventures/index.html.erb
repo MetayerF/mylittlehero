@@ -28,17 +28,17 @@
             <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="<%= image_class %>">
               </div>
               <div class="<%= hidden_class %> adventure-card-description text-center">
-                <h3><%= adventure.title %></h3>
+               <!--  <h3><%= adventure.title %></h3>
                 <p class="overflow adventure-description"><%= adventure.description %></p>
-                <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
+                <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p> -->
             </div>
           <% else %>
             <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="<%= image_class %>">
             </div>
             <div class="<%= hidden_class %> adventure-card-description text-center">
-              <h3><%= adventure.title %></h3>
+              <!-- <h3><%= adventure.title %></h3>
               <p><%= adventure.description %></p>
-              <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
+              <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p> -->
             </div>
           <% end %>
         </div>
