@@ -1,9 +1,14 @@
 /* Main navbar */
+.colorup {
+  background-color:#c48b9f;
+  padding: 5px 10px;
+}
+
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: $red;
+  background: #f8bbd0;
   transition: all 0.3s ease;
-  height: 70px;
+  height: 55px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -37,7 +42,7 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: $white;
+  color: $black;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
@@ -60,7 +65,7 @@
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
-  background: transparent !important;
+  background-color: $blue2 !important;
   color: black !important;
 }
 .navbar-wagon-dropdown-menu:before {
