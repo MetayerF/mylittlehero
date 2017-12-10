@@ -1,18 +1,30 @@
 /* Main navbar */
 .colorup {
-  background-color:#c48b9f;
+  background-color:$darkpink;
   padding: 5px 10px;
 }
 
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: #f8bbd0;
+  background: $pink;
   transition: all 0.3s ease;
   height: 55px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+
+.navbar-home {
+  position: absolute;
+  width: 100%;
+  z-index: 1029;
+  box-shadow: none;
+  .navbar-wagon-link {
+    color: $black;
+    font-weight: bold;
+  }
 }
 
 /* Logo */
@@ -46,7 +58,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: $blue;
+  color: $darkblue;
   text-decoration: none;
 }
 
@@ -65,7 +77,7 @@
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
-  background-color: $blue2 !important;
+  background-color: $blue !important;
   color: black !important;
 }
 .navbar-wagon-dropdown-menu:before {

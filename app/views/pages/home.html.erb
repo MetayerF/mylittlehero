@@ -1,19 +1,57 @@
 <% content_for :title, 'Bienvenue sur My Little Hero - Partagez les aventures de votre héro 👶' %>
+<% content_for :navbar_class, 'navbar-home' %>
 
 <div class="row">
   <div class="col-xs-12">
-    <div class="homepage-banner" style='background-image: linear-gradient(-225deg, rgba(229, 255, 255, 0.8) 55%, rgba(255, 238, 255, 1) 45%), url("<%= image_path('superhero-baby.jpg')%>");'>
+    <div class="homepage-banner" style='background-image: linear-gradient(-225deg, rgba(129, 185, 191, 0.1) 95%, rgba(255, 238, 255, 1) 5%), url("<%= image_path('mlh-banner.jpg')%>");'>
       <div class="banner-content text-center">
         <h1>My Little Hero</h1>
         <p>Le livre de bébé qui réunit toute la famille</p>
         <div class="text-center">
-          <%= link_to "M'identifier", new_user_session_path, class: "btn banner-button" %>
-          <%= link_to "M'enregistrer", new_user_registration_path, class: "btn banner-button margin-left"%>
+          <%= link_to "Créer mon livre de bébé", new_user_registration_path, class: "btn banner-button" %>
         </div>
       </div>
     </div>
   </div>
 <div class="wrapper">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="step-icon">
+          <div class='step-block'>
+            <%= image_tag('book-icon.png', class: 'home-icon ')  %>
+          </div>
+        </div>
+        <div class="step-description text-center">
+          <h2>Créer</h2>
+          <p>je crée un livre pour mon héros</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class='step-block'>
+          <%= image_tag('adventure-icon.png', class: 'home-icon ')  %>
+        </div>
+        <div class="step-description text-center">
+          <h2>Personnaliser</h2>
+          <p>j'ajoute ses aventures</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class='step-block'>
+          <%= image_tag('share-icon.png', class: 'home-icon ')  %>
+        </div>
+        <div class="step-description text-center">
+          <h2>Partager</h2>
+          <p>je partage ses exploits avec ma famille</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrapper blue-background">
   <div class="container">
 
     <div class="features">
@@ -45,6 +83,7 @@
 
       </div>
     </div>
+
 
   </div>
 </div>

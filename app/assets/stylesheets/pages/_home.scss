@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .homepage-banner {
-  height:70vh;
+  height:100vh;
   display:flex;
   justify-content: space-around;
   align-items: center;
@@ -8,6 +8,7 @@
   padding: 10px;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 150px;
 }
 
 
@@ -87,4 +88,19 @@
   border-radius: 50%;
 }
 
+.home-icon {
+  height: 160px;
+}
+
+.step-description {
+  margin-bottom: 100px;
+
+}
+
+.step-block {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
