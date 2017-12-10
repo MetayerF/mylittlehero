@@ -1,5 +1,5 @@
 .footer {
-  background: #F4F4F4;
+  background: rgba(225, 226, 225, 1);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,8 +21,8 @@
 }
 .footer-links a:hover {
   opacity: 1;
-  color: $red;
+  color: $darkpink;
 }
 .footer .fa-heart {
-  color: $red;
+  color: $darkpink;
 }

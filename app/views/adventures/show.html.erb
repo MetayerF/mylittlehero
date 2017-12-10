@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="current-adventure-content">
+        <div class="current-adventure-photo">
+          <%= cl_image_tag(@adventure.photos.first.picture) %>
+        </div>
+        <div class="current-adventure-description">
+          <h1><%= @adventure.title %></h1>
+          <p><%= @adventure.description %></p>
+          <p><%= @adventure.location %> - <%= @adventure.date %></p>
+        </div>
+        <div class="current-adventure-footer">
+          <%= link_to edit_hero_adventure_path do %>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to hero_adventure_path, method: :delete do %>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

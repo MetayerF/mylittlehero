@@ -1,62 +1,90 @@
 <% content_for :title, 'Bienvenue sur My Little Hero - Partagez les aventures de votre héro 👶' %>
+<% content_for :navbar_class, 'navbar-home' %>
 
 <div class="row">
   <div class="col-xs-12">
-    <div class="homepage-banner" style="background-image: linear-gradient(-225deg, rgba(250, 92, 100,0.4) 0%, rgba(0,36,61,0.5) 50%), url('http://res.cloudinary.com/poloduf/image/upload/v1512481071/home_page_banner_bs3ete.jpg');">
+    <div class="homepage-banner" style='background-image: linear-gradient(-225deg, rgba(129, 185, 191, 0.1) 95%, rgba(255, 238, 255, 1) 5%), url("<%= image_path('mlh-banner.jpg')%>");'>
       <div class="banner-content text-center">
         <h1>My Little Hero</h1>
-        <p><strong>Partagez les aventures de votre héro</strong>
-        <br>
-        <p>Créez un carnet de bord digital pour votre nouveau petit héro !</p>
-        <br>
-        <br>
-          <div class="sign-buttons text-center">
-           <%= link_to "M'identifier", new_user_session_path, class: "btn btn-success text-white" %>
-          <%= link_to "M'enregistrer", new_user_registration_path, class: "btn btn-primary text-green"%>
-          </div>
-        <div class="see-more">
-<!--           <a class="btn btn-danger" href="#features"> En savoir plus</a> -->
+        <p>Le livre de bébé qui réunit toute la famille</p>
+        <div class="text-center">
+          <%= link_to "Créer mon livre de bébé", new_user_registration_path, class: "btn banner-button" %>
         </div>
       </div>
     </div>
   </div>
 <div class="wrapper">
   <div class="container">
-    <div class="features">
-      <div class="row">
-        <div class="col-xs-12">
-          <h1 class="text-center">Fonctionnalités</h1>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="step-icon">
+          <div class='step-block'>
+            <%= image_tag('book-icon.png', class: 'home-icon ')  %>
+          </div>
+        </div>
+        <div class="step-description text-center">
+          <h2>Créer</h2>
+          <p>je crée un livre pour mon héros</p>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="features-card text-center">
-          <div class="homepage-card">
-            <i class="fa fa-heart feature-red" aria-hidden="true"></i>
-          </div>
-          <h2>Créer un espace dédié à son enfant</h2>
-          <p>Partagez rapidement et simplement les aventures de votre héro avec vos proches</p>
+      <div class="col-xs-12 col-md-4">
+        <div class='step-block'>
+          <%= image_tag('adventure-icon.png', class: 'home-icon ')  %>
+        </div>
+        <div class="step-description text-center">
+          <h2>Personnaliser</h2>
+          <p>j'ajoute ses aventures</p>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="features-card text-center">
-          <div class="homepage-card">
-           <i class="fa fa-check-square-o feature-blue" aria-hidden="true"></i>
-         </div>
-         <h2>Invitez facilement vos proche</h2>
-         <p>Une dent de perdue, un séjour à la plage, un week-end avec Papie et Mamie ? Tenez au courant votre entourage à l'aide de photos et/ou anecdotes autour de votre petit héro.</p>
-       </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="features-card  text-center">
-          <div class="homepage-card">
-             <i class="fa fa-lock feature-green" aria-hidden="true"></i>
-          </div>
-          <h2>Espace totalement privé et sécurisé</h2>
-          <p>Seul les personnes ayant reçu une invitation pourront accéder au contenu de votre enfants. Plusieurs niveau de modération possible.</p>
-          </div>
+      <div class="col-xs-12 col-md-4">
+        <div class='step-block'>
+          <%= image_tag('share-icon.png', class: 'home-icon ')  %>
+        </div>
+        <div class="step-description text-center">
+          <h2>Partager</h2>
+          <p>je partage ses exploits avec ma famille</p>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+
+    <div class="wrapper blue-background">
+  <div class="container">
+
+    <div class="features">
+      <div class="row">
+
+        <div class="col-xs-12 col-md-4">
+          <div class="features-card text-center">
+            <i class="fa fa-heart feature-red" aria-hidden="true"></i>
+            <h2>Bonheur</h2>
+            <p>Un véritable livre d'aventures dédié à la vie de bébé.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <div class="features-card text-center">
+            <i class="fa fa-check-square-o feature-blue" aria-hidden="true"></i>
+            <h2>Partage</h2>
+            <p>Vous pourrez facilement inviter vos proches à raconter les moments importants de la vie de vos enfants.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <div class="features-card  text-center">
+            <i class="fa fa-lock feature-green" aria-hidden="true"></i>
+            <h2>Serénité</h2>
+            <p>Partager uniquement à vos proches la vie de vos enfants, pour leur plus grand plaisir.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
   </div>
 </div>
 

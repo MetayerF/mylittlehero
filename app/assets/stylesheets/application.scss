@@ -17,3 +17,12 @@
 @import "heros/index";
 @import "relatives/index";
 
+// General rules of css: Simple to re-use
+.margin-left {
+  margin-left: 80px;
+}
+
+
+.blue-background {
+  background-color: $blue;
+}

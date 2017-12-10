@@ -1,143 +1,106 @@
 // Specific CSS for your home-page
 .homepage-banner {
-  color: #fff;
   height:100vh;
   display:flex;
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  padding: 200px 0px;
-  background-position: center;
+  padding: 10px;
+  background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  min-height: 100vh;
-  border-bottom: 10px solid $green;
+  padding-top: 150px;
 }
 
+
+
 .banner-content h1 {
-  color: $green;
+  color: $black;
   font-size: 80px;
+  text-shadow: 1px 2px 3px $dark-gray;
   letter-spacing: 5px;
-  margin-bottom: 150px;
+  font-family: 'Schoolbell', cursive;
 }
 
 .banner-content {
-  font-size: 22px;
-  font-weight: bold;
-  color: rgba(255,255,255, 0.85);
-  margin: 0 auto;
-  margin-top: 100px;
+  color: $black;
 }
 
 .banner-content p {
   font-size: 25px;
-  font-weight: lighter;
   letter-spacing: 2px;
   margin-top: 30px;
 }
 
-.see-more {
-  padding-top: 200px;
-}
-
-.sign-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  margin-top: 80px;
-  a {
-    font-family: $body-font;
-  }
-  .text-green {
-    color: $green;
-    margin: 15px;
-    width: 150px;
-  }
-
-  .text-white {
-    margin: 15px;
-    width: 150px;
-  }
-
-  .btn-primary {
-    border-radius: 15px;
-  }
-
-  .btn-success {
-    border-radius: 15px;
-  }
-}
 
 //FEATURES CARDS
-.homepage-card {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: space-around;
-  margin-top: 50px;
-}
+
 
 .features-card {
-  margin: 0px 50px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  height: 400px;
+  width: 300px;
+  background-color: $lightblue;
+  padding: 30px;
+  // box-shadow: 0px 2px 3px $light-gray;
+  margin-left: 40px;
+
 }
 
-.features {
-  margin-top: 60px;
+.features-card h2 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  color: $black;
 }
 
-.features h1 {
-  margin-top: 20px;
+.features-card p {
+  text-align: justify;
+  font-size: 15px;
 }
 
-.banner .btn-danger:hover {
-  opacity: 0.7;
-}
-
-.features .fa-lock {
+.features .fa {
   font-size: 60px;
-  color: white;
+  color: $black;
 }
 
-.features .fa-check-square-o {
-  font-size: 60px;
-  color: white;
-}
-
-.features .fa-heart {
-  font-size: 60px;
-  color: white;
-}
 
 .feature-red {
-  background-color: $red;
+  background-color: $darkblue;
   padding: 50px;
   width: 160px;
   height: 160px;
-  box-shadow: 2px 2px 2px lightgrey;
   border-radius: 50%;
-
 }
 
 .feature-blue {
-  background-color: $blue;
+  background-color: $darkblue;
   padding: 50px;
   width: 160px;
   height: 160px;
-  box-shadow: 2px 2px 2px lightgrey;
   border-radius: 50%;
 }
 
 .feature-green {
-  background-color: $green;
+  background-color: $darkblue;
   padding: 50px;
   width: 160px;
   height: 160px;
-  box-shadow: 2px 2px 2px lightgrey;
   border-radius: 50%;
 }
 
-.features .row {
-  margin: 0 auto;
+.home-icon {
+  height: 160px;
+}
+
+.step-description {
+  margin-bottom: 100px;
+
+}
+
+.step-block {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 

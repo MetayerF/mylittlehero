@@ -1,9 +1,8 @@
 body {
-  background-image: asset-url('bg.jpg');
+  background-color: $smooth-gray;
 }
 
 .container {
-  background-color: $white;
   padding-bottom: 50px;
 }
 
