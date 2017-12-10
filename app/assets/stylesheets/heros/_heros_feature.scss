@@ -35,7 +35,7 @@
 }
 .padding-plus:hover{
   padding-left: 15px;
-  color: $green;
+  color: $yellow;
 }
 
 // *************COUNTER ADVENTURE ********************//
@@ -44,7 +44,7 @@
   display: block;
   justify-content: center;
   align-items: center;
-  background-color: $red;
+  background-color: $blue;
   border-radius: 5px;
   border-bottom: 10px solid $blue;
 }
@@ -65,24 +65,24 @@
   align-items: center;
   background-color: $blue;
   border-radius: 5px;
-  border-bottom: 10px solid $green;
+  border-bottom: 10px solid $yellow;
 }
 .counter-relative h2 {
   font-size: 50px;
-  color: $green;
+  color: $yellow;
 }
 .counter-relative p {
   font-size: 20px;
   font-weight: lighter;
-  color: $green;
+  color: $yellow;
 }
 .padding-plus-deux{
   padding-left: 15px;
-  color: $green;
+  color: $yellow;
 }
 .padding-plus-deux:hover{
   padding-left: 15px;
-  color: $red;
+  color: $darkyellow;
 }
 // *************COUNTER PHOTO ********************//
 .counter-photo {
@@ -90,18 +90,18 @@
   display: block;
   justify-content: center;
   align-items: center;
-  background-color: $green;
+  background-color: $darkblue;
   border-radius: 5px;
-  border-bottom: 10px solid $red;
+  border-bottom: 10px solid $yellow;
 }
 .counter-photo h2 {
   font-size: 50px;
-  color: $red;
+  color: $yellow;
 }
 .counter-photo p {
   font-size: 20px;
   font-weight: lighter;
-  color: $red;
+  color: $yellow;
 }
 // *************BUTTON********************//
 
@@ -192,7 +192,7 @@ padding: 20px;
 }
 
 .gender-font-girl {
-  color: $red;
+  color: $pink;
   font-size: 50px;
   margin-bottom: 20px;
 }
@@ -216,7 +216,7 @@ padding: 20px;
 }
 .hero-tabs h2 {
   font-size: 50px;
-  color: $red;
+  color: $pink;
   font-weight: bold;
   margin-top: 0;
   text-decoration: none;

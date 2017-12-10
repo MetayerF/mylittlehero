@@ -7,13 +7,13 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <% if @hero && @hero.id %>
-      <%= link_to 'Ma famille', hero_relatives_path(@hero), class: 'navbar-wagon-item navbar-wagon-link' %>
-      <%= link_to 'Mes aventures', hero_adventures_path(@hero), class: 'navbar-wagon-item navbar-wagon-link' %>
-      <%= link_to 'Mes autres héros', heros_path, class: 'navbar-wagon-item navbar-wagon-link' %>
-    <% else %>
-      <%= link_to 'Se connecter',  new_user_session_path, class: 'navbar-wagon-item navbar-wagon-link' %>
-    <% end %>
+    <% if user_signed_in? %>
+      <% if @hero && @hero.id %>
+          <%= link_to 'Ma famille', hero_relatives_path(@hero), class: 'navbar-wagon-item navbar-wagon-link' %>
+          <%= link_to 'Mes aventures', hero_adventures_path(@hero), class: 'navbar-wagon-item navbar-wagon-link' %>
+          <%= link_to 'Mes autres héros', heros_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+        <% end %>
+      <% end %>
 
 
     <!-- Profile picture with dropdown list -->
