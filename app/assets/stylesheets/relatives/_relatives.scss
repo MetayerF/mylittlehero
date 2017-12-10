@@ -3,20 +3,23 @@
   letter-spacing: 2px;
 }
 
+.relatives-banner {
+  background-image: url("http://res.cloudinary.com/poloduf/image/upload/v1512925941/background_relatives_hcda5u.png");
+  background-repeat: no-repeat;
+  background-size: 1200px;
+  margin-bottom: 50px;
+}
+
 .relatives-banner-content {
-  padding: 50px;
-  // background-color: $green;
-  box-shadow: 0px 0px 15px rgba(34, 79, 109, 0.7);
-  border-radius: 15%;
-  border: 5px solid $blue;
+  padding: 100px;
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
 .relatives-avatar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
   padding: 5px;
 }
 
@@ -29,12 +32,34 @@
   box-shadow: 5px 0px 15px rgba(34, 79, 109, 0.9);
 }
 
-.relatives-hover:hover img{
-  opacity: 0.65;
+#parents {
+  position: relative;
+  bottom: 40px;
 }
 
-.relatives-hover {
- position: relative;
+#freres-soeurs {
+  bottom: 30px;
+}
+
+#grand-parents {
+  position: relative;
+  bottom: 130px;
+}
+
+#oncles-tantes {
+  position: relative;
+  bottom: 140px;
+  right: 120px;
+}
+
+#cousins-cousines {
+  position: relative;
+  bottom: 100px;
+  left: 80px;
+}
+
+#amis {
+  bottom: 150px;
 }
 
 //BOUTON PLUS
