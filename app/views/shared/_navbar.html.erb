@@ -11,8 +11,8 @@
       <% if @hero && @hero.id %>
           <%= link_to 'Ma famille', hero_relatives_path(@hero), class: 'navbar-wagon-item navbar-wagon-link' %>
           <%= link_to 'Mes aventures', hero_adventures_path(@hero), class: 'navbar-wagon-item navbar-wagon-link' %>
-          <%= link_to 'Mes autres héros', heros_path, class: 'navbar-wagon-item navbar-wagon-link' %>
         <% end %>
+        <%= link_to 'Mes héros', heros_path, class: 'navbar-wagon-item navbar-wagon-link' %>
       <% end %>
 
 
