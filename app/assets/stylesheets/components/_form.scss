@@ -37,7 +37,6 @@
     background-color: #98dff5;
     border: none;
     box-shadow: none;
-    border-radius: 10px;
 
   }
 
@@ -52,7 +51,13 @@
     background-color: #98dff5;
     border: none;
     box-shadow: none;
-    border-radius: 10px;
+
+  }
+
+  .schoolbell {
+    font-family: 'Schoolbell', cursive;
+    font-size: 18px;
+    letter-spacing: 1px;
   }
 
   .input-group-addon: {
@@ -60,9 +65,31 @@
     border-radius: 10px;
   }
 
+  .input-radius {
+    border-radius: 10px;
+   }
+
+  .date-radius {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+   }
+
+   .glyphicon-radius {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+   }
+
   .glyphicon {
     color: $black;
   }
+
+
 }
+
+// .preview-thumbnails {
+
+//     height: 200px;
+//     background-size: cover;
+//   }
 
 

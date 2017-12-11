@@ -10,28 +10,30 @@
         <%= simple_form_for [@hero, @adventure] do |f| %>
           <div class="row">
             <div class="col-xs-12 col-md-5">
-              <%= f.input :title, input_html: { class: 'input-blue-background' } %>
-              <%= f.input :description, input_html: { class: 'input-blue-background' } %>
-              <%= f.input :location, input_html: { class: 'input-blue-background' } %>
+              <%= f.input :title, input_html: { class: 'input-blue-background input-radius' } %>
+              <%= f.input :description, input_html: { class: 'input-blue-background input-radius' } %>
+              <%= f.input :location, input_html: { class: 'input-blue-background input-radius' } %>
             </div>
             <div class="col-xs-12 col-md-5 col-md-offset-2 ">
               <div class="form-group">
                 <label class="control-label string required" for="adventure_title"><abbr title="required">*</abbr> Date</label>
-                <div class='input-group date input-blue-background' id='date'>
-                    <input type='text' name="adventure[date]" class="form-control" />
-                    <span class="input-group-addon input-blue-background">
+                <div class='input-group date' id='date'>
+                    <input type='text' name="adventure[date]" class="form-control input-blue-background date-radius" />
+                    <span class="input-group-addon input-blue-background glyphicon-radius">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
               </div>
-              <%= f.simple_fields_for :photos, input_html: { class: 'input-blue-background' } do |p| %>
-                <%= p.input :picture, as: :file %>
+              <%= f.simple_fields_for :photos do |p| %>
+                <%= p.input :picture, label_html: { class: "btn btn-success input-radius" }, input_html: { class: 'js-picture-upload-input-with-preview hidden'} %>
               <% end %>
+              <div class="hidden preview-thumbnails js-preview-thumbnails">
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col-xs-12 text-center">
-              <%= f.submit class: 'btn btn-primary' %>
+              <%= f.submit class: 'btn btn-success input-radius schoolbell' %>
             </div>
           </div>
         <% end %>
@@ -41,15 +43,7 @@
   </div>
 </div>
 <div class="wrapper background-form-down"></div>
-<!--
-<div class="form-group">
-  <div class='input-group date' id='date1'>
-      <input type='text' name="adventure[date]" class="form-control" />
-      <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-      </span>
-  </div>
-</div> -->
+
 
 <!-- JS Datepicker -->
 <%= content_for(:after_js) do %>
@@ -60,11 +54,6 @@
               format: "D-M-YYYY"
             }
           );
-          // $('#date1').datetimepicker({
-          //     minDate: moment(),
-          //     format: "D-M-YYYY"
-          //   }
-          // );
       });
   </script>
 <% end %>
