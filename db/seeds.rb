@@ -201,6 +201,7 @@ camille = Hero.create!(
   hour_of_birth: '10 heures',
   first_word: 'Papa',
   first_teeth: '2017-09-16',
+  number_of_tooth: '4',
   first_steps: '2017-11-16',
   first_friend: "Gabrielle, Maximilien, Erwan",
   place_of_birth: "nantes",

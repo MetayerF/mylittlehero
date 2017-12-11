@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171210143705) do
+ActiveRecord::Schema.define(version: 20171210231719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20171210143705) do
     t.string   "nickname"
     t.string   "gender"
     t.string   "photo"
-    t.integer  "weight",         default: 0
-    t.integer  "size",           default: 0
+    t.integer  "weight",          default: 0
+    t.integer  "size",            default: 0
     t.string   "astro_sign"
     t.string   "eyes_color"
     t.string   "hair_color"
@@ -43,14 +43,15 @@ ActiveRecord::Schema.define(version: 20171210143705) do
     t.string   "place_of_birth"
     t.date     "date_of_birth"
     t.integer  "user_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "favorite_food"
     t.string   "hour_of_birth"
     t.string   "first_word"
     t.date     "first_teeth"
     t.date     "first_steps"
     t.string   "first_friend"
+    t.string   "number_of_tooth"
     t.index ["user_id"], name: "index_heros_on_user_id", using: :btree
   end
 

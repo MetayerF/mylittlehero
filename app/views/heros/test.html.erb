@@ -1,0 +1,135 @@
+<% content_for :title, @hero.firstname + "| MyLittleHero" %>
+
+<div class="container">
+<!-- HEAD HERO -->
+  <div class="head-hero">
+    <div class="row">
+      <div class="col-xs-12 col-md-8-col-md-offset-2">
+        <div class="text-center">
+            <% if @hero.photo.blank? %>
+              <%= image_tag("smiling_baby.png", height: 100) %>
+            <% else %>
+            <%= cl_image_tag @hero.photo, class: 'avatar-tlarge' %>
+            <% end %>
+        </div>
+        <div class="text-center">
+            <% if @hero.firstname.nil? || @hero.lastname.nil? %>
+              <h1><%= @hero.firstname %> <%= @hero.lastname %></h1>
+            <% else  %>
+              <h1><%= @hero.firstname.capitalize %> <%= @hero.lastname.capitalize %></h1>
+            <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- HEAD HERO END -->
+<!-- COUNTER -->
+  <div class="counter-adventure-relative-photo text-center">
+    <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="counter-adventure">
+          <div class="figure-plus">
+            <h2><%= @hero.adventures.count %></h2>
+              <%= link_to new_hero_path, class: 'padding-plus' do %><i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <%= end %>
+          </div>
+            <p>Aventures</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="counter-relative">
+          <div class="figure-plus">
+            <h2><%= @hero.relatives.count %></h2>
+              <%= link_to new_hero_path, class: 'padding-plus-deux' do %><i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <%= end %>
+          </div>
+            <p>Membres dans votre famille</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="counter-photo">
+          <div class="figure-plus">
+            <h2><%= @hero.photos.count %></h2>
+          </div>
+            <p>Photos</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+<!-- COUNTER END -->
+<!-- BODY HERO -->
+<!-- TABS -->
+<div class="container">
+  <div class="hero-tabs">
+    <a class="hero-tab" href="#">
+      <h2><%= @hero.adventures.count %></h2>
+      <p>Aventures</p>
+    </a>
+    <a class="hero-tab" href="#">
+      <h2><%= @hero.photos.count %></h2>
+      <p>Photos</p>
+    </a>
+    <a class="hero-tab" href="#">
+      <h2><%= @hero.relatives.count %></h2>
+      <p>Membres</p>
+    </a>
+  </div>
+</div>
+<!-- BUTTON-->
+<div class="row">
+  <div class="button-show">
+    <div class="text-center">
+        <%= link_to new_hero_adventure_path(@hero) do %>
+          <type="button" class="text-center button-edit btn btn-success"> <i class="fa fa-plus" aria-hidden="true"></i>      Nouvelle aventure
+        <% end %>
+    </div>
+    <div class="text-center">
+        <%= link_to new_hero_relative_path(@hero) do %>
+          <type="button" class="text-center button-edit btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i>      Nouveau membre
+        <% end %>
+    </div>
+  </div>
+</div>
+<!-- BUTTON END-->
+<!-- TABS END -->
+<div class="container">
+  <div class="profile text-center">
+    <div class="main">
+      <p> Je m'appelle <strong><%= @hero.firstname.capitalize %> <%= @hero.lastname.capitalize %></strong>, mais ma famille me surnomme <strong><%= @hero.nickname.capitalize %></strong>. Je suis une jolie <strong><%= @hero.gender %> </strong> aux yeux <%= @hero.eyes_color %> avec les cheveux <%= @hero.hair_color %>. </p>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+        <p> Je suis né(e) dans la ville de <strong><%= @hero.place_of_birth.capitalize %></strong> le <strong><%= @hero.date_of_birth.strftime("%d/%m/%Y") %></strong>. Je suis <%= @hero.astro_sign %>.</p>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+       <p>Je grandis très vite... Déjà <strong><%= @hero.size %> cm</strong>  pour <strong><%= @hero.weight.to_f %> kg</strong> à seulement <strong><%=age_count_for(@hero) %> mois.</strong></p>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+        <p> Je suis toujours accompagné(e) de mon fidèle acolyte, <strong><%= @hero.favorite_toy %></strong>.</p>
+      </div>
+    </div>
+    <div class="description" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "picture_adventure.jpg" %>');">
+      <div class="description-content">
+        <h1>Ma dernière aventure:</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- BODY HERO END -->
+<div class="text-center">
+    <%= link_to hero_path do %>
+      <type="button" class="text-center button-edit btn btn-success">Modifier le profil de <%= @hero.firstname %>
+    <% end %>
+</div>
+<!-- CONTAINER END -->
+  </div>
+
+
