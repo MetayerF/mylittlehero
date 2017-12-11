@@ -1,0 +1,37 @@
+.relatives-informations p {
+  font-size: 20px;
+}
+
+.relatives-avatar-show img{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid $blue;
+  margin-bottom: 30px;
+  box-shadow: 5px 0px 15px rgba(34, 79, 109, 0.9);
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.relative-infos h1 {
+  margin-top: 0 !important;
+
+  padding-top: 25px;
+}
+
+.hero-tab-relative {
+  background: $yellow;
+  width: 20vw;
+  transition: all 0.3 ease;
+  margin: 0;
+  padding: 20px 10px;
+}
+
+
+.hero-tab-relative:first-child{
+  border-radius: 10px 0 0 0;
+}
+.hero-tab-relative:last-child{
+  border-radius: 0 10px  0 0;
+}
+

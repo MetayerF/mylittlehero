@@ -1,31 +1,105 @@
 <% content_for :title, 'Voici les information relative à ' + @relative.user.firstname + ' ! | MyLittleHero' %>
 
-<div class="container">
-  <div class="relative-infos text-center">
-    <br>
-    <h1>Bienvenue sur le profile de <%= @relative.user.nickname%></h1>
-    <br>
+
+  <!-- HEADER -->
+  <div class="relative-infos text-center" style="background-image: url('<%= image_path('background1.jpg') %>');">
+    <h1>Bienvenue sur le profil de <%= @relative.user.nickname%></h1>
     <div class="relatives-avatar-show text-center">
       <%= image_tag @relative.user.photo %>
       <div class="main-informations-relative">
         <ul class="list-inline">
           <li>
-          <h3><%= @relative.user.firstname%></h3>
+            <h3><%= @relative.user.firstname%></h3>
           </li>
           <li>
-          <h3><%= @relative.user.lastname%></h3>
+            <h3><%= @relative.user.lastname%></h3>
           </li>
         </ul>
-          <p><%= @relative.user.date_of_birth.strftime("%d/%m/%Y")%></p>
-        </div>
+      </div>
     </div>
-    <div class="relatives-informations text-center">
 
-        <div class="second-informations-relative text-center">
-          <p><strong>Lieu de naissance :</strong> <%= @relative.user.place_of_birth%></p>
-          <p><strong>Ma musique préférée :</strong> <%= @relative.user.favorite_song%></p>
-          <p><strong>Mon film préférée  :</strong> <%= @relative.user.favorite_movie%></p>
-          <p><strong>Mon job actuel :</strong> <%= @relative.user.job%></p>
+    <div class="flex-button-body">
+      <div class="hero-tabs text-center">
+        <div class="hero-tab-relative">
+          <% @relative.user.date_of_birth.strftime("%d/%m/%Y") %>
+            <h2><%= age_count_for(@relative) %></h2>
+            <p><strong>Ans</strong></p>
         </div>
+        <div class="hero-tab-relative">
+          <p>Date d'inscription</p>
+          <h2><%= @relative.user.created_at.strftime("%d/%m/%Y") %></h2>
+        </div>
+        <div class="hero-tab-relative" >
+          <h2></h2>
+          <p>Nombre de commentaires laissés</p>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
+  <!-- HEADER FIN -->
+
+  <!-- TAB -->
+
+  <!-- TAB FIN -->
+  <!-- CLOUDS -->
+<div class="darkblue-background" style="border-top: 5px solid #ebba00;">
+  <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <div class="text-center">
+      <div class="hero-book-content text-center">
+        <div class="hero-book-text">
+          <h3> Mes hobbies </h3>
+          <p> Je m'appelle <strong><%= @relative.user.firstname.capitalize %> <%= @relative.user.lastname.capitalize %></strong>, mais en général, on me surnome <%= @relative.user.nickname.capitalize %>.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="text-center">
+        <div class="hero-book-content text-center">
+          <div class="hero-book-text">
+            <h3> Mon...</h3>
+            <p> Je suis né(e) à <strong><%= @relative.user.place_of_birth.capitalize %></strong> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="text-center">
+        <div class="hero-book-content text-center">
+          <div class="hero-book-text">
+            <h3> Ma musique préférée</h3>
+            <p> Ma musique préférée est <strong><%= @relative.user.favorite_song.capitalize %></strong> :-)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="text-center">
+        <div class="hero-book-content text-center">
+          <div class="hero-book-text">
+            <h3> Mon film préféré</h3>
+            <p> Mon film préféré est <strong><%= @relative.user.favorite_movie.capitalize %></strong> ! </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="text-center">
+        <div class="hero-book-content text-center">
+          <div class="hero-book-text">
+            <h3>Mon job actuel</h3>
+            <p> Je suis <strong><%= @relative.user.job %></strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- CLOUDS FIN -->
 </div>
