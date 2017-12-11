@@ -6,14 +6,13 @@
 .relatives-banner {
   background-image: url("family-tree.png");
   background-repeat: no-repeat;
-  margin-bottom: 50px;
-  background-size: cover;
+  background-size: contain;
   height: 1200px;
-  background-position: fixed;
+  background-position: bottom;
 }
 
 .relatives-banner-content {
-  padding: 60px;
+  padding: 0px 60px;
 }
 
 .relatives-avatar {
@@ -21,10 +20,18 @@
 }
 
 .relatives-avatar img{
+  border-radius: 50%;
   height: 100px;
   width: 100px;
-  border-radius: 50%;
-  border: 5px solid $blue;
+  box-shadow: 1px 2px 2px lightblue;
+}
+
+.relatives-border-mother-side{
+  border: 5px solid $darkpink;
+}
+
+.relatives-border-father-side {
+  border: 5px solid $darkblue;
 }
 
 .parents {
@@ -36,7 +43,6 @@
 .freres-soeurs-grands-parents {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 200px;
 }
 
 .oncles-tantes-cousins-cousines {
@@ -51,24 +57,26 @@
   margin-bottom: 50px;
 }
 
-.hero {
+.hero-relative {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 
   img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
     border: 5px solid $yellow;
+    box-shadow: 1px 2px 2px $yellow;
   }
 }
 .title-relatives {
   display: flex;
   align-items: center;
-
   h2 {
     padding: 0px;
     margin: 0px;
+    margin-left: 5px;
   }
 }
 
@@ -80,18 +88,17 @@
 
 .plus-button-relatives i{
   color: $light-gray;
-  opacity: 0.8;
   font-size: 30px;
   transition: all 0.3s ease;
   margin-left: 10px;
 }
 
 .plus-button-relatives i:hover{
-  color: $blue;
-  font-size: 50px;
+  color: $yellow;
 }
 
 .plus-button-relatives a{
   color: $light-gray;
   text-decoration: none;
 }
+
