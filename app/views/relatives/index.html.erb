@@ -9,11 +9,11 @@
       <div class="relatives-banner-content">
         <div class="parents">
           <div>
-            <div class="title-relatives">
+            <div class="text-center">
               <h2>Mes parents</h2>
             </div>
           <div class="relatives-avatar">
-            <% @relatives.where(family_link: 'parent').each do |relative|%>
+            <% @relatives.where(family_link: 'parents').each do |relative|%>
             <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
             <%= image_tag relative.user.photo %>
             <% end %>
@@ -26,14 +26,13 @@
             <div class="title-relatives">
               <h2>Mes frères et soeurs</h2>
                 <div class="plus-button-relatives">
-
                 <%= link_to new_hero_relative_path do %>
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 <% end %>
               </div>
             </div>
             <div class="relatives-avatar">
-              <% @relatives.where(family_link: "Soeur").each do |relative|%>
+              <% @relatives.where(family_link: "freres et soeurs").each do |relative|%>
               <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
               <%= image_tag relative.user.photo %>
               <% end %>
@@ -51,14 +50,15 @@
               </div>
             <div class="relatives-avatar">
               <% @relatives.where(family_link: "grand-parents").each do |relative|%>
-
               <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
               <%= image_tag relative.user.photo %>
               <% end %>
               <% end %>
             </div>
-
             </div>
+         </div>
+         <div class="hero-relative">
+          <%= image_tag @hero.photo %>
          </div>
          <div class="oncles-tantes-cousins-cousines">
           <div>
@@ -71,9 +71,8 @@
                 </div>
             </div>
             <div class="relatives-avatar">
-              <% @relatives.where(family_link: "oncle").each do |relative|%>
+              <% @relatives.where(family_link: "oncles et tantes").each do |relative|%>
               <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
-
               <%= image_tag relative.user.photo %>
               <% end %>
               <% end %>
@@ -89,7 +88,7 @@
                 </div>
              </div>
               <div class="relatives-avatar">
-                <% @relatives.where(family_link: "cousine").each do |relative|%>
+                <% @relatives.where(family_link: "cousins et cousines").each do |relative|%>
                 <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
                 <%= image_tag relative.user.photo %>
                 <% end %>
@@ -97,7 +96,6 @@
               </div>
           </div>
         </div>
-
         <div class="amis">
           <div>
             <div class="title-relatives">
@@ -109,8 +107,7 @@
               </div>
             </div>
             <div class="relatives-avatar">
-              <% @relatives.where(family_link: "amis").each do |relative|%>
-
+              <% @relatives.where(family_link: "amis de la famille").each do |relative|%>
               <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
               <%= image_tag relative.user.photo %>
               <% end %>
