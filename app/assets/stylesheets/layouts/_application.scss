@@ -11,14 +11,29 @@ body {
   background-color: $white;
   border-radius: 5px;
   padding: 50px;
-
-}
-
-.fix-footer {
-  min-height: 100vh;
 }
 
 
 .background-custom {
   background-image: asset-url('background1.jpg');
+}
+
+.background-form-up {
+  background-image: asset-url('bg-form-up.png');
+  background-size: cover;
+  background-position: bottom;
+  height: 800px;
+}
+
+.background-form-down {
+  background-image: asset-url('bg-form-down.png');
+  background-size: cover;
+  padding:200px;
+}
+
+
+.background-form-up-hero {
+  background-image: asset-url('hero-new-form.png');
+  background-size: cover;
+  height: 100%;
 }
