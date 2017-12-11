@@ -1,24 +1,34 @@
+<% content_for :title, "#{@adventure.title} | MyLittleHero" %>
+
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <div class="current-adventure-content">
-        <div class="current-adventure-photo">
-          <%= cl_image_tag(@adventure.photos.first.picture) %>
-        </div>
-        <div class="current-adventure-description">
-          <h1><%= @adventure.title %></h1>
-          <p><%= @adventure.description %></p>
-          <p><%= @adventure.location %> - <%= @adventure.date %></p>
-        </div>
-        <div class="current-adventure-footer">
-          <%= link_to edit_hero_adventure_path do %>
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-          <% end %>
-          <%= link_to hero_adventure_path, method: :delete do %>
-            <i class="fa fa-trash" aria-hidden="true"></i>
-          <% end %>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+      voir l'image
+    </button>
+
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header darkblue-background">
+            <h2 class="modal-title text-center" id="exampleModalLongTitle"><%= @adventure.title %></h2>
+          </div>
+          <div class="modal-body current-adventure-content">
+            <%= cl_image_tag @adventure.photos.first.picture, class: 'current-adventure-img' %>
+            <p><%= @adventure.description %></p>
+            <p>
+              À <%= @adventure.location %> le <%= @adventure.date %>
+              <%= link_to edit_hero_adventure_path do %>
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              <% end %>
+              <%= link_to hero_adventure_path, method: :delete do %>
+                 <i class="fa fa-trash" aria-hidden="true"></i>
+              <% end %>
+            </p>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 </div>

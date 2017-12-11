@@ -31,7 +31,7 @@ class AdventuresController < ApplicationController
   end
 
   def update
-    @adventure.update
+    @adventure.update(adventure_params)
     if @adventure.save
       redirect_to hero_adventures_path
     else
@@ -41,6 +41,7 @@ class AdventuresController < ApplicationController
 
   def destroy
     @adventure.destroy
+    redirect_to hero_adventures_path
   end
 
   private
