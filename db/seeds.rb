@@ -1,7 +1,6 @@
 puts "Cleaning database..."
 User.destroy_all
 
-
 ################### FAMILY BONNET ####################
 etienne = User.create!(
   password: "123456",
@@ -66,7 +65,6 @@ sophie = User.create!(
   job: 'Bloggeuse',
   photo: File.open(Rails.root.join('db/fixtures/images/users/sophie.jpg'))
   )
-
 
 ################### FAMILY LE GALL ####################
 puts "Création d'utilisateurs..."
@@ -201,6 +199,7 @@ camille = Hero.create!(
   hour_of_birth: '10 heures',
   first_word: 'Papa',
   first_teeth: '2017-09-16',
+  number_of_tooth: '4',
   first_steps: '2017-11-16',
   first_friend: "Gabrielle, Maximilien, Erwan",
   place_of_birth: "nantes",

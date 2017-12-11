@@ -1,247 +1,159 @@
-// *************HEAD HERO********************//
-.head-hero {
-  display: flex;
-  justify-content: space-around;
-}
-.head-hero h3{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  color: $light-gray;
-  font-weight: lighter;
-  padding-bottom: 10px;
-}
-// *************BODY HERO********************//
-.body-hero-description{
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-  margin-top: 30px;
-}
-// *************COUNTER HERO********************//
-.counter-adventure-relative-photo {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-.figure-plus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.padding-plus{
-  padding-left: 15px;
-  color: $blue;
-}
-.padding-plus:hover{
-  padding-left: 15px;
-  color: $yellow;
-}
-
-// *************COUNTER ADVENTURE ********************//
-.counter-adventure {
-  height: 150px;
-  display: block;
-  justify-content: center;
-  align-items: center;
+.hero-show-container{
   background-color: $blue;
-  border-radius: 5px;
-  border-bottom: 10px solid $blue;
 }
-.counter-adventure h2 {
-  font-size: 50px;
-  border-radius: 50%;
-}
-.counter-adventure p {
-  font-size: 20px;
-  font-weight: lighter;
-  color: $blue;
-}
-// *************COUNTER RELATIVE ********************//
-.counter-relative {
-  height: 150px;
-  display: block;
+.cloud-display{
+  display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: $blue;
-  border-radius: 5px;
-  border-bottom: 10px solid $yellow;
+  margin-top: 50px;
 }
-.counter-relative h2 {
-  font-size: 50px;
-  color: $yellow;
-}
-.counter-relative p {
-  font-size: 20px;
-  font-weight: lighter;
-  color: $yellow;
-}
-.padding-plus-deux{
-  padding-left: 15px;
-  color: $yellow;
-}
-.padding-plus-deux:hover{
-  padding-left: 15px;
-  color: $darkyellow;
-}
-// *************COUNTER PHOTO ********************//
-.counter-photo {
-  height: 150px;
-  display: block;
-  justify-content: center;
-  align-items: center;
-  background-color: $darkblue;
-  border-radius: 5px;
-  border-bottom: 10px solid $yellow;
-}
-.counter-photo h2 {
-  font-size: 50px;
-  color: $yellow;
-}
-.counter-photo p {
-  font-size: 20px;
-  font-weight: lighter;
-  color: $yellow;
-}
-// *************BUTTON********************//
-
-.button-edit {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  color: white;
-  padding: 5px;
-}
-// *************HERO BOOK********************//
-.hero-book{
-padding-top: 40px;
-padding-bottom: 40px;
+.cloud-display-two{
+  display: flex;
+  justify-content: space-between;
 }
 .hero-book-content{
-background-color: $smooth-gray;
-height: 300px;
-display: block;
-justify-content: space-around;
-align-items: center;
-padding: 20px;
-}
-.hero-book-content h2 {
-  padding-bottom: 30px;
-}
-// ************* PROFIL ********************//
-.profile {
-  display: grid;
-  grid-template-columns: 350px 1fr 1fr 1fr;
-  grid-template-rows: 50% 50%;
-  height: calc(100vh - 70px);
-  padding: 30px;
-}
-.profile .main {
-  grid-row: 1 / span 2;
-  grid-column: 1 / span 1;
-}
-.profile .description {
-  grid-row: 2 / span 1;
-  grid-column: 2 / span 3;
-}
-// ************* MAIN ********************//
-.main, .description, .stat {
-  background: $smooth-gray;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  padding: 50px;
-  margin: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  margin: 50px auto;
+
   border-radius: 5px;
-}
-
-@media (max-width: 940px) {
-  .profile {
-    display: block;
-  }
-}
-// ************* MAIN ********************//
-.main p{
-  line-height: 30px;
-  font-size: 15px;
-}
-.stat p{
-  line-height: 30px;
-  font-size: 15px;
-}
-.description{
+  transition: all 0.4s ease;
+  height: 240px;
+  width: 380px;
+  background-image: url("cloud_solo.png");
   background-size: cover;
-  background-image: url("images/picture_adventure.jpg");
+  display:flex;
+  align-items: center;
+  padding: 5px;
+}
+.hero-book-content:hover{
+ margin-top: 0px;
+}
+.hero-book-content strong{
+color: $darkyellow;
 }
 
-
-.description-content h1{
-  color: white;
+.hero-book-text{
+  margin-bottom: 30px;
+  padding: 25px;
+}
+.hero-book-text p{
+  font-size: 15px;
+}
+.hero-image-background{
+  background-color: $lightpink;
+  height: 500px;
+  background-image: url('background1.jpg');
+  background-size: cover;
+}
+.hero-image-background h2 {
+  padding-top: 30px;
+  letter-spacing: 2px;
+  font-size: 80px;
+  color: $black;
+  margin-top: 0px;
+}
+.hero-image-background p{
+  color: $light-gray;
+  font-weight: lighter;
 }
 
-
-/* Fonts and colors */
-
-
-// *************GENDER FONTAWESOME********************//
-.gender-font-man {
-  color: $blue;
-  font-size: 50px;
-  margin-bottom: 20px;
+// ################ LINE #############\\
+.white-line{
+  background-color: white;
+  height: 30px;
 }
 
-.gender-font-girl {
-  color: $pink;
-  font-size: 50px;
-  margin-bottom: 20px;
+.lightgray-line{
+  background-color: $yellow;
+  height: 10px;
 }
-
 //************************* TABS ****************//
 .hero-tabs {
-  background: white;
+  flex:1 0 60vw;
+  padding-top: 0px;
+  background-image: url('background1.jpg');
+  background-size: cover;
   display: flex;
-  justify-content: center;
-  padding: 10px 10px 0 10px;
   text-decoration: none;
-  padding: 20px;
+  justify-content: center;
 }
 .hero-tabs a {
-  color: white;
-}
-.hero-tabs a:hover {
-  cursor: pointer;
   text-decoration: none;
-  opacity: 0.8;
 }
+
 .hero-tabs h2 {
   font-size: 50px;
-  color: $pink;
+  color: $darkblue;
   font-weight: bold;
-  margin-top: 0;
   text-decoration: none;
 }
 .hero-tabs p {
-  opacity: 0.5;
   margin-bottom: 0;
   text-decoration: none;
   color: white;
 }
 .hero-tab {
   background: $blue;
-  flex: 0 0 25%;
-  text-align: center;
-  padding: 20px 0;
+  width: 20vw;
+  transition: all 0.3 ease;
+  margin: 0;
+  padding: 20px 10px;
+}
+.hero-tab:first-child:hover{
+  background-color: $lightyellow;
+}
+.hero-tab:last-child:hover{
+  background-color: $lightyellow;
 }
 
-.hero-tab:first-child {
-  border-radius: 10px 0 0 10px;
+.hero-tab:first-child{
+  border-radius: 0 10px 0 0;
 }
-.hero-tab:last-child {
-  border-radius: 0 10px 10px 0;
+.hero-tab:last-child{
+  border-radius: 10px 0 0 0;
 }
-.button-show{
+
+//#################### ADD SYMBOL ###############//
+.add-symbol-button{
+  color: $blue;
+}
+.add-symbol-button:hover{
+  color: $lightyellow;
+}
+//#################### FLEX ITEMS BODY ###############//
+.flex-button-body{
+  display:flex;
+  align-items:center;
+
+  justify-content: center;
+}
+
+.hero-tab-buttons-right {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  a {
+    margin: 0;
+
+  }
 }
+
+.hero-tab-buttons-left {
+  display: flex;
+  align-items: center;
+    a {
+    margin: 0;
+  }
+}
+
+
+.flex-button-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.flex-button-item-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
