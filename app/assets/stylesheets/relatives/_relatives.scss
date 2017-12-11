@@ -3,20 +3,20 @@
   letter-spacing: 2px;
 }
 
-.relatives-banner-content {
-  padding: 50px;
-  // background-color: $green;
-  box-shadow: 0px 0px 15px rgba(34, 79, 109, 0.7);
-  border-radius: 15%;
-  border: 5px solid $blue;
-  margin-top: 50px;
+.relatives-banner {
+  background-image: url("family-tree.png");
+  background-repeat: no-repeat;
   margin-bottom: 50px;
+  background-size: cover;
+  height: 1200px;
+  background-position: fixed;
+}
+
+.relatives-banner-content {
+  padding: 60px;
 }
 
 .relatives-avatar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   padding: 5px;
 }
 
@@ -24,36 +24,71 @@
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  border: 2px solid $blue;
-  margin-right: 10px;
-  box-shadow: 5px 0px 15px rgba(34, 79, 109, 0.9);
+  border: 5px solid $blue;
 }
 
-.relatives-hover:hover img{
-  opacity: 0.65;
+.parents {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
 }
 
-.relatives-hover {
- position: relative;
+.freres-soeurs-grands-parents {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 200px;
+}
+
+.oncles-tantes-cousins-cousines {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 100px;
+}
+
+.amis {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+
+  img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 5px solid $yellow;
+  }
+}
+.title-relatives {
+  display: flex;
+  align-items: center;
+
+  h2 {
+    padding: 0px;
+    margin: 0px;
+  }
 }
 
 //BOUTON PLUS
 
 .plus-button-relatives{
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .plus-button-relatives i{
-  color: $blue;
+  color: $light-gray;
   opacity: 0.8;
-  font-size: 80px;
+  font-size: 30px;
   transition: all 0.3s ease;
   margin-left: 10px;
 }
 
 .plus-button-relatives i:hover{
   color: $blue;
-  font-size: 100px;
+  font-size: 50px;
 }
 
 .plus-button-relatives a{
