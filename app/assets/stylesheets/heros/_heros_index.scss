@@ -1,0 +1,14 @@
+.hero-index-container{
+  background-color: $blue;
+}
+.hero-index-content{
+  margin: 50px auto;
+  border-radius: 5px;
+  height: 350px;
+  width: 350px;
+  background-image: url("badge_hero.png");
+  background-size: cover;
+  display:flex;
+  align-items: center;
+  padding: 5px;
+}
