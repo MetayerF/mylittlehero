@@ -20,11 +20,18 @@
 }
 
 .relatives-avatar img{
+  border-radius: 50%;
   height: 100px;
   width: 100px;
-  border-radius: 50%;
-  border: 5px solid $darkblue;
   box-shadow: 1px 2px 2px lightblue;
+}
+
+.relatives-border-mother-side{
+  border: 5px solid $darkpink;
+}
+
+.relatives-border-father-side {
+  border: 5px solid $darkblue;
 }
 
 .parents {
@@ -94,3 +101,4 @@
   color: $light-gray;
   text-decoration: none;
 }
+

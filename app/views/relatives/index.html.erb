@@ -14,8 +14,8 @@
             </div>
           <div class="relatives-avatar">
             <% @relatives.where(family_link: 'parents').each do |relative|%>
-            <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
-            <%= image_tag relative.user.photo %>
+            <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover"  do %>
+              <%= image_tag relative.user.photo, class: "#{relative_avatar_class(relative)}" %>
             <% end %>
             <% end %>
             </div>
@@ -34,7 +34,7 @@
             <div class="relatives-avatar">
               <% @relatives.where(family_link: "freres et soeurs").each do |relative|%>
               <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
-              <%= image_tag relative.user.photo %>
+              <%= image_tag relative.user.photo, class: "#{relative_avatar_class(relative)}"  %>
               <% end %>
               <% end %>
             </div>
@@ -51,7 +51,7 @@
             <div class="relatives-avatar">
               <% @relatives.where(family_link: "grand-parents").each do |relative|%>
               <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
-              <%= image_tag relative.user.photo %>
+              <%= image_tag relative.user.photo, class: "#{relative_avatar_class(relative)}" %>
               <% end %>
               <% end %>
             </div>
@@ -73,7 +73,7 @@
             <div class="relatives-avatar">
               <% @relatives.where(family_link: "oncles et tantes").each do |relative|%>
               <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
-              <%= image_tag relative.user.photo %>
+              <%= image_tag relative.user.photo, class: "#{relative_avatar_class(relative)}"  %>
               <% end %>
               <% end %>
             </div>
@@ -90,7 +90,7 @@
               <div class="relatives-avatar">
                 <% @relatives.where(family_link: "cousins et cousines").each do |relative|%>
                 <%= link_to hero_relative_path(@hero, relative), class: "relatives-hover" do %>
-                <%= image_tag relative.user.photo %>
+                <%= image_tag relative.user.photo, class: "#{relative_avatar_class(relative)}"  %>
                 <% end %>
                 <% end %>
               </div>
