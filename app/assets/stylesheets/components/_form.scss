@@ -29,6 +29,12 @@
     padding-bottom: 30px;
     text-align: center;
   }
+
+  h3 {
+    font-size: 25px;
+
+  }
+
   .btn {
     width: 100%;
     margin-bottom: 20px
@@ -52,6 +58,10 @@
     border: none;
     box-shadow: none;
 
+  }
+
+  .input-white-background {
+    background-color: #fff;
   }
 
   .schoolbell {
@@ -85,11 +95,5 @@
 
 
 }
-
-// .preview-thumbnails {
-
-//     height: 200px;
-//     background-size: cover;
-//   }
 
 

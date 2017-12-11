@@ -15,14 +15,9 @@ body {
   background-color: $white;
   border-radius: 5px;
   padding: 50px;
-  // height: 100vh;
 }
 
-// .fix-footer {
-//   min-height: 100vh;
-// }
 
-// SEARCH BAR
 
 .background-custom {
   background-image: asset-url('background1.jpg');
@@ -39,4 +34,11 @@ body {
   background-image: asset-url('bg-form-down.png');
   background-size: cover;
   padding:200px;
+}
+
+
+.background-form-up-hero {
+  background-image: asset-url('hero-new-form.png');
+  background-size: cover;
+  height: 100%;
 }
