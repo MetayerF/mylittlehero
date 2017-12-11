@@ -1,16 +1,15 @@
 .adventure-card {
-  box-shadow: 0px 2px 3px $light-gray;
   margin-top: 5px;
   margin-left: 10px;
 }
 
-.overflow {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 200px;
-  height: 30px;
-}
+// .overflow {
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   width: 200px;
+//   height: 30px;
+// }
 
 .adventure-card-description h3 {
   line-height: 20px;
@@ -102,19 +101,22 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin: 10px;
+  border: 2px dashed $darkblue;
 }
 .medium-portrait{
   height: 380px;
   background-size: cover;
   background-repeat: no-repeat;
   margin: 10px;
+  border: 2px dashed $darkblue;
 }
 
 .medium-paysage{
   height: 380px;
   background-size: cover;
   background-repeat: no-repeat;
-  margin: 10px
+  margin: 10px;
+  border: 2px dashed $darkblue;
 }
 
 .small-paysage{
@@ -122,13 +124,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin: 10px;
+  border: 2px dashed $darkblue;
 
 }
 
 /*** Current adventure ***/
 
 .current-adventure-content {
-  background-color: $blue;
   img {
     width: 100%;
   }
@@ -148,17 +150,25 @@
 
    a {
     text-decoration: none;
-    color: $yellow;
-    text-shadow: 0px 2px 3px $darkblue;
+    color: $darkblue;
+
    }
 
    a:hover {
-    color: $darkyellow;
+    color: $darkblue;
    }
 
   .fa {
     margin-left: 10px;
   }
+
+  .modal-footer {
+    .btn-xs {
+      margin-left: 15px;
+    }
+
+  }
+
 }
 
 

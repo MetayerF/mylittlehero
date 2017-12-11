@@ -2,7 +2,8 @@
 
 <% adventure = @adventures.first %>
 <% adventures_presenter = AdventuresPresenter.new(@adventures) %>
-<div class="container">
+<div class="wrapper background-custom">
+  <div class="container">
   <% adventures_presenter.adventures_groups.each_with_index do |adventures_group, index| %>
     <% grid_rules = adventures_presenter.grid_rules[index] %>
     <% grid_class = grid_rules[:grid_class] %>
@@ -15,222 +16,50 @@
         <% image_class = styling_rules[:image_class] %>
         <% hidden_class = styling_rules[:hidden] ? "hidden" : "" %>
 
-        <div class="<%= adventure_classes %> adventure-card">
+        <div class="<%= adventure_classes %> adventure-card" data-toggle="modal" data-target="#adventure-<%= adventure.id %>">
           <% if styling_rules[:div_class] == "small-adv" %>
             <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="<%= image_class %>">
               <div class="<%= hidden_class %> adventure-card-description text-center">
-                <h3><%= adventure.title %></h3>
-                <p class="overflow text-center"><%= adventure.description %></p>
-                <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
               </div>
             </div>
           <% elsif styling_rules[:div_class] == "medium-adv" %>
             <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="<%= image_class %>">
-              </div>
-              <div class="<%= hidden_class %> adventure-card-description text-center">
-               <!--  <h3><%= adventure.title %></h3>
-                <p class="overflow adventure-description"><%= adventure.description %></p>
-                <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p> -->
+            </div>
+            <div class="<%= hidden_class %> adventure-card-description text-center">
             </div>
           <% else %>
             <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="<%= image_class %>">
             </div>
             <div class="<%= hidden_class %> adventure-card-description text-center">
-              <!-- <h3><%= adventure.title %></h3>
-              <p><%= adventure.description %></p>
-              <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p> -->
             </div>
           <% end %>
+        </div>
+        <div class="modal fade" id="adventure-<%= adventure.id %>" tabindex="-1" role="dialog" aria-labelledby="<%= adventure.title %>" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header darkblue-background">
+                <h2 class="modal-title text-center" id="<% adventure.title %>"><%= adventure.title %></h2>
+              </div>
+              <div class="modal-body current-adventure-content">
+                <%= cl_image_tag adventure.photos.first.picture, class: 'current-adventure-img' %>
+                <p><%= adventure.description %></p>
+                <p>
+                  À <%= adventure.location %> le <%= adventure.date %>
+                </p>
+              </div>
+              <div class="modal-footer text-right">
+                <% if policy(adventure).edit? %>
+                  <%= link_to 'Éditer', edit_hero_adventure_path(@hero, adventure), class: 'btn btn-primary modal-btn' %>
+                <% end %>
+                <% if policy(adventure).destroy? %>
+                  <%= link_to 'Supprimer', hero_adventure_path(@hero, adventure), method: :delete, class: 'btn btn-danger modal-btn' %>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
   <% end %>
-</div>
-
-
-<!-- <div class="container">
-  <#% adventure = @adventures.first %>
-  <div class="big-card-left">
-    <div class="big-adv left-item-full adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="big-paysage"></div>
-      <div class="adventure-card-description text-center">
-        <h3><%= adventure.title %></h3>
-        <p><%= adventure.description %></p>
-        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
-      </div>
-    </div>
-    <div class="medium-adv right-item-half adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-portrait"></div>
-      <div class="adventure-card-description text-center">
-        <h3><%= adventure.title %></h3>
-        <p><%= adventure.description %></p>
-        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
-      </div>
-    </div>
-    <div class="small-adv right-item-up adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
-        <div class="hidden adventure-card-description text-center">
-          <h3><%= adventure.title %></h3>
-          <p><%= adventure.location %></p>
-          <p><strong><%= adventure.date %></strong></p>
-        </div>
-      </div>
-    </div>
-    <div class="small-adv right-item-down adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
-        <div class=" hidden adventure-card-description text-center">
-          <h3><%= adventure.title %></h3>
-          <p><%= adventure.location %></p>
-          <p><strong><%= adventure.date %></strong></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="medium-card-left">
-    <div class="medium-advs left-item-2r adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-paysage">
-      </div>
-      <div class="adventure-card-description text-center">
-        <h3><%= adventure.title %></h3>
-        <p><%= adventure.description %></p>
-        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
-      </div>
-    </div>
-    <div class="medium-adv center-item-half adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-portrait"></div>
-      <div class="adventure-card-description text-center">
-        <h3><%= adventure.title %></h3>
-        <p><%= adventure.description %></p>
-        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
-      </div>
-    </div>
-    <div class="small-adv md-right-item-up adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
-        <div class="hidden adventure-card-description text-center">
-          <h3><%= adventure.title %></h3>
-          <p><%= adventure.location %></p>
-          <p><strong><%= adventure.date %></strong></p>
-        </div>
-      </div>
-    </div>
-    <div class="small-adv md-right-item-down adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
-        <div class=" hidden adventure-card-description text-center">
-          <h3><%= adventure.title %></h3>
-          <p><%= adventure.location %></p>
-          <p><strong><%= adventure.date %></strong></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="big-card-right">
-    <div class="big-adv right-item-full adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="big-paysage"></div>
-      <div class="adventure-card-description text-center">
-        <h3><%= adventure.title %></h3>
-        <p><%= adventure.description %></p>
-        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
-      </div>
-    </div>
-    <div class="medium-adv left-item-half adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-portrait"></div>
-      <div class="adventure-card-description text-center">
-        <h3><%= adventure.title %></h3>
-        <p><%= adventure.description %></p>
-        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
-      </div>
-    </div>
-    <div class="small-adv left-item-up adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
-        <div class=" hidden adventure-card-description text-center">
-          <h3><%= adventure.title %></h3>
-          <p><%= adventure.location %></p>
-          <p><strong><%= adventure.date %></strong></p>
-        </div>
-      </div>
-    </div>
-    <div class="small-adv left-item-down adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
-        <div class=" hidden adventure-card-description text-center">
-          <h3><%= adventure.title %></h3>
-          <p><%= adventure.location %></p>
-          <p><strong><%= adventure.date %></strong></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="medium-card-right">
-    <div class="medium-advs right-item-2r adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-paysage">
-      </div>
-      <div class="adventure-card-description text-center">
-        <h3><%= adventure.title %></h3>
-        <p><%= adventure.description %></p>
-        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
-      </div>
-    </div>
-    <div class="medium-adv left-item-half adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-portrait"></div>
-      <div class="adventure-card-description text-center">
-        <h3><%= adventure.title %></h3>
-        <p><%= adventure.description %></p>
-        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
-      </div>
-    </div>
-    <div class="small-adv md-left-item-up adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
-        <div class="hidden adventure-card-description text-center">
-          <h3><%= adventure.title %></h3>
-          <p><%= adventure.location %></p>
-          <p><strong><%= adventure.date %></strong></p>
-        </div>
-      </div>
-    </div>
-    <div class="small-adv md-left-item-down adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
-        <div class=" hidden adventure-card-description text-center">
-          <h3><%= adventure.title %></h3>
-          <p><%= adventure.location %></p>
-          <p><strong><%= adventure.date %></strong></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="big-card-left">
-    <div class="big-adv left-item-full adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="big-paysage"></div>
-      <div class="adventure-card-description text-center">
-        <h3><%= adventure.title %></h3>
-        <p><%= adventure.description %></p>
-        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
-      </div>
-    </div>
-    <div class="medium-adv right-item-half adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="medium-portrait"></div>
-      <div class="adventure-card-description text-center">
-        <h3><%= adventure.title %></h3>
-        <p><%= adventure.description %></p>
-        <p><%= adventure.location %> - <strong><%= adventure.date %></strong></p>
-      </div>
-    </div>
-    <div class="small-adv right-item-up adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
-        <div class="hidden adventure-card-description text-center">
-          <h3><%= adventure.title %></h3>
-          <p><%= adventure.location %></p>
-          <p><strong><%= adventure.date %></strong></p>
-        </div>
-      </div>
-    </div>
-    <div class="small-adv right-item-down adventure-card">
-      <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="small-paysage">
-        <div class=" hidden adventure-card-description text-center">
-          <h3><%= adventure.title %></h3>
-          <p><%= adventure.location %></p>
-          <p><strong><%= adventure.date %></strong></p>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
- -->
