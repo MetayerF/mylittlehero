@@ -40,16 +40,18 @@ color: $darkyellow;
 .hero-image-background{
   background-color: $lightpink;
   height: 500px;
+  background-image: url('background1.jpg');
+  background-size: cover;
 }
 .hero-image-background h2 {
   padding-top: 30px;
   letter-spacing: 2px;
   font-size: 80px;
-  color: $darkblue;
+  color: $black;
   margin-top: 0px;
 }
 .hero-image-background p{
-  color: $darkblue;
+  color: $light-gray;
   font-weight: lighter;
 }
 
@@ -66,8 +68,9 @@ color: $darkyellow;
 //************************* TABS ****************//
 .hero-tabs {
   flex:1 0 60vw;
-  padding-top: 20px;
-  background: $lightpink;
+  padding-top: 0px;
+  background-image: url('background1.jpg');
+  background-size: cover;
   display: flex;
   text-decoration: none;
   justify-content: center;
@@ -153,4 +156,5 @@ color: $darkyellow;
     flex-direction: column;
     justify-content: flex-start;
 }
+
 
