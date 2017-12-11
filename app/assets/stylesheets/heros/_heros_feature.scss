@@ -83,7 +83,6 @@ color: $darkyellow;
   font-size: 50px;
   color: $darkblue;
   font-weight: bold;
-  margin-top: 0;
   text-decoration: none;
 }
 .hero-tabs p {
@@ -93,9 +92,10 @@ color: $darkyellow;
 }
 .hero-tab {
   background: $blue;
-  padding: 20px 0;
   width: 20vw;
   transition: all 0.3 ease;
+  margin: 0;
+  padding: 20px 10px;
 }
 .hero-tab:first-child:hover{
   background-color: $lightyellow;
@@ -131,7 +131,7 @@ color: $darkyellow;
   align-items: center;
   a {
     margin: 0;
-    padding: 20px 10px;
+
   }
 }
 
@@ -140,7 +140,6 @@ color: $darkyellow;
   align-items: center;
     a {
     margin: 0;
-    padding: 20px 10px;
   }
 }
 
