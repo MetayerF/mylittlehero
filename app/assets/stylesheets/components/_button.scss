@@ -5,3 +5,35 @@
   margin-top: 100px;
 
 }
+.hero-show-button {
+  background-color:$darkblue;
+  color: white;
+  font-weight: bolder;
+  margin: 10px;
+  border-radius: 10px 0 0 10px;
+  margin-top: 20px;
+
+  i{
+  font-size: 30px;
+  }
+}
+
+.hero-show-button:hover {
+  background-color:$lightyellow;
+}
+.hero-show-button-two {
+  background-color:$darkblue;
+  color: white;
+  font-weight: bolder;
+  margin: 10px;
+  border-radius: 0 10px 10px 0;
+  margin-top: 20px;
+
+    i{
+  font-size: 30px;
+  }
+}
+.hero-show-button-two:hover {
+  background-color:$lightyellow;
+}
+

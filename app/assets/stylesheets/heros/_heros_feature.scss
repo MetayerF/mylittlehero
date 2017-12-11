@@ -1,17 +1,18 @@
 .hero-show-container{
   background-color: $blue;
-  height: 240vh;
 }
 .cloud-display{
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 }
 .cloud-display-two{
   display: flex;
   justify-content: space-between;
 }
 .hero-book-content{
-  margin-top: 10px;
+  margin: 50px auto;
+
   border-radius: 5px;
   transition: all 0.4s ease;
   height: 240px;
@@ -36,34 +37,40 @@ color: $darkyellow;
 .hero-book-text p{
   font-size: 15px;
 }
-
-// ################ LINE #############\\
-.yellow-line{
-  background-color: $yellow;
-  height: 110px;
+.hero-image-background{
+  background-color: $lightpink;
+  height: 500px;
 }
-.yellow-line p{
-  color: white;
+.hero-image-background h2 {
+  padding-top: 30px;
+  letter-spacing: 2px;
+  font-size: 80px;
+  color: $darkblue;
+  margin-top: 0px;
+}
+.hero-image-background p{
+  color: $darkblue;
   font-weight: lighter;
 }
-.yellow-line h2{
-  padding-top: 15px;
-  letter-spacing: 2px;
-  color: white;
-  height: 50px;
+
+// ################ LINE #############\\
+.white-line{
+  background-color: white;
+  height: 30px;
 }
-.darkyellow-line{
-  background-color: $darkyellow;
+
+.lightgray-line{
+  background-color: $yellow;
   height: 10px;
-  margin-bottom: 50px;
 }
 //************************* TABS ****************//
 .hero-tabs {
-  background: $blue;
+  flex:1 0 60vw;
+  padding-top: 20px;
+  background: $lightpink;
   display: flex;
-  justify-content: space-around;
   text-decoration: none;
-  padding: 20px;
+  justify-content: center;
 }
 .hero-tabs a {
   text-decoration: none;
@@ -71,7 +78,7 @@ color: $darkyellow;
 
 .hero-tabs h2 {
   font-size: 50px;
-  color: $lightyellow;
+  color: $darkblue;
   font-weight: bold;
   margin-top: 0;
   text-decoration: none;
@@ -79,21 +86,26 @@ color: $darkyellow;
 .hero-tabs p {
   margin-bottom: 0;
   text-decoration: none;
-  color: $lightyellow;
+  color: white;
 }
 .hero-tab {
-  background: $darkblue;
-  flex: 0 0 25%;
-  text-align: center;
+  background: $blue;
   padding: 20px 0;
-   border-radius: 10px 0 10px 0px;
+  width: 20vw;
+  transition: all 0.3 ease;
+}
+.hero-tab:first-child:hover{
+  background-color: $lightyellow;
+}
+.hero-tab:last-child:hover{
+  background-color: $lightyellow;
 }
 
-.hero-tab:first-child {
-  border-radius: 10px 0 10px 0px;
+.hero-tab:first-child{
+  border-radius: 0 10px 0 0;
 }
-.hero-tab:last-child {
-  border-radius: 0 10px 10px 0;
+.hero-tab:last-child{
+  border-radius: 10px 0 0 0;
 }
 
 //#################### ADD SYMBOL ###############//
@@ -102,5 +114,43 @@ color: $darkyellow;
 }
 .add-symbol-button:hover{
   color: $lightyellow;
+}
+//#################### FLEX ITEMS BODY ###############//
+.flex-button-body{
+  display:flex;
+  align-items:center;
+
+  justify-content: center;
+}
+
+.hero-tab-buttons-right {
+  display: flex;
+  align-items: center;
+  a {
+    margin: 0;
+    padding: 20px 10px;
+  }
+}
+
+.hero-tab-buttons-left {
+  display: flex;
+  align-items: center;
+    a {
+    margin: 0;
+    padding: 20px 10px;
+  }
+}
+
+
+.flex-button-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.flex-button-item-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
