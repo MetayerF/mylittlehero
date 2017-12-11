@@ -18,28 +18,25 @@ body {
   // height: 100vh;
 }
 
-.fix-footer {
-  min-height: 100vh;
-}
+// .fix-footer {
+//   min-height: 100vh;
+// }
 
 // SEARCH BAR
 
-// .inner-addon {
-//   position: relative;
-//   color: $green;
-// }
+.background-custom {
+  background-image: asset-url('background1.jpg');
+}
 
-// /* style glyph */
-// .inner-addon .glyphicon {
-//   position: absolute;
-//   padding: 10px;
-//   pointer-events: none;
-// }
+.background-form-up {
+  background-image: asset-url('bg-form-up.png');
+  background-size: cover;
+  background-position: bottom;
+  height: 800px;
+}
 
-// /* align glyph */
-// .left-addon .glyphicon  { left:  0px;}
-// .right-addon .glyphicon { right: 0px;}
-
-// /* add padding  */
-// .left-addon input  { padding-left:  30px; }
-// .right-addon input { padding-right: 30px; }
+.background-form-down {
+  background-image: asset-url('bg-form-down.png');
+  background-size: cover;
+  padding:200px;
+}

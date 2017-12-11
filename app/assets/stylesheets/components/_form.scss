@@ -1,9 +1,8 @@
 .form-login {
-  background: white;
+  background: transparent;
   padding: 10px 20px;
-  margin-top: 50px;
+  padding-top: 50px;
   border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   h2 {
     font-size: 25px;
     font-weight: bold;
@@ -19,21 +18,51 @@
 
 
 .form-general {
-  background: white;
+  background: transparent;
   padding: 10px 20px;
-  margin: 150px 0;
+  padding-top: 150px 0;
   border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   width: 600;
   h2 {
     font-size: 25px;
     font-weight: bold;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
     text-align: center;
   }
   .btn {
     width: 100%;
     margin-bottom: 20px
   }
+  input.form-control.input-blue-background {
+    background-color: #98dff5;
+    border: none;
+    box-shadow: none;
+    border-radius: 10px;
+
+  }
+
+  label {
+    font-weight: lighter;
+    font-family: 'Schoolbell', cursive;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  textarea.form-control.input-blue-background {
+    background-color: #98dff5;
+    border: none;
+    box-shadow: none;
+    border-radius: 10px;
+  }
+
+  .input-group-addon: {
+    background-color: #98dff5;
+    border-radius: 10px;
+  }
+
+  .glyphicon {
+    color: $black;
+  }
 }
+
 
