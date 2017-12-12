@@ -5,19 +5,10 @@
 
 <div class="relative-infos text-center" style="background-image: url('<%= image_path('background1.jpg') %>');">
   <h1>Bienvenue sur le profil de <%= @relative.user.nickname%></h1>
-  <div class="relatives-avatar-show text-center">
+  <div class="relatives-avatar-show">
     <%= image_tag @relative.user.photo %>
-    <div class="main-informations-relative">
-      <ul class="list-inline">
-        <li>
-          <h3><%= @relative.user.firstname%></h3>
-        </li>
-        <li>
-          <h3><%= @relative.user.lastname%></h3>
-        </li>
-      </ul>
-    </div>
   </div>
+  <h3><%= @relative.user.firstname%> <%= @relative.user.lastname %></h3>
   <div class="flex-button-body">
     <div class="hero-tabs text-center">
       <div class="hero-tab-relative">
@@ -26,12 +17,8 @@
           <p>ans</p>
       </div>
       <div class="hero-tab-relative">
-        <p>Date d'inscription</p>
         <h2><%= @relative.user.created_at.strftime("%d/%m/%Y") %></h2>
-      </div>
-      <div class="hero-tab-relative" >
-        <h2></h2>
-        <p>Nombre de commentaires laissés</p>
+        <p>Date d'inscription</p>
       </div>
     </div>
   </div>

@@ -4,20 +4,24 @@
 
 .relatives-avatar-show img{
   height: 100px;
-  width: 100px;
   border-radius: 50%;
-  border: 2px solid $blue;
+  border: 2px solid $yellow;
   margin-bottom: 30px;
-  box-shadow: 5px 0px 15px rgba(34, 79, 109, 0.9);
   justify-content: center;
   margin-bottom: 20px;
 }
 
-.relative-infos h1 {
-  margin-top: 0 !important;
+.relative-infos {
+  .hero-index-button {
+    margin-bottom: 10px;
+  }
 
-  padding-top: 25px;
+  h1 {
+    margin-top: 0 !important;
+    padding-top: 25px;
+  }
 }
+
 
 .hero-tab-relative {
   background: $yellow;

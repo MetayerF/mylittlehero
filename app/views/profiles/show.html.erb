@@ -4,33 +4,21 @@
 
 <div class="relative-infos text-center" style="background-image: url('<%= image_path('background1.jpg') %>');">
   <h1>Bienvenue sur ton espace <%= current_user.firstname%> </h1>
-  <div class="relatives-avatar-show text-center">
-    <%= image_tag current_user.photo %>
-    <div class="main-informations-relative">
-      <ul class="list-inline">
-        <li>
-          <h3><%= current_user.firstname%></h3>
-        </li>
-        <li>
-          <h3><%= current_user.lastname%></h3>
-        </li>
-      </ul>
-    </div>
+  <div class="relatives-avatar-show">
+    <%= image_tag(current_user.photo) %>
   </div>
+  <h3><%= current_user.firstname%> <%= current_user.lastname%></h3>
+  <%= link_to 'Éditer mon profil', edit_profile_path, class: 'btn hero-index-button' %>
   <div class="flex-button-body">
     <div class="hero-tabs text-center">
       <div class="hero-tab-relative">
         <% current_user.date_of_birth.strftime("%d/%m/%Y") %>
-          <h2><%= age_count_for(current_user) %></h2>
+          <h2><%= age(current_user) %></h2>
           <p>ans</p>
       </div>
       <div class="hero-tab-relative">
-        <p>Date d'inscription</p>
         <h2><%= current_user.created_at.strftime("%d/%m/%Y") %></h2>
-      </div>
-      <div class="hero-tab-relative" >
-        <h2></h2>
-        <p>Nombre de commentaires laissés</p>
+        <p>Date d'inscription</p>
       </div>
     </div>
   </div>
