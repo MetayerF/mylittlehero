@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_many :created_adventures, class_name: 'Adventure', dependent: :destroy
   has_many :relatives, dependent: :destroy
   has_many :created_heros, class_name: 'Hero', dependent: :destroy
-  has_many :heros, through: :relatives
+  has_many :heros, through: :relatives_
+  has_many :comments, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
