@@ -58,7 +58,9 @@
             </div>
          </div>
          <div class="hero-relative">
-          <%= image_tag @hero.photo %>
+          <%= link_to hero_path(@hero) do %>
+          <%= image_tag @hero.photo, class: "avatar-show-bordered"%>
+          <% end %>
          </div>
          <div class="oncles-tantes-cousins-cousines">
           <div>
