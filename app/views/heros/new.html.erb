@@ -24,9 +24,7 @@
               <h3><strong> Et votre héros ? </strong></h3>
               <div class="col-xs-12 col-md-5">
                 <%= f.input :firstname, label: "il s'appelle ?", input_html: { class: 'input-radius'} %>
-                <%= f.input :lastname, label: 'Et son petit nom ?', input_html: { class: 'input-radius'} %>
                 <%= f.input :nickname, label: 'Son surnom, pour les intimes ?', input_html: { class: 'input-radius'} %>
-                <%= f.input :gender, label: 'Fille ou Garçon', as: :radio_buttons, collection: %w(petite-fille petit-garçon) %>
                 <div class="form-group">
                   <label class="control-label string required" for="adventure_title"><abbr title="required">*</abbr> Sa date de naissance est...</label>
                   <div class='input-group date' id='date_of_birth'>
@@ -36,37 +34,12 @@
                       </span>
                   </div>
                 </div>
-                <%= f.input :place_of_birth, label: 'Son lieu de naissance est...', input_html: { class:  'input-radius'} %>
                 <%= f.input :hour_of_birth, label: 'A quelle heure est-il né ?', input_html: { class: 'input-radius'} %>
-                <%= f.input :astro_sign, label: 'Signe Astrologique', input_html: { class: 'input-radius'} %>
-                <%= f.input :eyes_color, label: 'Couleur des yeux', input_html: { class: 'input-radius'} %>
               </div>
               <div class="col-xs-12 col-md-5 col-md-offset-2">
-                <%= f.input :hair_color, label: 'Couleur des cheveux', input_html: { class: 'input-radius'}%>
-                <%= f.input :size, label: 'Combien mesure t-il ? (en cm)', input_html: { class: 'input-radius'} %>
-                <%= f.input :weight, label: 'Combien pèse t-il ? (en kg)', input_html: { class: 'input-radius'} %>
-                <%= f.input :favorite_toy, label: 'Son jouet préféré ?', input_html: { class: 'input-radius'} %>
-                <%= f.input :favorite_food, label: 'Son aliment préféré ?', input_html: { class: 'input-radius'} %>
-                <%= f.input :first_word, label: 'Son premier mot ?', input_html: { class: 'input-radius'} %>
-                <div class="form-group">
-                  <label class="control-label string" for="adventure_title">Il a eu sa première dent le...</label>
-                  <div class='input-group date' id='first_teeth'>
-                      <input type='text' name="hero[first_teeth]" class="form-control date-radius" />
-                      <span class="input-group-addon glyphicon-radius">
-                          <span class="glyphicon glyphicon-calendar"></span>
-                      </span>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label string required" for="adventure_title"><abbr title="required">*</abbr> Il a fait ses premiers pas le...</label>
-                  <div class='input-group date' id='first_steps'>
-                      <input type='text' name="hero[first_steps]" class="form-control date-radius" />
-                      <span class="input-group-addon glyphicon-radius">
-                          <span class="glyphicon glyphicon-calendar"></span>
-                      </span>
-                  </div>
-                </div>
-                <%= f.input :first_friend, label: 'Le prénom de son premier ami ? ', input_html: { class: 'input-radius'} %>
+                <%= f.input :lastname, label: 'Et son petit nom ?', input_html: { class: 'input-radius'} %>
+                <%= f.input :gender, label: 'Fille ou Garçon', as: :radio_buttons, collection: %w( 👧 👶) %>
+                <%= f.input :place_of_birth, label: 'Il est né(e) à...', input_html: { class:  'input-radius'} %>
               </div>
               <div class="col-xs-12 col-md-12">
                 <%= f.input :photo, label: 'Ajouter une photo de votre héros', label_html: { class: "btn btn-success input-radius" }, input_html: { class: 'js-picture-upload-input-with-preview hidden'} %>
