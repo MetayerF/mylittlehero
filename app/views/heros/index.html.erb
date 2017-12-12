@@ -1,17 +1,46 @@
 <% content_for :title, "Vos héros| MyLittleHero" %>
-
-<div class="hero-index-container">
+<!-- FIRST CONTAINER -->
+<div class="hero-index-title-container">
+  <div class="hero-title">
+    <h2 class= "text-center" >Tous vos Héros </h2>
+    <p class= "text-center"> Une nouvelle arrivée dans votre famille?</p>
+      <div class="text-center">
+          <%= link_to "Un nouveau héros?", new_hero_path, class: "btn hero-index-button" %>
+        </div>
+  </div>
+</div>
+<!-- SECOND CONTAINER -->
+<div class="hero-index-cards-container">
   <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <div class="hero-index-content text-center">
-        <div class="hero-index-photo">
-          <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hero.photo, height: 200 %>');">
+    <div class="hero-index-block">
+      <div class="col-xs-12 col-md-4">
+      <% @heros.each do |hero|%>
+        <div class="hero-index-content text-center">
+          <div class="hero-index-block">
+            <div class="hero-index-photo">
+              <% if hero.photo.blank? %>
+                <%= image_tag("smiling_baby.png", height: 100) %>
+                <% else %>
+                <%= cl_image_tag hero.photo, class: 'avatar-index-badge' %>
+              <% end %>
+            </div>
+            <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
+            <p><%= hero.relatives.count %> </p>
+            <%= link_to  hero_path(hero), class: "btn hero-show-button" do %>
+                <i class="fa fa-eye"></i> <br> profil
+            <% end %>
+            <%= link_to new_hero_adventure_path(hero), class: "btn hero-show-button-two" do %>
+                <i class="fa fa-plus"></i> <br> aventures
+                  <% end %>
           </div>
         </div>
+      <% end %>
       </div>
     </div>
   </div>
 </div>
+
+  <!-- ROW ADD NEW HERO -->
 
 
 

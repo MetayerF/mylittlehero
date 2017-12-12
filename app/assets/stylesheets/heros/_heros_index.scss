@@ -1,14 +1,57 @@
-.hero-index-container{
-  background-color: $blue;
+// FIRST CONTAINER
+
+.hero-title {
+  background-image: url('background6whitegradients.jpg');
+  background-size: cover;
+  h2 {
+  text-shadow: 0.5px 1px 2px $light-gray;
+  font-size: 80px;
+  margin-top: 0px;
+  padding-top: 50px;
+  color: white;
+  }
+  p {
+  font-weight: lighter;
+  color: $darkpink;
+  margin-bottom: 0px;
+  padding-bottom: 40px;
+  }
+}
+
+// SECOND CONTAINER
+.hero-index-cards-container{
+  background-image: url('background6whitegradients.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: space-start;
+  align-items: center;
 }
 .hero-index-content{
-  margin: 50px auto;
-  border-radius: 5px;
+  margin: 50px 80px;
   height: 350px;
   width: 350px;
   background-image: url("badge_hero.png");
   background-size: cover;
-  display:flex;
-  align-items: center;
-  padding: 5px;
 }
+.hero-index-block{
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 180px;
+  h2 {
+    color: $darkblue;
+    font-size: 50px;
+    margin-left: 10px;
+  }
+  p{
+    color: white;
+  }
+}
+.hero-index-photo{
+  margin-top: 52px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+.hero-index-photo:hover{
+  opacity: 1;
+}
+
