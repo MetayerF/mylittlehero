@@ -47,6 +47,87 @@
                   À <%= adventure.location %> le <%= adventure.date %>
                 </p>
               </div>
+              <!-- Comments -->
+                <!-- Contenedor Principal -->
+                  <div class="comments-container">
+                    <h2>Commentaires</h2>
+
+                    <ul id="comments-list" class="comments-list">
+                      <li>
+                        <div class="comment-main-level">
+                          <!-- Avatar -->
+                          <div class="comment-avatar"><img src="" alt=""></div>
+                          <!-- Contenedor del Comentario -->
+                          <div class="comment-box">
+                            <div class="comment-head">
+                              <h6 class="comment-name by-author"><a href="">Pauline Menard</a></h6>
+                              <span>Il y a 20 minutes</span>
+                              <i class="fa fa-reply"></i>
+                              <i class="fa fa-heart"></i>
+                            </div>
+                            <div class="comment-content">
+                              Cette photo est magnifique ! Bravo et surtout, courage à la maman :)
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Réponses des commentaires -->
+                        <ul class="comments-list reply-list">
+                          <li>
+                            <!-- Avatar -->
+                            <div class="comment-avatar"><img src="" alt=""></div>
+                            <!-- Contenedor del Comentario -->
+                            <div class="comment-box">
+                              <div class="comment-head">
+                                <h6 class="comment-name"><a href="">Marraine</a></h6>
+                                <span>Il y a 2 minutes</span>
+                                <i class="fa fa-reply"></i>
+                                <i class="fa fa-heart"></i>
+                              </div>
+                              <div class="comment-content">
+                                <3
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <!-- Avatar -->
+                            <div class="comment-avatar"><img src="" alt=""></div>
+                            <!-- Contenedor del Comentario -->
+                            <div class="comment-box">
+                              <div class="comment-head">
+                                <h6 class="comment-name by-author"><a href="">Arnaud Ménard</a></h6>
+                                <span>Il y a 10 minutes</span>
+                                <i class="fa fa-reply"></i>
+                                <i class="fa fa-heart"></i>
+                              </div>
+                              <div class="comment-content">
+                                Merci :) Elle est de moi :))
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <div class="comment-main-level">
+                          <!-- Avatar -->
+                          <div class="comment-avatar"><img src="" alt=""></div>
+                          <!-- Contenedor del Comentario -->
+                          <div class="comment-box">
+                            <div class="comment-head">
+                              <h6 class="comment-name"><a href="">Papa</a></h6>
+                              <span>Il y a 2 jours</span>
+                              <i class="fa fa-reply"></i>
+                              <i class="fa fa-heart"></i>
+                            </div>
+                            <div class="comment-content">
+                              Super !!
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+              <!-- Comments -->
               <div class="modal-footer text-right">
                 <% if policy(adventure).edit? %>
                   <%= link_to 'Éditer', edit_hero_adventure_path(@hero, adventure), class: 'btn btn-primary modal-btn' %>
