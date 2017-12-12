@@ -1,25 +1,27 @@
 <% content_for :title, 'Créer votre compte MyLittleHero 👶' %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <div class="form-login">
-        <h2 class="text-center">Créer mon compte</h2>
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= f.error_notification %>
+<div class="wrapper background-form-up">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <div class="form-login">
+          <h2 class="text-center schoolbell">Créer mon compte</h2>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= f.error_notification %>
 
-            <div class="form-inputs">
-              <%= f.input :email, required: true, autofocus: true %>
-              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-              <%= f.input :password_confirmation, required: true %>
-            </div>
+              <div class="form-inputs">
+                <%= f.input :email, required: true, autofocus: true, input_html: { class: 'input-blue-background input-radius' }, label_html: { class: 'schoolbell' } %>
+                <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { class: 'input-blue-background input-radius' },label_html: { class: 'schoolbell' } %>
+                <%= f.input :password_confirmation, required: true, input_html: { class: 'input-blue-background input-radius' }, label_html: { class: 'schoolbell' } %>
+              </div>
 
-            <div class="form-actions">
-              <%= f.button :submit, "Sign up" %>
-            </div>
-          <% end %>
+              <div class="form-actions">
+                <%= f.button :submit, "Sign up", class: 'input-radius schoolbell btn btn-success' %>
+              </div>
+            <% end %>
 
-          <%= render "devise/shared/links" %>
+            <%= render "devise/shared/links" %>
+        </div>
       </div>
     </div>
   </div>

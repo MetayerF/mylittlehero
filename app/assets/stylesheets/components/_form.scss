@@ -13,6 +13,33 @@
     width: 100%;
     margin-bottom: 20px
   }
+
+  .schoolbell {
+    font-family: 'Schoolbell', cursive;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  input.form-control.input-blue-background {
+    background-color: #98dff5;
+    border: none;
+    box-shadow: none;
+
+  }
+
+ .input-radius {
+    border-radius: 10px;
+   }
+
+   a {
+    text-decoration: none;
+    font-family: 'Schoolbell', cursive;
+   }
+
+   p {
+    font-family: 'Schoolbell', cursive;
+    font-size: 18px;
+    letter-spacing: 1px;
+   }
 }
 
 
