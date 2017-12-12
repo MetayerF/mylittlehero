@@ -78,3 +78,10 @@
   margin-left: 10px;
   color: $black;
 }
+.hero-destroy-button p{
+  color: white;
+}
+.hero-destroy-button:hover p{
+  text-decoration: none;
+  color: $darkblue;
+}
