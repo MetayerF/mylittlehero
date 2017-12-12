@@ -4,34 +4,18 @@
 
 <div class="wrapper background-form-up">
   <div class="container">
-    <div class="background-color-invitation">
-      <div class="title-one text-center">
-        <h1>Invitez vos proches à rejoindre l'aventure MyLittleHero !</h1>
-      </div>
+    <h1>Invitez vos proches à rejoindre l'aventure MyLittleHero !</h1>
+    <p class="text-center">Envoyez une invitation à une personne de votre famille ou de votre entourage afin que celle-ci puisse avoir accès à l'univers de votre héro. Pour ce faire, rien de plus simple, renseignez son adresse mail ci-dessous ainsi que son "degré" d'autorisation.</p>
 
-      <p class="text-center">Envoyez une invitation à une personne de votre famille ou de votre entourage afin que celle-ci puisse avoir accès à l'univers de votre héro. Pour ce faire, rien de plus simple, renseignez son adresse mail ci-dessous ainsi que son "degré" d'autorisation.</p>
-
-      <div class="form-general">
-
-        <%= simple_form_for @relatives do |f| %>
-        <form>
-        <div class="form-group">
-          <div class="email-invite-form col-xs-8">
-            <input type="email" class="form-control date-radius" placeholder="Entrer l'email de la personne à inviter ">
-          </div>
-          </div>
-          <div class="col-xs-4">
-            <select class="form-control form-control-sm glyphicon-radius">
-            </select>
-          </div>
-        </form>
-      </div>
-      <br>
-      <br>
-      <br>
-      <div class="send-invitation-button">
-      <button type="submit" class="btn btn-success">Envoyer l'invitation</button>
-      </div>
+    <div class="form-general">
+      <%= simple_form_for @relative do |f| %>
+        <%= f.input :email %>
+        <%= f.input :role, collection: Relative::ROLES  %>
+        <%= f.input :family_link, collection: Relative::FAMILY_LINKS %>
+        <%= f.submit class: 'btn btn-success input-radius schoolbell' %>
+      <% end %>
     </div>
-  </div>
+ </div>
 </div>
+
+
