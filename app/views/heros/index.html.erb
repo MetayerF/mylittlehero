@@ -1,47 +1,49 @@
 <% content_for :title, "Vos héros| MyLittleHero" %>
-
-<div class="container">
+<!-- FIRST CONTAINER -->
+<div class="hero-index-title-container">
   <div class="hero-title">
-    <h1 class= "text-center">Vos héros: </h1>
-    <p class= "text-center">Créer et manager vos héros </p>
+    <h2 class= "text-center" >Tous vos Héros </h2>
+    <p class= "text-center"> Une nouvelle arrivée dans votre famille?</p>
+      <div class="text-center">
+          <%= link_to "Un nouveau héros?", new_hero_path, class: "btn hero-index-button" %>
+        </div>
   </div>
-  <div class="hero-category">
-    <h2> Mes héros </h2>
-  </div>
+</div>
+<!-- SECOND CONTAINER -->
+<div class="hero-index-cards-container">
   <div class="row">
-    <% @heros.each do |hero|%>
-    <div class="col-xs-12 col-sm-4">
-      <div class="heros">
-        <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hero.photo, height: 200 %>');">
-          <div class="hero-description">
-            <h1><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h1>
+    <div class="hero-index-block">
+      <div class="col-xs-12 col-md-4">
+      <% @heros.each do |hero|%>
+        <div class="hero-index-content text-center">
+          <div class="hero-index-block">
+            <div class="hero-index-photo">
+              <% if hero.photo.blank? %>
+                <%= image_tag("smiling_baby.png", height: 100) %>
+                <% else %>
+                <%= cl_image_tag hero.photo, class: 'avatar-index-badge' %>
+              <% end %>
+            </div>
+            <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
+            <p><%= hero.relatives.count %> </p>
+            <%= link_to  hero_path(hero), class: "btn hero-show-button" do %>
+                <i class="fa fa-eye"></i> <br> profil
+            <% end %>
+            <%= link_to new_hero_adventure_path(hero), class: "btn hero-show-button-two" do %>
+                <i class="fa fa-plus"></i> <br> aventures
+                  <% end %>
           </div>
-        <div class="hero-age">
-          <p><%= pluralize age_count_for(hero), "mois" %></p>
         </div>
-        <%= link_to hero_adventures_path(hero), class: 'hero-card-link' do %>
-
-        <% end %>
-      </div>
-      <div class="card-footer">
-        <div class="controls">
-          <%= link_to 'Profil', hero_path(hero), class:'btn-success' %>
-          <%= link_to 'Aventures', hero_adventures_path(hero), class:'btn-primary' %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <% end %>
-  <div class="col-xs-12 col-sm-4">
-    <div class="heros">
-      <div class="hero-new  ">
-        <div class="plus-button">
-          <%= link_to new_hero_path do %>
-            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-            <p> Nouveau héro</p>
-          <% end %>
-        </div>
+      <% end %>
       </div>
     </div>
   </div>
 </div>
+
+  <!-- ROW ADD NEW HERO -->
+
+
+
+
+
+

@@ -11,6 +11,9 @@
           <% end %>
           <h2> Le Livre bébé de <%= @hero.firstname.capitalize %></h2>
           <p> Compléter et afficher toutes les informations de votre héros </p>
+          <%= link_to  new_hero_relative_path(@hero), class: "btn hero-show-edit-button" do %>
+            <i class="fa fa-pencil"></i> <br> Editer le Livre de <%= @hero.firstname.capitalize %> <br>
+          <% end %>
         </div>
         <div class="flex-button-body">
           <div class="hero-tabs text-center">

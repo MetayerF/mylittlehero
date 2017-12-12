@@ -1,18 +1,9 @@
 .hero-show-container{
   background-color: $blue;
 }
-.cloud-display{
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-.cloud-display-two{
-  display: flex;
-  justify-content: space-between;
-}
+
 .hero-book-content{
   margin: 50px auto;
-
   border-radius: 5px;
   transition: all 0.4s ease;
   height: 240px;
@@ -53,17 +44,6 @@ color: $darkyellow;
 .hero-image-background p{
   color: $light-gray;
   font-weight: lighter;
-}
-
-// ################ LINE #############\\
-.white-line{
-  background-color: white;
-  height: 30px;
-}
-
-.lightgray-line{
-  background-color: $yellow;
-  height: 10px;
 }
 //************************* TABS ****************//
 .hero-tabs {
