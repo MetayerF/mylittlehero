@@ -1,4 +1,7 @@
 <% content_for :title, 'Voici les information relative à ' + @relative.user.firstname + ' ! | MyLittleHero' %>
+<% content_for :meta_description %>
+<% content_for :meta_image %>
+
   <!-- HEADER -->
   <div class="relative-infos text-center" style="background-image: url('<%= image_path('background1.jpg') %>');">
     <h1>Bienvenue sur le profil de <%= @relative.user.nickname%></h1>

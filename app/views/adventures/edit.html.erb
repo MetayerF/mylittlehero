@@ -1,11 +1,12 @@
-<% content_for :title, "Ajouter une nouvelle aventure 👶 "%>
-
+<% content_for :meta_title, "#{@adventure.title} - MyLittleHero" %>
+<% content_for :meta_description %>
+<% content_for :meta_image %>
 
 <div class="wrapper background-form-up">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-8 col-md-offset-2">
-        <h2 class="text-center">Créer une nouvelle aventure 👶 </h2>
+        <h2 class="text-center">Mettez à jour son aventure 👶 </h2>
         <div class="form-general">
           <%= simple_form_for [@hero, @adventure] do |f| %>
             <div class="row">
