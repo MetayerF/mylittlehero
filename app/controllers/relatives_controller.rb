@@ -1,7 +1,6 @@
 class RelativesController < ApplicationController
   before_action :get_hero, only: [:index, :new]
   def index
-
     @relatives = policy_scope(@hero.relatives)
   end
 

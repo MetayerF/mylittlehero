@@ -9,10 +9,11 @@
         <h1>Invitez vos proches à rejoindre l'aventure MyLittleHero !</h1>
       </div>
 
-      <br>
       <p class="text-center">Envoyez une invitation à une personne de votre famille ou de votre entourage afin que celle-ci puisse avoir accès à l'univers de votre héro. Pour ce faire, rien de plus simple, renseignez son adresse mail ci-dessous ainsi que son "degré" d'autorisation.</p>
-      <br>
+
       <div class="form-general">
+
+        <%= simple_form_for @relatives do |f| %>
         <form>
         <div class="form-group">
           <div class="email-invite-form col-xs-8">
@@ -21,10 +22,6 @@
           </div>
           <div class="col-xs-4">
             <select class="form-control form-control-sm glyphicon-radius">
-              <option>Niveau d'autorisation</option>
-              <option>Administrateur</option>
-              <option>Editeur</option>
-              <option>Spectateur</option>
             </select>
           </div>
         </form>

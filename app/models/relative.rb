@@ -1,6 +1,8 @@
 class Relative < ApplicationRecord
-  FAMILY_LINKS = %w(Mère Père Grand-Père Grand-Mère Frère Soeur Oncle Tante Cousin Cousine Ami(e))
-  belongs_to :user
+  FAMILY_LINKS  = ["parents", "grand-parents", "frères et soeurs", "oncles et tantes", "cousins et cousines", "amis de la famille"]
+  ROLES         = %w(admin editor viewer)
+
+  belongs_to :user, optional: true
   belongs_to :hero
 
   def admin?
