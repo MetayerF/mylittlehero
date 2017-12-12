@@ -1,0 +1,5 @@
+meta_product_name: "My Little Hero"
+meta_title: "My Little Hero - Le livre de bébé qui réunit toute la famille"
+meta_description: "Créer un livre de bébé pour votre enfant, partager le facilement avec tous vos proches uniquement "
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

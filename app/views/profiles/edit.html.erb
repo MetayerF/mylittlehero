@@ -1,23 +1,33 @@
-<% content_for :title, 'Edite ton profile | MyLittleHero' %>
+<% content_for :meta_title, 'Edite ton profile | MyLittleHero' %>
 
-<div class="container">
-  <div class="edit-profile-form-container">
-      <h1 class="text-center">Edite ton profile</h1>
-    <%= simple_form_for @user, url: profile_path do |f| %>
-          <%= f.input :firstname, placeholder: "Prénom" %>
-          <%= f.input :lastname, placeholder: "Nom" %>
-          <%= f.input :nickname, placeholder: "Surnom" %>
-          <%= f.input :date_of_birth, placeholder: "Date de naissance" %>
-          <%= f.input :place_of_birth, placeholder: "Lieu de naissance" %>
-          <%= f.input :gender, placeholder: "sexe" %>
-          <%= f.input :car, placeholder: "Ma voiture actuelle" %>
-          <%= f.input :favorite_song, placeholder: "Ma musique préférée" %>
-          <%= f.input :favorite_movie, placeholder: "Mon film préféré" %>
-          <%= f.input :job, placeholder: "Mon boulot actuel" %>
-          <%= f.input :photo, label_html: { class: "btn btn-default" } %>
-        <div class="col-xs-6 col-sm-4 col-md-4 text-center">
-          <%= f.submit class: 'btn btn-success btn-form' %>
+<div class="wrapper background-form-up">
+  <div class="container">
+    <div class="form-general">
+      <div class="edit-profile-form-container">
+        <div class="row">
+          <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <h1 class="text-center">Edite ton profile</h1>
+            <%= simple_form_for @user, url: profile_path do |f| %>
+              <%= f.input :firstname, placeholder: "Prénom" input_html: {class: 'input-radius '} %>
+              <%= f.input :lastname, placeholder: "Nom" input_html: {class: 'input-radius '} %>
+              <%= f.input :nickname, placeholder: "Surnom" input_html: {class: 'input-radius '} %>
+              <%= f.input :date_of_birth, placeholder: "Date de naissance" input_html: {class: 'input-radius '} %>
+              <%= f.input :place_of_birth, placeholder: "Lieu de naissance" input_html: {class: 'input-radius '} %>
+              <%= f.input :gender, placeholder: "sexe" input_html: {class: 'input-radius '} %>
+              <%= f.input :car, placeholder: "Ma voiture actuelle" input_html: {class: 'input-radius '} %>
+              <%= f.input :favorite_song, placeholder: "Ma musique préférée" input_html: {class: 'input-radius '} %>
+              <%= f.input :favorite_movie, placeholder: "Mon film préféré" input_html: {class: 'input-radius '} %>
+              <%= f.input :job, placeholder: "Mon boulot actuel" input_html: {class: 'input-radius '} %>
+              <%= f.input :photo, label_html: { class: "btn btn-default" } %>
+          </div>
+          <div class="col-xs-6 col-sm-4 col-md-4 text-center">
+            <%= f.submit class: 'btn btn-success schoolbell input-radius' %>
+          </div>
+            <% end %>
+            </div>
+          </div>
         </div>
-    <% end %>
+      </div>
+    </div>
   </div>
 </div>
