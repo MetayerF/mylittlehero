@@ -1,0 +1,83 @@
+<% content_for :meta_title, 'Salut ' + current_user.firstname + ', bienvenue sur ton profil | MyLittleHero' %>
+<% content_for :meta_description %>
+<% content_for :meta_image %>
+
+  <!-- HEADER -->
+<div class="relative-infos text-center" style="background-image: url('<%= image_path('background1.jpg') %>');">
+  <h1>Bienvenue sur ton profil <%= current_user.firstname%> </h1>
+  <div class="relatives-avatar-show text-center">
+    <%= image_tag current_user.photo %>
+    <div class="main-informations-relative">
+      <ul class="list-inline">
+        <li>
+          <h3><%= current_user.firstname%></h3>
+        </li>
+        <li>
+          <h3><%= current_user.lastname%></h3>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex-button-body">
+    <div class="hero-tabs text-center">
+      <div class="hero-tab-relative">
+        <%# current_user.date_of_birth.strftime("%d/%m/%Y") %>
+          <h2><%#= age_count_for(current_user) %></h2>
+          <p><strong>Ans</strong></p>
+      </div>
+      <div class="hero-tab-relative">
+        <p>Date d'inscription</p>
+        <h2><%= current_user.created_at.strftime("%d/%m/%Y") %></h2>
+      </div>
+      <div class="hero-tab-relative" >
+        <h2></h2>
+        <p>Nombre de commentaires laissés</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- HEADER FIN -->
+
+  <!-- TAB -->
+
+  <!-- TAB FIN -->
+  <!-- CLOUDS -->
+<div class="darkblue-background" style="border-top: 5px solid #ebba00;">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="text-center">
+          <div class="hero-book-content text-center">
+            <div class="hero-book-text">
+              <h3> Musique préférée</h3>
+              <p> Ta musique préférée est <strong><%= current_user.favorite_song.capitalize %></strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="text-center">
+          <div class="hero-book-content text-center">
+            <div class="hero-book-text">
+              <h3> Film préféré</h3>
+              <p> Ton film préféré est <strong><%= current_user.favorite_movie.capitalize %></strong>!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="text-center">
+          <div class="hero-book-content text-center">
+            <div class="hero-book-text">
+              <h3>Ton job</h3>
+              <p> Tu es <strong><%= current_user.job %></strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- CLOUDS FIN -->
+
+

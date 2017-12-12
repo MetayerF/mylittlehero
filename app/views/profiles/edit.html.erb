@@ -1,33 +1,58 @@
-<% content_for :meta_title, 'Edite ton profile | MyLittleHero' %>
+<% content_for :meta_title, 'Édite ton profil | MyLittleHero' %>
 
 <div class="wrapper background-form-up">
   <div class="container">
-    <div class="form-general">
-      <div class="edit-profile-form-container">
-        <div class="row">
-          <div class="col-xs-12 col-md-8 col-md-offset-2">
-            <h1 class="text-center">Edite ton profile</h1>
-            <%= simple_form_for @user, url: profile_path do |f| %>
-              <%= f.input :firstname, placeholder: "Prénom" input_html: {class: 'input-radius '} %>
-              <%= f.input :lastname, placeholder: "Nom" input_html: {class: 'input-radius '} %>
-              <%= f.input :nickname, placeholder: "Surnom" input_html: {class: 'input-radius '} %>
-              <%= f.input :date_of_birth, placeholder: "Date de naissance" input_html: {class: 'input-radius '} %>
-              <%= f.input :place_of_birth, placeholder: "Lieu de naissance" input_html: {class: 'input-radius '} %>
-              <%= f.input :gender, placeholder: "sexe" input_html: {class: 'input-radius '} %>
-              <%= f.input :car, placeholder: "Ma voiture actuelle" input_html: {class: 'input-radius '} %>
-              <%= f.input :favorite_song, placeholder: "Ma musique préférée" input_html: {class: 'input-radius '} %>
-              <%= f.input :favorite_movie, placeholder: "Mon film préféré" input_html: {class: 'input-radius '} %>
-              <%= f.input :job, placeholder: "Mon boulot actuel" input_html: {class: 'input-radius '} %>
-              <%= f.input :photo, label_html: { class: "btn btn-default" } %>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-4 text-center">
-            <%= f.submit class: 'btn btn-success schoolbell input-radius' %>
-          </div>
-            <% end %>
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="form-general">
+          <h2 class="text-center">Édite ton profile</h2>
+          <%= simple_form_for @user, url: profile_path do |f| %>
+            <div class="row">
+              <div class="col-xs-12 col-md-5">
+                <%= f.input :firstname, placeholder: "Prénom", input_html: {class: 'input-radius input-blue-background'} %>
+                <%= f.input :lastname, placeholder: "Nom", input_html: {class: 'input-radius input-blue-background'} %>
+                <%= f.input :nickname, placeholder: "Surnom", input_html: {class: 'input-radius input-blue-background'} %>
+                <div class="form-group">
+                  <label class="control-label string required" for="adventure_title"><abbr title="required">*</abbr> Date</label>
+                  <div class='input-group date' id='date'>
+                      <input type='text' name="profil[date]" class="form-control input-blue-background date-radius" />
+                      <span class="input-group-addon input-blue-background glyphicon-radius">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+                </div>
+                <%= f.input :place_of_birth, placeholder: "Lieu de naissance", input_html: {class: 'input-radius input-blue-background'} %>
+                <%= f.input :gender, placeholder: "sexe", input_html: {class: 'input-radius input-blue-background'}, collection: User::GENDERS %>
+              </div>
+              <div class="col-xs-12 col-md-5 col-md-offset-2 ">
+                <%= f.input :car, placeholder: "Ma voiture actuelle", input_html: {class: 'input-radius input-blue-background'} %>
+                <%= f.input :favorite_song, placeholder: "Ma musique préférée", input_html: {class: 'input-radius input-blue-background'} %>
+                <%= f.input :favorite_movie, placeholder: "Mon film préféré", input_html: {class: 'input-radius input-blue-background'} %>
+                <%= f.input :job, placeholder: "Mon boulot actuel", input_html: {class: 'input-radius input-blue-background'} %>
+                <%= f.input :photo, label_html: { class: "btn hero-index-button input-radius" }, input_html: { class: 'js-picture-upload-input-with-preview hidden'} %>
+                <div class="hidden preview-thumbnails js-preview-thumbnails">
+                </div>
+              </div>
             </div>
-          </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <%= f.submit class: 'btn hero-index-button input-radius schoolbell' %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<%= content_for(:after_js) do %>
+  <script type="text/javascript">
+      $(function () {
+          $('#date').datetimepicker({
+              format: "D-M-YYYY"
+            }
+          );
+      });
+  </script>
+<% end %>
