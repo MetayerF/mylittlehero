@@ -1,17 +1,16 @@
 .comments-container {
   background-color: $lightpink;
   // background-image: url('bg-form-down.png');
-  opacity: 0.8;
   margin: 10px;
-  padding: 50px;
+  padding: 10px;
   border-radius: 10px;
   h2 {
   color: $darkpink;
+  text-align: center;
   }
 }
 
 .comments-list {
-  margin: 15px;
   position: relative;
 }
 
@@ -49,7 +48,7 @@
   border-radius: 50%;
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   overflow: hidden;
 }
 
@@ -58,21 +57,10 @@
   height: 100%;
 }
 
-.reply-list .comment-avatar {
-  width: 50px;
-  height: 50px;
+.comment-main-level {
+  padding-bottom: 40px;
 }
 
-.comment-main-level:after {
-  content: '';
-  width: 0;
-  height: 0;
-  display: block;
-  clear: both;
-}
-/**
- * Caja del Comentario
- ---------------------------*/
 .comments-list .comment-box {
   width: 0 auto;
   position: relative;
@@ -81,28 +69,6 @@
   box-shadow: 0 10px 15px rgba(0,0,0,0.15);
 }
 
-.comments-list .comment-box:before, .comments-list .comment-box:after {
-  content: '';
-  height: 0;
-  width: 0;
-  position: absolute;
-  display: block;
-  border-width: 10px 12px 10px 0;
-  border-style: solid;
-  border-color: transparent #FCFCFC;
-  top: 8px;
-  left: -11px;
-}
-
-.comments-list .comment-box:before {
-  border-width: 11px 13px 11px 0;
-  border-color: transparent rgba(0,0,0,0.05);
-  left: -12px;
-}
-
-.reply-list .comment-box {
-  width: 0 auto;
-}
 .comment-box .comment-head {
   background-color: $lightblue;
   padding: 10px 12px;
@@ -112,35 +78,44 @@
   -moz-border-radius: 4px 4px 0 0;
   border-radius: 4px 4px 0 0;
   min-width: 200px;
-}
+  color: blue;
 
-.comment-box .comment-head i {
-  float: right;
-  margin-left: 14px;
-  position: relative;
-  top: 2px;
-  color: #A6A6A6;
-  cursor: pointer;
-  -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-}
+  i {
+    float: right;
+    margin-left: 14px;
+    position: relative;
+    top: 2px;
+    color: #A6A6A6;
+    cursor: pointer;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+  }
 
-.comment-box .comment-head i:hover {
-  color: #03658c;
+  i:hover {
+    color: $darkpink;
+  }
+
+  a {
+    color: $darkblue;
+  }
+
+  a:hover {
+    color: $blue;
+  }
 }
 
 .comment-box .comment-name {
   color: $darkblue;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
   float: left;
   margin-right: 10px;
-}
 
-.comment-box .comment-name a {
-  color: $darkblue;
-  text-decoration: none;
+  a {
+    color: $darkblue;
+    text-decoration: none;
+  }
 }
 
 .comment-box .comment-head span {
@@ -159,20 +134,6 @@
   -webkit-border-radius: 0 0 4px 4px;
   -moz-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
-}
-
-.comment-box .comment-name.by-author, .comment-box .comment-name.by-author a {color: #03658c;}
-.comment-box .comment-name.by-author:after {
-  content: 'Autheur';
-  background: $darkblue;
-  color: #FFF;
-  font-size: 15px;
-  padding: 3px 5px;
-  font-weight: 700;
-  margin-left: 10px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
 }
 
 /** =====================

@@ -4,6 +4,7 @@ class AdventuresController < ApplicationController
 
   def index
     @adventures = policy_scope(@hero.adventures)
+    @comment = Comment.new
   end
 
   def show
