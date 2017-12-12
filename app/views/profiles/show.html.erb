@@ -1,28 +1,29 @@
-<% content_for :title, 'Voici les information relative à ' + @relative.user.firstname + ' ! | MyLittleHero' %>
+<% content_for :meta_title, 'Salut ' + current_user.firstname + ', bienvenue sur ton profil | MyLittleHero' %>
 <% content_for :meta_description %>
 <% content_for :meta_image %>
 
-
 <div class="relative-infos text-center" style="background-image: url('<%= image_path('background1.jpg') %>');">
-  <h1>Bienvenue sur le profil de <%= @relative.user.nickname%></h1>
+  <h1>Bienvenue sur ton espace <%= current_user.firstname%> </h1>
   <div class="relatives-avatar-show">
-    <%= image_tag @relative.user.photo %>
+    <%= image_tag(current_user.photo) %>
   </div>
-  <h3><%= @relative.user.firstname%> <%= @relative.user.lastname %></h3>
+  <h3><%= current_user.firstname%> <%= current_user.lastname%></h3>
+  <%= link_to 'Éditer mon profil', edit_profile_path, class: 'btn hero-index-button' %>
   <div class="flex-button-body">
     <div class="hero-tabs text-center">
       <div class="hero-tab-relative">
-        <% @relative.user.date_of_birth.strftime("%d/%m/%Y") %>
-          <h2><%= age_count_for(@relative) %></h2>
+        <% current_user.date_of_birth.strftime("%d/%m/%Y") %>
+          <h2><%= age(current_user) %></h2>
           <p>ans</p>
       </div>
       <div class="hero-tab-relative">
-        <h2><%= @relative.user.created_at.strftime("%d/%m/%Y") %></h2>
+        <h2><%= current_user.created_at.strftime("%d/%m/%Y") %></h2>
         <p>Date d'inscription</p>
       </div>
     </div>
   </div>
 </div>
+
 
 
 <div class="darkblue-background" style="border-top: 5px solid #ebba00;">
@@ -33,10 +34,10 @@
         <div class="hero-book-content text-center">
           <div class="hero-book-text">
             <h3>Lieu de naissance</h3>
-            <% if @relative.user.gender == 'Femme' %>
-              <p>Elle est née à <strong><%= @relative.user.place_of_birth.capitalize %></strong></p>
+            <% if current_user.gender == 'Femme' %>
+              <p>Tu es née à <strong><%= current_user.place_of_birth.capitalize %></strong></p>
             <% else %>
-              <p> Il est né à <strong><%= @relative.user.place_of_birth.capitalize %></strong></p>
+              <p> Tu es né à <strong><%= current_user.place_of_birth.capitalize %></strong></p>
             <% end %>
           </div>
         </div>
@@ -45,7 +46,7 @@
         <div class="hero-book-content text-center">
           <div class="hero-book-text">
             <h3> Musique préférée</h3>
-            <p> Sa musique préférée est <strong><%= @relative.user.favorite_song.capitalize %></strong></p>
+            <p> Ta musique préférée est <strong><%= current_user.favorite_song.capitalize %></strong></p>
           </div>
         </div>
       </div>
@@ -55,20 +56,20 @@
         <div class="hero-book-content text-center">
           <div class="hero-book-text">
             <h3> Film préféré</h3>
-            <p> Son film préféré est <strong><%= @relative.user.favorite_movie.capitalize %></strong> ! </p>
+            <p> Ton film préféré est <strong><%= current_user.favorite_movie.capitalize %></strong> ! </p>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="hero-book-content text-center">
           <div class="hero-book-text">
-            <h3>Son job</h3>
-            <p> Elle est <strong><%= @relative.user.job %></strong></p>
+            <h3>Job</h3>
+            <p> Tu es <strong><%= current_user.job %></strong></p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-  <!-- CLOUDS FIN -->
+
 

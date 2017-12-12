@@ -1,6 +1,9 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :show]
   skip_after_action :verify_authorized
+
+  def show
+  end
 
   def edit
   end

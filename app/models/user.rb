@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  GENDERS = %w(Homme Femme)
   mount_uploader :photo, PhotoUploader
 
   has_many :created_adventures, class_name: 'Adventure', dependent: :destroy
