@@ -37,7 +37,7 @@
                   </div>
                 </div>
                 <%= f.input :place_of_birth, label: 'Son lieu de naissance est...', input_html: { class:  'input-radius'} %>
-                <%= f.input :hour_of_birth, label: 'A quelle est-il né ?', input_html: { class: 'input-radius'} %>
+                <%= f.input :hour_of_birth, label: 'A quelle heure est-il né ?', input_html: { class: 'input-radius'} %>
                 <%= f.input :astro_sign, label: 'Signe Astrologique', input_html: { class: 'input-radius'} %>
                 <%= f.input :eyes_color, label: 'Couleur des yeux', input_html: { class: 'input-radius'} %>
               </div>
@@ -49,7 +49,7 @@
                 <%= f.input :favorite_food, label: 'Son aliment préféré ?', input_html: { class: 'input-radius'} %>
                 <%= f.input :first_word, label: 'Son premier mot ?', input_html: { class: 'input-radius'} %>
                 <div class="form-group">
-                  <label class="control-label string required" for="adventure_title"><abbr title="required">*</abbr> Il a eu sa première dent le...</label>
+                  <label class="control-label string" for="adventure_title">Il a eu sa première dent le...</label>
                   <div class='input-group date' id='first_teeth'>
                       <input type='text' name="hero[first_teeth]" class="form-control date-radius" />
                       <span class="input-group-addon glyphicon-radius">
@@ -88,21 +88,18 @@
   <script type="text/javascript">
       $(function () {
           $('#date_of_birth').datetimepicker({
-              minDate: moment(),
               format: "D-M-YYYY"
             }
           );
       });
       $(function () {
           $('#first_teeth').datetimepicker({
-              minDate: moment(),
               format: "D-M-YYYY"
             }
           );
       });
       $(function () {
           $('#first_steps').datetimepicker({
-              minDate: moment(),
               format: "D-M-YYYY"
             }
           );

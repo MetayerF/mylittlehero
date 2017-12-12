@@ -13,8 +13,9 @@
 <div class="hero-index-cards-container">
   <div class="row">
     <div class="hero-index-block">
-      <div class="col-xs-12 col-md-4">
+
       <% @heros.each do |hero|%>
+      <div class="col-xs-12 col-md-4">
         <div class="hero-index-content text-center">
           <div class="hero-index-block">
             <div class="hero-index-photo">
@@ -25,17 +26,19 @@
               <% end %>
             </div>
             <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
-            <p><%= hero.relatives.count %> </p>
+            <p><%= hero.relatives.where(user_id: current_user.id).first.role %> </p>
             <%= link_to  hero_path(hero), class: "btn hero-show-button" do %>
                 <i class="fa fa-eye"></i> <br> profil
             <% end %>
             <%= link_to new_hero_adventure_path(hero), class: "btn hero-show-button-two" do %>
                 <i class="fa fa-plus"></i> <br> aventures
-                  <% end %>
+            <% end %>
           </div>
         </div>
-      <% end %>
       </div>
+      <% end %>
+
+
     </div>
   </div>
 </div>
