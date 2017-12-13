@@ -16,9 +16,11 @@ class RelativesController < ApplicationController
 
   def create
     @relative = @hero.relatives.new(relative_params)
-    @user = User.new(user_params)
+    @relative.invitation_status = "pending"
     authorize @relative
+
     if @relative.save
+      flash[:notice] = "Votre invitation a bien été envoyé à #{@relative.email}"
       redirect_to hero_relatives_path
     else
       render :new
@@ -33,11 +35,7 @@ class RelativesController < ApplicationController
   end
 
   def relative_params
-    params.require(:relative).permit(:family_link, :mother_side, :role, :invitation_status, :hero_id, :email)
-  end
-
-  def user_params
-     params.require(:relative).permit(:email)
+    params.require(:relative).permit(:family_link, :mother_side, :role, :email)
   end
 end
 

@@ -14,8 +14,9 @@
         <div class="form-general">
           <%= simple_form_for [@hero, @relative] do |f| %>
             <%= f.input :email %>
-            <%= f.input :role, collection: Relative::ROLES  %>
+            <%= f.input :mother_side, as: :radio_buttons, collection: [['papa', false], ['maman', true]], label: 'Est-ce un proche de.. ' %>
             <%= f.input :family_link, collection: Relative::FAMILY_LINKS %>
+            <%= f.input :role, collection: Relative::ROLES  %>
             <%= f.submit class: 'btn btn-success input-radius schoolbell' %>
           <% end %>
         </div>
