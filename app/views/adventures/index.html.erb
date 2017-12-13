@@ -48,22 +48,32 @@
               <!-- Comments -->
               <div class="comments-container">
                 <%= simple_form_for([adventure, @comment]) do |f| %>
-                  <%= f.input :content %>
-                  <%= f.submit "Poster mon commentaire" %>
+                  <%= f.input :content, label: 'Rédiger un commentaire',as: :text , label_html: { class: 'Schoolbell'}, input_html: {class: ''} %>
+                  <%= f.submit "Poster", {class: 'btn btn-success'} %>
                 <% end %>
                 <h2>Commentaires</h2>
                 <ul id="comments-list" class="comments-list">
                   <% adventure.comments.order(created_at: :desc).each do |comment| %>
                     <li>
                       <div class="comment-main-level">
-                        <div class="comment-avatar">
-                          <%= comment.user.photo %>
-                        </div>
                         <div class="comment-box">
                           <div class="comment-head">
-                            <h6 class="comment-name by-author"></h6>
-                            <span></span>
-                            <i class="fa fa-heart"></i>
+                            <div class="comment-avatar">
+                              <%= link_to hero_relative_path(@hero, @hero.relatives.find_by_user_id(comment.user_id)), class: "relatives-hover" do %>
+                              <%= cl_image_tag comment.user.photo %>
+                              <% end %>
+                            </div>
+                            <h6 class="comment-name by-author">
+                              <%= link_to hero_relative_path(@hero, @hero.relatives.find_by_user_id(comment.user_id)), class: "relatives-hover" do %>
+                                <%= comment.user.firstname.capitalize %> <%= comment.user.lastname.capitalize %>
+                              <% end %>
+                            </h6>
+                            <div class="like-delete">
+                              <i class="fa fa-heart"></i>
+                              <%= link_to adventure_comment_path(adventure, comment), method: :delete do %>
+                                <i class="fa fa-trash-o"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="comment-content">
                             <%= comment.content %>

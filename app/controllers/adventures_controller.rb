@@ -31,6 +31,7 @@ class AdventuresController < ApplicationController
   def edit
   end
 
+
   def update
     @adventure.update(adventure_params)
     if @adventure.save

@@ -79,6 +79,8 @@
   border-radius: 4px 4px 0 0;
   min-width: 200px;
   color: blue;
+  display: flex;
+  align-items: center;
 
   i {
     float: right;
@@ -109,12 +111,12 @@
   color: $darkblue;
   font-size: 25px;
   font-weight: 700;
-  float: left;
   margin-right: 10px;
-
+  flex: 1 1 auto;
   a {
     color: $darkblue;
     text-decoration: none;
+    padding-left: 20px;
   }
 }
 

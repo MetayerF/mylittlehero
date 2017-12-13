@@ -1,18 +1,27 @@
 class CommentsController < ApplicationController
-  skip_after_action :verify_authorized, only: :create
+  skip_after_action :verify_authorized, only: [:create, :destroy]
 
   def create
     @comment = Comment.new(comment_params)
     @adventure = Adventure.find(params[:adventure_id])
     @comment.user = current_user
     @comment.adventure = @adventure
-    @hero = Hero.find(params[:id])
+    @hero = @adventure.hero
     if @comment.save
     flash[:notice] = "Votre commentaire à bien été publié !"
     else
     flash[:alert] = "Votre commentaire n'a pas pu être publié."
     end
-    redirect_to hero_adventure_path(@hero, @adventure)
+    redirect_to hero_adventures_path(@hero, @adventure)
+  end
+
+  def destroy
+    @adventure = Adventure.find(params[:adventure_id])
+    @hero = @adventure.hero
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to hero_adventures_path(@hero, @adventure)
+    flash[:notice] = "Votre commentaire à bien été supprimé."
   end
 
 private
