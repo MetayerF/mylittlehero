@@ -1,0 +1,7 @@
+Bonjour à toi,
+
+Suis tu les aventures de <%= @hero.firstname %> ?
+
+Rendez-vous sur l'adresse suivante pour voir l'invitation :
+
+<%= invitation_hero_relative_url(@hero, @relative.invitation_token) %>

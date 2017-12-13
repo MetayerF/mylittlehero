@@ -1,0 +1,69 @@
+<% content_for :meta_title %>
+<% content_for :meta_description %>
+<% content_for :meta_image %>
+
+<div class="relative-infos text-center" style="background-image: url('<%= image_path('background1.jpg') %>');">
+  <div class="invitation-header">
+    <div class="relatives-avatar-show">
+      <%= image_tag(@relative.inviter.photo) %>
+    </div>
+    <h1>Vous avez reçu une invitation de <%= @relative.inviter.firstname%> <%= @relative.inviter.lastname%></h1>
+  </div>
+</div>
+
+
+
+<div class="darkblue-background" style="border-top: 5px solid #ebba00;">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="invitation" style="background-image: url('<%= image_path('book-baby.png') %>');">
+          <div class= "text-center">
+            <%= image_tag(@hero.photo, class: 'avatar-show-bordered') %>
+            <br>
+            <%= link_to "Le livre de  #{@hero.firstname}" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 white-background-invitation">
+        <div class="invitation-description">
+          <% if @relative.role == 'admin' %>
+            <p class="title">Bienvenue sur <strong>MyLittleHero.fr </strong></p><br>
+            <p>Voici le livre de bébé de <%= @hero.firstname.capitalize %>. Vous pouvez y retrouver toutes ses aventures.</p>
+            <p>Vous avez reçu une invitation en tant qu'administrateur sur le livre d'aventures de <%= @hero.firstname.capitalize %>. Voici la liste des actions que vous pouvez effectuer : </p>
+            <ul>
+              <li>Éditer les informations de <%= @hero.firstname.capitalize %>.</li>
+              <li>Gérer le livre d'aventures de votre héros.</li>
+              <li>Modérer les commentaires liés à une aventure.</li>
+              <li>Gérer les membres de la famille.</li>
+            </ul>
+          <% elsif @relative.role == 'editor' %>
+            <p class="title">Bienvenue sur <strong>MyLittleHero.fr </strong></p><br>
+            <p>Voici le livre de bébé de <%= @hero.firstname.capitalize %>. Vous pouvez y retrouver toutes ses aventures.</p>
+            <p>Vous avez reçu une invitation en tant qu'éditeur sur le livre d'aventures de <%= @hero.firstname.capitalize %>. Voici la liste des actions que vous pouvez effectuer : </p>
+            <ul>
+              <li>Ajouter des aventures au livre de <%= @hero.firstname.capitalize %>.</li>
+              <li>Supprimer les aventures que vous avez ajoutés.</li>
+              <li>Commenter les aventures de votre héros.</li>
+              <li>Éditer vos commentaires.</li>
+              <li>Supprimer vos commentaires.</li>
+            </ul>
+          <% else @relative.role == 'viewer' %>
+            <p class="title">Bienvenue sur <strong>MyLittleHero.fr </strong></p><br>
+            <p>Voici le livre de bébé de <%= @hero.firstname.capitalize %>. Vous pouvez y retrouver toutes ses aventures.</p>
+            <p>Vous avez reçu une invitation en tant que visiteur sur le livre d'aventures de <%= @hero.firstname.capitalize %>. Voici la liste des actions que vous pouvez effectuer : </p>
+            <ul>
+              <li>Consulter toutes les aventures de <%= @hero.firstname.capitalize %>.</li>
+              <li>Commenter les aventures de votre héros.</li>
+              <li>Éditer vos commentaires.</li>
+              <li>Supprimer vos commentaires.</li>
+            </ul>
+          <% end %>
+          <div class="invitation-buttons text-center">
+            <%= link_to "Accepter l'invitation", accept_hero_relative_path(@hero, @relative.invitation_token), class: 'btn btn-info', method: :patch %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

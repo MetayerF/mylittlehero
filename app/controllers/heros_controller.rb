@@ -17,9 +17,15 @@ class HerosController < ApplicationController
 
   def create
     @hero = current_user.created_heros.new(hero_params)
-
     authorize @hero
     if @hero.save
+      @relative = Relative.new(
+        family_link: 'parent',
+        user: current_user,
+        invitation_status: 'accepted',
+        mother_side: (current_user.gender == 'Femme'),
+        role: 'admin'
+       )
       redirect_to @hero
     else
       render :new

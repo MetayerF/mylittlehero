@@ -6,8 +6,7 @@ class Relative < ApplicationRecord
   belongs_to :hero
   belongs_to :inviter, class_name: "User"
 
-  validates_uniqueness_of :invitation_token
-
+  validates :invitation_token, uniqueness: true, allow_nil: true
 
   def admin?
     role == 'admin'

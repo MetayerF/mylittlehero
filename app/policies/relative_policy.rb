@@ -24,15 +24,18 @@ class RelativePolicy < ApplicationPolicy
 
   def destroy?
     relative? && relative.admin?
-
   end
 
-  def accept
-    record.user == user
+  def invitation?
+    record.invitation_status == "pending" && record.user == nil
   end
 
-  def decline
-    record.user == user
+  def accept?
+    record.invitation_status == "pending" && record.user == nil
+  end
+
+  def decline?
+    record.invitation_status == "pending" && record.user == nil
   end
 
   private
@@ -42,6 +45,6 @@ class RelativePolicy < ApplicationPolicy
   end
 
   def relative
-    @relative ||= record.hero.relatives.find_by_user_id(user.id)
+    @relative ||= record.hero.relatives.where(invitation_status: 'accepted').find_by_user_id(user.id)
   end
 end

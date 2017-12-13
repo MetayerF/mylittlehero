@@ -23,7 +23,7 @@
       <div class="dropdown">
         <% if user_signed_in? %>
           <% if current_user.photo.nil? %>
-              <%= image_tag('user.png', class: 'avatar-nav dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
+            <%= image_path('user.png', class: 'avatar-nav dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
           <% elsif %>
             <%= image_tag(current_user.photo, class: 'avatar-nav dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
           <% end %>

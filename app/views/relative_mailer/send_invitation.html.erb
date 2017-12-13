@@ -1,0 +1,13 @@
+<p>
+  Bonjour à toi,
+</p>
+
+<p>
+  Suis tu les aventures de <%= @hero.firstname %> ?
+</p>
+
+<p>
+  Suivez le lien suivant pour voir l'invitation :
+</p>
+
+<%= link_to "voir l'invitation", invitation_hero_relative_url(@hero, @relative.invitation_token) %>
