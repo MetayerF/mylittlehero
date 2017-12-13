@@ -11,12 +11,12 @@
 
               <div class="form-inputs">
                 <%= f.input :email, required: true, autofocus: true, input_html: { class: 'input-blue-background input-radius' }, label_html: { class: 'schoolbell' } %>
-                <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { class: 'input-blue-background input-radius' },label_html: { class: 'schoolbell' } %>
+                <%= f.input :password, required: true, hint: ("Minimun #{@minimum_password_length} caractères" if @minimum_password_length), input_html: { class: 'input-blue-background input-radius' },label_html: { class: 'schoolbell' } %>
                 <%= f.input :password_confirmation, required: true, input_html: { class: 'input-blue-background input-radius' }, label_html: { class: 'schoolbell' } %>
               </div>
 
               <div class="form-actions">
-                <%= f.button :submit, "Sign up", class: 'input-radius schoolbell btn btn-success' %>
+                <%= f.button :submit, "Inscription", class: 'input-radius schoolbell btn btn-success' %>
               </div>
             <% end %>
 

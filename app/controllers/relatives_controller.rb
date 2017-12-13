@@ -1,15 +1,18 @@
 class RelativesController < ApplicationController
+  
   skip_before_action :authenticate_user!, only: [:invitation]
 
   before_action :get_hero
   before_action :get_relative_by_token, only: [:invitation, :accept, :decline]
+
 
   def index
     @relatives = policy_scope(@hero.relatives)
   end
 
   def show
-    @relative = Relative.find(params[:id])
+    @relative = @hero.relatives.find(params[:id])
+    @comments_count = @relative.user.comments.joins(:adventure).where(adventures: { hero_id: @hero.id }).count
     authorize @relative
   end
 

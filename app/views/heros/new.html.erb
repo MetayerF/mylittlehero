@@ -34,20 +34,21 @@
                       </span>
                   </div>
                 </div>
-                <%= f.input :hour_of_birth, label: 'A quelle heure est-il né ?', input_html: { class: 'input-radius'} %>
               </div>
+
               <div class="col-xs-12 col-md-5 col-md-offset-2">
                 <%= f.input :lastname, label: 'Et son petit nom ?', input_html: { class: 'input-radius'} %>
-                <%= f.input :gender, label: 'Fille ou Garçon', as: :radio_buttons, collection: %w( 👧 👶) %>
+                <%= f.input :gender, label: 'Fille ou Garçon', as: :radio_buttons, collection: %w( petite-fille petit-garçon) %>
                 <%= f.input :place_of_birth, label: 'Il est né(e) à...', input_html: { class:  'input-radius'} %>
               </div>
+
               <div class="col-xs-12 col-md-12">
                 <%= f.input :photo, label: 'Ajouter une photo de votre héros', label_html: { class: "btn btn-success input-radius" }, input_html: { class: 'js-picture-upload-input-with-preview hidden'} %>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12 text-center">
-                <%= f.submit class: 'btn btn-success input-radius schoolbell' %>
+                <%= f.submit "Créer mon héros", class: 'btn btn-success input-radius schoolbell' %>
               </div>
             </div>
           <% end %>

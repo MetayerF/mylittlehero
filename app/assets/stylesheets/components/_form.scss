@@ -19,6 +19,7 @@
     font-size: 18px;
     letter-spacing: 1px;
   }
+
   input.form-control.input-blue-background {
     background-color: #98dff5;
     border: none;
@@ -119,8 +120,11 @@
   .glyphicon {
     color: $black;
   }
-
-
 }
 
-
+  #schoolbell {
+    font-family: 'Schoolbell', cursive;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight:100;
+}

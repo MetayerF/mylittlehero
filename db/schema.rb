@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20171213113455) do
     t.index ["user_id"], name: "index_adventures_on_user_id", using: :btree
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.integer  "adventure_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["adventure_id"], name: "index_comments_on_adventure_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
+
   create_table "heros", force: :cascade do |t|
     t.string   "firstname"
     t.string   "lastname"
@@ -109,6 +119,8 @@ ActiveRecord::Schema.define(version: 20171213113455) do
 
   add_foreign_key "adventures", "heros"
   add_foreign_key "adventures", "users"
+  add_foreign_key "comments", "adventures"
+  add_foreign_key "comments", "users"
   add_foreign_key "heros", "users"
   add_foreign_key "photos", "adventures"
   add_foreign_key "relatives", "heros"

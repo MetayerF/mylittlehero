@@ -4,7 +4,8 @@ class Relative < ApplicationRecord
 
   belongs_to :user, optional: true
   belongs_to :hero
-  belongs_to :inviter, class_name: "User"
+
+  belongs_to :inviter, optional: true, class_name: "User"
 
   validates :invitation_token, uniqueness: true, allow_nil: true
 

@@ -9,8 +9,6 @@
   <% adventures_presenter.adventures_groups.each_with_index do |adventures_group, index| %>
     <% grid_rules = adventures_presenter.grid_rules[index] %>
     <% grid_class = grid_rules[:grid_class] %>
-
-
     <div class="<%= grid_class %>">
       <% adventures_group.each_with_index do |adventure, index| %>
         <% styling_rules = grid_rules[:adventures_styling_rules][index] %>
@@ -48,7 +46,52 @@
                 <p>
                   À <%= adventure.location %> le <%= adventure.date %>
                 </p>
+                <% if adventure.comments.count == 0 %>
+                  <p>Il y a actuellement <strong> <%= adventure.comments.count %> </strong> commentaire sur cette photo. Soyez le/la premier(e) !</p>
+                <% else %>
+                  <p> Il y a actuellement <strong> <%= adventure.comments.count %> </strong> commentaires sur cette photo.</p>
+                <% end %>
               </div>
+              <!-- Comments -->
+              <div class="comments-container">
+                <%= simple_form_for([adventure, @comment]) do |f| %>
+                  <%= f.input :content, label: 'Rédiger un commentaire', label_html: { id: 'schoolbell'}, input_html: {class: ''} %>
+                  <%= f.submit "Poster", {class: 'btn btn-success'} %>
+                <% end %>
+                <h2>Commentaires</h2>
+                <ul id="comments-list" class="comments-list">
+                  <% adventure.comments.order(created_at: :desc).each do |comment| %>
+                    <li>
+                      <div class="comment-main-level">
+                        <div class="comment-box">
+                          <div class="comment-head">
+                            <div class="comment-avatar">
+                              <%= link_to hero_relative_path(@hero, @hero.relatives.find_by_user_id(comment.user_id)), class: "relatives-hover" do %>
+                              <%= cl_image_tag comment.user.photo %>
+                              <% end %>
+                            </div>
+                            <h6 class="comment-name by-author">
+                              <%= link_to hero_relative_path(@hero, @hero.relatives.find_by_user_id(comment.user_id)), class: "relatives-hover" do %>
+                                <%= comment.user.firstname.capitalize %> <%= comment.user.lastname.capitalize %>
+                              <% end %>
+                            </h6>
+                            <div class="like-delete">
+                              <i class="fa fa-heart"></i>
+                              <%= link_to adventure_comment_path(adventure, comment), method: :delete do %>
+                                <i class="fa fa-trash-o"></i>
+                              <% end %>
+                            </div>
+                          </div>
+                          <div class="comment-content">
+                            <%= comment.content %>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+              <!-- Comments -->
               <div class="modal-footer text-right">
                 <% if policy(adventure).edit? %>
                   <%= link_to 'Éditer', edit_hero_adventure_path(@hero, adventure), class: 'btn btn-primary modal-btn' %>
