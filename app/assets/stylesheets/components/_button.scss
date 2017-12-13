@@ -1,12 +1,13 @@
 .banner-button {
-  background-color:$yellow;
-  color:$black;
+  background-color: $darkblue;
+  color: white;
   font-weight: bolder;
   margin-top: 30px;
   border-radius: 10px;
+  padding: 10px 20px;
 }
 .banner-button:hover {
-  background-color:$darkblue;
+  background-color: #f5b800;
   color:  white;
   font-weight: bolder;
   margin-top: 30px;
