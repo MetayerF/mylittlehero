@@ -3,14 +3,13 @@ class ProfilesController < ApplicationController
   skip_after_action :verify_authorized
 
   def show
-    if @user.params.nil?
+    if @user.date_of_birth.nil?
       flash[:notice] = "Oups.. Votre profil n'est pas éditer. Merci de l'éditer pour y accéder."
       redirect_to edit_profile_path
     end
   end
 
   def edit
-
   end
 
   def update

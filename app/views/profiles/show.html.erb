@@ -12,11 +12,11 @@
    <%= link_to edit_profile_path, class: "btn btn hero-index-button" do %>
      <i class="fa fa-pencil"></i> <br> Éditer mon profil <br>
   <% end %>
-  
+
   <div class="flex-button-body">
     <div class="hero-tabs text-center">
       <div class="hero-tab-relative">
-        <%= @user.date_of_birth.strftime("%d/%m/%Y") %>
+        <% @user.date_of_birth.strftime("%d/%m/%Y") %>
           <h2><%= age(@user) %></h2>
           <p>ans</p>
       </div>
