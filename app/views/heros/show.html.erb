@@ -78,7 +78,7 @@
       <div class="hero-book-content text-center">
         <div class="hero-book-text">
           <h3> Ma naissance</h3>
-          <p> Je suis né(e) dans dans la jolie ville de <strong><%= @hero.place_of_birth.capitalize %></strong> le <%= @hero.date_of_birth.strftime("%e %B %Y ") %>, c'était un <%= @hero.date_of_birth.strftime("%A") %>. Je suis <%= @hero.astro_sign %></p>
+          <p> Je suis né(e) dans dans la jolie ville de <strong><%= @hero.place_of_birth.capitalize %></strong> le <%= l(@hero.date_of_birth)  %>, c'était un <%= l(@hero.date_of_birth, format: :day) %>. Je suis <%= @hero.astro_sign %></p>
         </div>
       </div>
     </div>
@@ -142,7 +142,7 @@
         <div class="hero-book-text">
           <h3> Premiers pas </h3>
           <% if !@hero.first_steps.nil? %>
-            <p> Depuis le <%= @hero.first_steps.strftime("%e %B %Y ") %>, <strong>je marche!</strong> Attention aux chutes .</p>
+            <p> Depuis le <%= l(@hero.first_steps) %>, <strong>je marche!</strong> Attention aux chutes .</p>
           <% end %>
         </div>
       </div>
@@ -162,7 +162,7 @@
         <div class="hero-book-text">
           <h3> Premières dents</h3>
           <% if !@hero.first_teeth.nil? %>
-          <p> Depuis le <%= @hero.first_teeth.strftime("%e %B %Y ") %> mes dents poussent. J'ai déjà <strong><%= pluralize @hero.number_of_tooth, "dent" %> </strong> qui ont poussé.</p>
+          <p> Depuis le <%= l(@hero.first_teeth) %> mes dents poussent. J'ai déjà <strong><%= pluralize @hero.number_of_tooth, "dent" %> </strong> qui ont poussé.</p>
           <% end %>
         </div>
       </div>

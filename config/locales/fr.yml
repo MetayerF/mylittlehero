@@ -1,0 +1,37 @@
+fr:
+  date:
+    formats:
+      default: "%e %B %Y"
+      day: "%A"
+
+  activerecord:
+    models:
+      hero: "Héros"
+    attributes:
+      hero:
+        firstame: "Prénom"
+        lastname: "Nom"
+      user:
+        email: "Email"
+        firstname: "Prénom"
+        lastname: "Nom"
+        nickname: "Surnom"
+        place_of_birth: "Date de naisssance"
+        gender: "Genre"
+        car: "Voiture"
+        favorite_song: "Musique préférée"
+        favorite_movie: "Film préféré"
+        job: "Travail"
+      relative:
+        family_link: "Lien de parenté"
+        role: "Rôle"
+      adventure:
+        title: "Titre"
+        description: "Description"
+        location: "Lieu"
+      photo:
+        picture: "Photo"
+
+
+
+
