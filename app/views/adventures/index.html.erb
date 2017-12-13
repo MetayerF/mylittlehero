@@ -44,8 +44,13 @@
                 <%= cl_image_tag adventure.photos.first.picture, class: 'current-adventure-img' %>
                 <p><%= adventure.description %></p>
                 <p>
-                  À <%= adventure.location %> le <%= adventure.date %> <%= adventure.comments.count %>
+                  À <%= adventure.location %> le <%= adventure.date %>
                 </p>
+                <% if adventure.comments.count == 0 %>
+                  <p>Il y a actuellement <strong> <%= adventure.comments.count %> </strong> commentaire sur cette photo. Soyez le/la premier(e) !</p>
+                <% else %>
+                  <p> Il y a actuellement <strong> <%= adventure.comments.count %> </strong> commentaires sur cette photo.</p>
+                <% end %>
               </div>
               <!-- Comments -->
               <div class="comments-container">
