@@ -27,11 +27,11 @@
           <% else %>
             <%= cl_image_tag(current_user.photo, class: 'avatar-nav dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
           <% end %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><%= link_to 'Mon profil', profile_path %></li>
+          <li><%= link_to 'Déconnexion',  destroy_user_session_path, method: :delete %></li>
+        </ul>
         <% else %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><%= link_to 'Mon profil', profile_path %></li>
-            <li><%= link_to 'Déconnexion',  destroy_user_session_path, method: :delete %></li>
-          </ul>
         <% end %>
       </div>
     </div>
