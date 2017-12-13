@@ -18,10 +18,16 @@
 
 .avatar-show-bordered {
   margin-top: 20px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid $blue;
+}
+.avatar-index-badge{
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  border: $yellow 10px solid;
+  margin-left: 20px;
 }
 
 .avatar-bordered {

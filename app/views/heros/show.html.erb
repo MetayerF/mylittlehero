@@ -11,6 +11,9 @@
           <% end %>
           <h2> Le Livre bébé de <%= @hero.firstname.capitalize %></h2>
           <p> Compléter et afficher toutes les informations de votre héros </p>
+          <%= link_to  edit_hero_path(@hero), class: "btn hero-show-edit-button" do %>
+            <i class="fa fa-pencil"></i> <br> Editer le Livre de <%= @hero.firstname.capitalize %> <br>
+          <% end %>
         </div>
         <div class="flex-button-body">
           <div class="hero-tabs text-center">
@@ -22,10 +25,17 @@
                 <% end %>
               </div>
               <div class="hero-tab">
-                <%= link_to  hero_adventures_path(@hero) do %>
-                <h2><%= @hero.adventures.count %></h2>
-                  <p>Aventures</p>
+                <% if @hero.adventures.nil? %>
+                  <%= link_to new_hero_adventure_path(@hero) do %>
+                    <h2><%= @hero.adventures.count %></h2>
+                    <p>Aventures</p>
                   <% end %>
+                <% else %>
+                  <%= link_to hero_adventures_path(@hero) do %>
+                    <h2><%= @hero.adventures.count %></h2>
+                    <p>Aventures</p>
+                  <% end %>
+                <% end %>
               </div>
             </div>
 
@@ -59,7 +69,7 @@
       <div class="hero-book-content text-center">
         <div class="hero-book-text">
           <h3> Le petit héro </h3>
-          <p> Je m'appelle <strong><%= @hero.firstname.capitalize %> <%= @hero.lastname.capitalize %></strong>, mais ma famille me surnomme <%= @hero.nickname.capitalize %>.</p>
+          <p> Je m'appelle <strong><%= @hero.firstname.capitalize %> <%= @hero.lastname.capitalize %></strong>, mais ma famille me surnomme <strong><%= @hero.nickname.capitalize %></strong>.</p>
         </div>
       </div>
     </div>
@@ -131,7 +141,9 @@
       <div class="hero-book-content text-center">
         <div class="hero-book-text">
           <h3> Premiers pas </h3>
-          <p> Depuis le <%= @hero.first_steps.strftime("%e %B %Y ") %>, <strong>je marche!</strong> Attention aux chutes .</p>
+          <% if !@hero.first_steps.nil? %>
+            <p> Depuis le <%= @hero.first_steps.strftime("%e %B %Y ") %>, <strong>je marche!</strong> Attention aux chutes .</p>
+          <% end %>
         </div>
       </div>
     </div>
@@ -149,7 +161,9 @@
       <div class="hero-book-content text-center">
         <div class="hero-book-text">
           <h3> Premières dents</h3>
+          <% if !@hero.first_teeth.nil? %>
           <p> Depuis le <%= @hero.first_teeth.strftime("%e %B %Y ") %> mes dents poussent. J'ai déjà <strong><%= pluralize @hero.number_of_tooth, "dent" %> </strong> qui ont poussé.</p>
+          <% end %>
         </div>
       </div>
     </div>

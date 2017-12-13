@@ -1,26 +1,18 @@
 .hero-show-container{
   background-color: $blue;
 }
-.cloud-display{
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-.cloud-display-two{
-  display: flex;
-  justify-content: space-between;
-}
+
 .hero-book-content{
   margin: 50px auto;
-
   border-radius: 5px;
   transition: all 0.4s ease;
   height: 240px;
   width: 380px;
-  background-image: url("cloud_solo.png");
+  background-image: asset-url("cloud_solo.png");
   background-size: cover;
   display:flex;
   align-items: center;
+  justify-content: space-around;
   padding: 5px;
 }
 .hero-book-content:hover{
@@ -38,9 +30,8 @@ color: $darkyellow;
   font-size: 15px;
 }
 .hero-image-background{
-  background-color: $lightpink;
   height: 500px;
-  background-image: url('background1.jpg');
+  background-image: asset-url('background1.jpg');
   background-size: cover;
 }
 .hero-image-background h2 {
@@ -54,22 +45,11 @@ color: $darkyellow;
   color: $light-gray;
   font-weight: lighter;
 }
-
-// ################ LINE #############\\
-.white-line{
-  background-color: white;
-  height: 30px;
-}
-
-.lightgray-line{
-  background-color: $yellow;
-  height: 10px;
-}
 //************************* TABS ****************//
 .hero-tabs {
   flex:1 0 60vw;
   padding-top: 0px;
-  background-image: url('background1.jpg');
+  background-image: asset-url('background1.jpg');
   background-size: cover;
   display: flex;
   text-decoration: none;

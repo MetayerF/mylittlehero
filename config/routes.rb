@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
     resources :relatives do
       member do
+        get :invitation
         patch :accept
         patch :decline
       end
