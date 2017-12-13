@@ -15,7 +15,6 @@ Rails.application.routes.draw do
       member do
         get :invitation
         patch :accept
-        patch :decline
       end
     end
   end

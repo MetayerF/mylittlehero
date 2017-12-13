@@ -42,6 +42,6 @@ class AdventurePolicy < ApplicationPolicy
   end
 
   def relative
-    @relative ||= record.hero.relatives.find_by_user_id(user.id)
+    @relative ||= record.hero.relatives.where(invitation_status: 'accepted').find_by_user_id(user.id)
   end
 end

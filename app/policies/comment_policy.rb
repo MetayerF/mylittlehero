@@ -36,6 +36,6 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def relative
-    @relative ||= record.adventure.hero.relatives.find_by_user_id(user.id)
+    @relative ||= record.adventure.hero.relatives.where(invitation_status: 'accepted').find_by_user_id(user.id)
   end
 end

@@ -102,3 +102,59 @@
   text-decoration: none;
 }
 
+
+// Invitation page
+
+.invitation-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 280px;
+
+  .relatives-avatar-show {
+    margin-top: 20px
+  }
+}
+
+
+.invitation {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80vh;
+  background-size: contain;
+  background-position: center;
+  min-height: 600px;
+  background-repeat: no-repeat;
+
+  .avatar-show-bordered {
+    border: 10px solid $lightblue;
+    margin-bottom: 40px;
+    margin-left: 30px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $black;
+    font-size: 18px;
+    font-size: 30px;
+    font-family: 'Grand Hotel', cursive;
+    margin-top: 30px;
+
+  }
+}
+
+.invitation-description {
+  margin-top: 45px;
+
+
+  .invitation-buttons {
+    margin-top: 45px;
+  }
+
+  .title {
+    font-size: 30px
+  }
+}
+
+
