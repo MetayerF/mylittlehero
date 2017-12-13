@@ -16,7 +16,7 @@ class RelativesController < ApplicationController
 
   def create
     @relative = @hero.relatives.new(relative_params)
-    @relative.user = current_user
+    @user = User.new(user_params)
     authorize @relative
     if @relative.save
       redirect_to hero_relatives_path
@@ -33,7 +33,11 @@ class RelativesController < ApplicationController
   end
 
   def relative_params
-    params.require(:relative).permit(:family_link, :mother_side, :role, :invitation_status, :user_id, :hero_id)
+    params.require(:relative).permit(:family_link, :mother_side, :role, :invitation_status, :hero_id, :email)
+  end
+
+  def user_params
+     params.require(:relative).permit(:email)
   end
 end
 
