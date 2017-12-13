@@ -38,7 +38,7 @@
 
               <div class="col-xs-12 col-md-5 col-md-offset-2">
                 <%= f.input :lastname, label: 'Et son petit nom ?', input_html: { class: 'input-radius'} %>
-                <%= f.input :gender, label: 'Fille ou Garçon', as: :radio_buttons, collection: %w( 👧 👶) %>
+                <%= f.input :gender, label: 'Fille ou Garçon', as: :radio_buttons, collection: %w( petite-fille petit-garçon) %>
                 <%= f.input :place_of_birth, label: 'Il est né(e) à...', input_html: { class:  'input-radius'} %>
               </div>
 
