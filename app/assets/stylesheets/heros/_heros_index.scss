@@ -28,13 +28,6 @@
   border-top: 5px solid $darkblue;
 
 }
-.hero-index-content{
-  margin: 90px 80px;
-  height: 350px;
-  width: 350px;
-  background-image: asset-url("badge_hero.png");
-  background-size: cover;
-}
 
 .heros-index {
   justify-content: center;
@@ -47,6 +40,7 @@
 .hero-index-block{
   display: inline-block;
   vertical-align: middle;
+  margin-top: 10px;
 
   h2 {
     color: $darkblue;
@@ -58,12 +52,23 @@
   }
 }
 .hero-index-photo{
-  margin-top: 52px;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-.hero-index-photo:hover{
-  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 350px;
+  width: 350px;
+  background-image: asset-url("badge_hero.png");
+  background-size: cover;
+
+  img {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+
+    &:hover{
+      opacity: 1;
+    }
+  }
 }
 
 // TABS

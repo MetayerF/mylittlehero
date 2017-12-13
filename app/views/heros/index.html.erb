@@ -19,152 +19,29 @@
     <div class="heros-index">
 
       <% @heros.each do |hero|%>
-      <div class="col-xs-12 col-md-4">
-        <div class="hero-index-content text-center">
-          <div class="hero-index-block">
-            <div class="hero-index-photo">
-              <%= link_to hero_adventures_path(hero) do %>
-                <% if hero.photo.blank? %>
-                  <%= image_tag("smiling_baby.png", height: 100) %>
-                <% else %>
-                  <%= cl_image_tag hero.photo, class: 'avatar-index-badge' %>
+        <div class="col-xs-12 col-md-4">
+          <div class="hero-index-content text-center">
+            <div class="hero-index-block">
+              <div class="hero-index-photo">
+                <%= link_to hero_adventures_path(hero) do %>
+                  <% if hero.photo.blank? %>
+                    <%= image_tag("smiling_baby.png", height: 300) %>
+                  <% else %>
+                    <%= cl_image_tag hero.photo, height: 300, class: 'avatar-index-badge' %>
+                  <% end %>
                 <% end %>
+              </div>
+              <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
+              <p><%= hero.relatives.where(user_id: current_user.id).first.role %> </p>
+              <%= link_to  hero_path(hero), class: "btn hero-show-button" do %>
+                  <i class="fa fa-eye"></i> <br> profil
+              <% end %>
+              <%= link_to new_hero_adventure_path(hero), class: "btn hero-show-button-two" do %>
+                  <i class="fa fa-plus"></i> <br> aventures
               <% end %>
             </div>
-            <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
-            <p><%= hero.relatives.where(user_id: current_user.id).first.role %> </p>
-            <%= link_to  hero_path(hero), class: "btn hero-show-button" do %>
-                <i class="fa fa-eye"></i> <br> profil
-            <% end %>
-            <%= link_to new_hero_adventure_path(hero), class: "btn hero-show-button-two" do %>
-                <i class="fa fa-plus"></i> <br> aventures
-            <% end %>
           </div>
         </div>
-      </div>
-
-      <div class="col-xs-12 col-md-4">
-        <div class="hero-index-content text-center">
-          <div class="hero-index-block">
-            <div class="hero-index-photo">
-              <%= link_to hero_adventures_path(hero) do %>
-                <% if hero.photo.blank? %>
-                  <%= image_tag("smiling_baby.png", height: 100) %>
-                <% else %>
-                  <%= cl_image_tag hero.photo, class: 'avatar-index-badge' %>
-                <% end %>
-              <% end %>
-            </div>
-            <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
-            <p><%= hero.relatives.where(user_id: current_user.id).first.role %> </p>
-            <%= link_to  hero_path(hero), class: "btn hero-show-button" do %>
-                <i class="fa fa-eye"></i> <br> profil
-            <% end %>
-            <%= link_to new_hero_adventure_path(hero), class: "btn hero-show-button-two" do %>
-                <i class="fa fa-plus"></i> <br> aventures
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-md-4">
-        <div class="hero-index-content text-center">
-          <div class="hero-index-block">
-            <div class="hero-index-photo">
-              <%= link_to hero_adventures_path(hero) do %>
-                <% if hero.photo.blank? %>
-                  <%= image_tag("smiling_baby.png", height: 100) %>
-                <% else %>
-                  <%= cl_image_tag hero.photo, class: 'avatar-index-badge' %>
-                <% end %>
-              <% end %>
-            </div>
-            <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
-            <p><%= hero.relatives.where(user_id: current_user.id).first.role %> </p>
-            <%= link_to  hero_path(hero), class: "btn hero-show-button" do %>
-                <i class="fa fa-eye"></i> <br> profil
-            <% end %>
-            <%= link_to new_hero_adventure_path(hero), class: "btn hero-show-button-two" do %>
-                <i class="fa fa-plus"></i> <br> aventures
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="hero-index-content text-center">
-          <div class="hero-index-block">
-            <div class="hero-index-photo">
-              <%= link_to hero_adventures_path(hero) do %>
-                <% if hero.photo.blank? %>
-                  <%= image_tag("smiling_baby.png", height: 100) %>
-                <% else %>
-                  <%= cl_image_tag hero.photo, class: 'avatar-index-badge' %>
-                <% end %>
-              <% end %>
-            </div>
-            <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
-            <p><%= hero.relatives.where(user_id: current_user.id).first.role %> </p>
-            <%= link_to  hero_path(hero), class: "btn hero-show-button" do %>
-                <i class="fa fa-eye"></i> <br> profil
-            <% end %>
-            <%= link_to new_hero_adventure_path(hero), class: "btn hero-show-button-two" do %>
-                <i class="fa fa-plus"></i> <br> aventures
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-xs-12 col-md-4">
-        <div class="hero-index-content text-center">
-          <div class="hero-index-block">
-            <div class="hero-index-photo">
-              <%= link_to hero_adventures_path(hero) do %>
-                <% if hero.photo.blank? %>
-                  <%= image_tag("smiling_baby.png", height: 100) %>
-                <% else %>
-                  <%= cl_image_tag hero.photo, class: 'avatar-index-badge' %>
-                <% end %>
-              <% end %>
-            </div>
-            <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
-            <p><%= hero.relatives.where(user_id: current_user.id).first.role %> </p>
-            <%= link_to  hero_path(hero), class: "btn hero-show-button" do %>
-                <i class="fa fa-eye"></i> <br> profil
-            <% end %>
-            <%= link_to new_hero_adventure_path(hero), class: "btn hero-show-button-two" do %>
-                <i class="fa fa-plus"></i> <br> aventures
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-
-<div class="col-xs-12 col-md-4">
-        <div class="hero-index-content text-center">
-          <div class="hero-index-block">
-            <div class="hero-index-photo">
-              <%= link_to hero_adventures_path(hero) do %>
-                <% if hero.photo.blank? %>
-                  <%= image_tag("smiling_baby.png", height: 100) %>
-                <% else %>
-                  <%= cl_image_tag hero.photo, class: 'avatar-index-badge' %>
-                <% end %>
-              <% end %>
-            </div>
-            <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
-            <p><%= hero.relatives.where(user_id: current_user.id).first.role %> </p>
-            <%= link_to  hero_path(hero), class: "btn hero-show-button" do %>
-                <i class="fa fa-eye"></i> <br> profil
-            <% end %>
-            <%= link_to new_hero_adventure_path(hero), class: "btn hero-show-button-two" do %>
-                <i class="fa fa-plus"></i> <br> aventures
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-
       <% end %>
     </div>
   </div>
