@@ -1,7 +1,7 @@
 // FIRST CONTAINER
 
 .hero-title {
-  background-image: url('background6whitegradients.jpg');
+  background-image: asset-url('background6whitegradients.jpg');
   background-size: cover;
   h2 {
   text-shadow: 0.5px 1px 2px $light-gray;
@@ -20,7 +20,7 @@
 
 // SECOND CONTAINER
 .hero-index-cards-container{
-  background-image: url('background6whitegradients.jpg');
+  background-image: asset-url('background6whitegradients.jpg');
   background-size: cover;
 
 }
@@ -28,7 +28,7 @@
   margin: 90px 80px;
   height: 350px;
   width: 350px;
-  background-image: url("badge_hero.png");
+  background-image: asset-url("badge_hero.png");
   background-size: cover;
 }
 .hero-index-block{

@@ -8,7 +8,7 @@
   transition: all 0.4s ease;
   height: 240px;
   width: 380px;
-  background-image: url("cloud_solo.png");
+  background-image: asset-url("cloud_solo.png");
   background-size: cover;
   display:flex;
   align-items: center;
@@ -30,9 +30,8 @@ color: $darkyellow;
   font-size: 15px;
 }
 .hero-image-background{
-  background-color: $lightpink;
   height: 500px;
-  background-image: url('background1.jpg');
+  background-image: asset-url('background1.jpg');
   background-size: cover;
 }
 .hero-image-background h2 {
@@ -50,7 +49,7 @@ color: $darkyellow;
 .hero-tabs {
   flex:1 0 60vw;
   padding-top: 0px;
-  background-image: url('background1.jpg');
+  background-image: asset-url('background1.jpg');
   background-size: cover;
   display: flex;
   text-decoration: none;
