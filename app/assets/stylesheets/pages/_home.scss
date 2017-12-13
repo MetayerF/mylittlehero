@@ -13,16 +13,15 @@
 
 
 .banner-content h1 {
-  color: $black;
+  color: #f19e70;
   font-size: 100px;
   text-shadow: 1px 2px 3px $dark-gray;
   font-family: 'Grand Hotel', cursive;
 }
 
 .banner-content {
-  color: $black;
   background-image: asset-url('badge_home.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   padding: 100px;
   display:flex;
