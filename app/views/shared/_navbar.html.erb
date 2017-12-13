@@ -22,16 +22,16 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <% if user_signed_in? %>
-          <% if current_user.photo.nil? %>
-            <%= image_path('user.png', class: 'avatar-nav dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
-          <% elsif %>
-            <%= image_tag(current_user.photo, class: 'avatar-nav dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
+          <% if current_user.photo.url.nil? %>
+            <%= image_tag('user.png', class: 'avatar-nav dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
+          <% else %>
+            <%= cl_image_tag(current_user.photo, class: 'avatar-nav dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
           <% end %>
+        <% else %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li><%= link_to 'Mon profil', profile_path %></li>
             <li><%= link_to 'Déconnexion',  destroy_user_session_path, method: :delete %></li>
           </ul>
-        <% else %>
         <% end %>
       </div>
     </div>
