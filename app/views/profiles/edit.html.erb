@@ -22,7 +22,7 @@
                   </div>
                 </div>
                 <%= f.input :place_of_birth, placeholder: "Lieu de naissance", input_html: {class: 'input-radius input-blue-background'} %>
-                <%= f.input :gender, placeholder: "sexe", input_html: {class: 'input-radius input-blue-background'}, collection: User::GENDERS %>
+                <%= f.input  :gender, placeholder: "sexe", input_html: {class: 'input-radius input-blue-background'}, collection: User::GENDERS %>
               </div>
               <div class="col-xs-12 col-md-5 col-md-offset-2 ">
                 <%= f.input :car, placeholder: "Ma voiture actuelle", input_html: {class: 'input-radius input-blue-background'} %>
@@ -36,7 +36,7 @@
             </div>
             <div class="row">
               <div class="col-xs-12 text-center">
-                <%= f.submit class: 'btn hero-index-button input-radius schoolbell' %>
+                <%= f.submit "Modifier votre profil", class: 'btn hero-index-button input-radius schoolbell' %>
               </div>
             </div>
           <% end %>
