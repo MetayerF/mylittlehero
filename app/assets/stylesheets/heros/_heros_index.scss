@@ -1,18 +1,21 @@
 // FIRST CONTAINER
 
+
 .hero-title {
-  background-image: asset-url('background6whitegradients.jpg');
-  background-size: cover;
+  // background-image: asset-url('background6whitegradients.jpg');
+  // background-size: cover;
+  background-color: white;
+  padding-bottom: 45px;
+
   h2 {
-  text-shadow: 0.5px 1px 2px $light-gray;
   font-size: 80px;
   margin-top: 0px;
   padding-top: 50px;
-  color: white;
+  color: $darkblue;
   }
   p {
   font-weight: lighter;
-  color: $darkpink;
+  color: $darkblue;
   margin-bottom: 0px;
   padding-bottom: 40px;
   }
@@ -22,6 +25,7 @@
 .hero-index-cards-container{
   background-image: asset-url('background6whitegradients.jpg');
   background-size: cover;
+  border-top: 5px solid $darkblue;
 
 }
 .hero-index-content{
@@ -31,10 +35,19 @@
   background-image: asset-url("badge_hero.png");
   background-size: cover;
 }
+
+.heros-index {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 180px;
+}
+
 .hero-index-block{
   display: inline-block;
   vertical-align: middle;
-  margin-bottom: 180px;
+
   h2 {
     color: $darkblue;
     font-size: 50px;
@@ -53,3 +66,29 @@
   opacity: 1;
 }
 
+// TABS
+.hero-index-tabs {
+  background-color: white;
+  flex:1 0 60vw;
+  padding-top: 0px;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+}
+.hero-index-tab a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.hero-index-tab {
+  background-color: $darkblue;
+  border-radius: 10px 10px 0 0 ;
+  width: 20vw;
+  margin: 0;
+  padding: 20px 10px;
+  transition: all 0.3s ease;
+}
+.hero-index-tab:hover {
+  background-color: $yellow;
+}

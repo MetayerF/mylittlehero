@@ -14,17 +14,26 @@
 
 .banner-content h1 {
   color: $black;
-  font-size: 80px;
+  font-size: 100px;
   text-shadow: 1px 2px 3px $dark-gray;
-  letter-spacing: 5px;
-  font-family: 'Schoolbell', cursive;
+  font-family: 'Grand Hotel', cursive;
 }
 
 .banner-content {
   color: $black;
+  background-image: asset-url('badge_home.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 100px;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 100px;
 }
 
 .banner-content p {
+  font-weight: lighter;
+  color: $light-gray;
   font-size: 25px;
   letter-spacing: 2px;
   margin-top: 30px;
@@ -37,6 +46,7 @@
 .features-card {
   margin-top: 100px;
   margin-bottom: 50px;
+  border-radius: 10px;
   height: 400px;
   width: 300px;
   background-color: $lightblue;

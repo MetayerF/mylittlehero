@@ -2,8 +2,15 @@
   background-color:$yellow;
   color:$black;
   font-weight: bolder;
-  margin-top: 100px;
-
+  margin-top: 30px;
+  border-radius: 10px;
+}
+.banner-button:hover {
+  background-color:$darkblue;
+  color:  white;
+  font-weight: bolder;
+  margin-top: 30px;
+  border-radius: 10px;
 }
 
 .hero-show-button {
@@ -56,8 +63,8 @@
   background-color:$darkblue;
   color: white;
   font-weight: bolder;
-  border-radius: 10px;
-  margin-top: 20px;
+  border-radius: 10px 10px 0 0;
+  margin-top: 90px;
   width: 300px;
   transition: margin 0.3s ease;
 
@@ -67,7 +74,7 @@
 }
 .hero-show-edit-button:hover{
   background-color:$lightyellow;
-  margin-top: 0px;
+  margin-top: 62px;
 }
 
 .modal-btn {
