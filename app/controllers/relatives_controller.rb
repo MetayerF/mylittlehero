@@ -19,7 +19,7 @@ class RelativesController < ApplicationController
     @relative.user = current_user
     authorize @relative
     if @relative.save
-      redirect_to _path
+      redirect_to hero_relatives_path
     else
       render :new
     end

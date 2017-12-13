@@ -4,18 +4,24 @@
 
 <div class="wrapper background-form-up">
   <div class="container">
-    <h1>Invitez vos proches à rejoindre l'aventure MyLittleHero !</h1>
-    <p class="text-center">Envoyez une invitation à une personne de votre famille ou de votre entourage afin que celle-ci puisse avoir accès à l'univers de votre héro. Pour ce faire, rien de plus simple, renseignez son adresse mail ci-dessous ainsi que son "degré" d'autorisation.</p>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <h1 class="text-center">Invitez vos proches à rejoindre l'aventure MyLittleHero !</h1>
+        <div class="text-center">
+          <p class="text-justify">Envoyez une invitation à une personne de votre famille ou de votre entourage afin que celle-ci puisse avoir accès à l'univers de votre héro. Pour ce faire, rien de plus simple, renseignez son adresse mail ci-dessous ainsi que son "degré" d'autorisation.</p>
+        </div>
 
-    <div class="form-general">
-      <%= simple_form_for @relative do |f| %>
-        <%= f.input :email %>
-        <%= f.input :role, collection: Relative::ROLES  %>
-        <%= f.input :family_link, collection: Relative::FAMILY_LINKS %>
-        <%= f.submit class: 'btn btn-success input-radius schoolbell' %>
-      <% end %>
+        <div class="form-general">
+          <%= simple_form_for [@hero, @relative] do |f| %>
+            <%= f.input :email %>
+            <%= f.input :role, collection: Relative::ROLES  %>
+            <%= f.input :family_link, collection: Relative::FAMILY_LINKS %>
+            <%= f.submit class: 'btn btn-success input-radius schoolbell' %>
+          <% end %>
+        </div>
+      </div>
     </div>
- </div>
+  </div>
 </div>
 
 
