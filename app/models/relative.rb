@@ -4,6 +4,10 @@ class Relative < ApplicationRecord
 
   belongs_to :user, optional: true
   belongs_to :hero
+  belongs_to :inviter, class_name: "User"
+
+  validates_uniqueness_of :invitation_token
+
 
   def admin?
     role == 'admin'
