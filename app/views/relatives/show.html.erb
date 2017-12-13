@@ -20,11 +20,13 @@
         <h2><%= @relative.user.created_at.strftime("%d/%m/%Y") %></h2>
         <p>Date d'inscription</p>
       </div>
+      <div class="hero-tab-relative">
+        <h2><%= @relative.user.comments.count %></h2>
+        <p>Nombre de commentaires laissés</p>
+      </div>
     </div>
   </div>
 </div>
-
-
 <div class="darkblue-background" style="border-top: 5px solid #ebba00;">
   <div class="container">
 

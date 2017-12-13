@@ -44,13 +44,13 @@
                 <%= cl_image_tag adventure.photos.first.picture, class: 'current-adventure-img' %>
                 <p><%= adventure.description %></p>
                 <p>
-                  À <%= adventure.location %> le <%= adventure.date %>
+                  À <%= adventure.location %> le <%= adventure.date %> <%= adventure.comments.count %>
                 </p>
               </div>
               <!-- Comments -->
               <div class="comments-container">
                 <%= simple_form_for([adventure, @comment]) do |f| %>
-                  <%= f.input :content, label: 'Rédiger un commentaire',as: :text , label_html: { class: 'Schoolbell'}, input_html: {class: ''} %>
+                  <%= f.input :content, label: 'Rédiger un commentaire', label_html: { id: 'schoolbell'}, input_html: {class: ''} %>
                   <%= f.submit "Poster", {class: 'btn btn-success'} %>
                 <% end %>
                 <h2>Commentaires</h2>
