@@ -46,11 +46,16 @@
                 <p>
                   À <%= adventure.location %> le <%= adventure.date %>
                 </p>
+                <% if adventure.comments.count == 0 %>
+                  <p>Il y a actuellement <strong> <%= adventure.comments.count %> </strong> commentaire sur cette photo. Soyez le/la premier(e) !</p>
+                <% else %>
+                  <p> Il y a actuellement <strong> <%= adventure.comments.count %> </strong> commentaires sur cette photo.</p>
+                <% end %>
               </div>
               <!-- Comments -->
               <div class="comments-container">
                 <%= simple_form_for([adventure, @comment]) do |f| %>
-                  <%= f.input :content, label: 'Rédiger un commentaire',as: :text , label_html: { class: 'Schoolbell'}, input_html: {class: ''} %>
+                  <%= f.input :content, label: 'Rédiger un commentaire', label_html: { id: 'schoolbell'}, input_html: {class: ''} %>
                   <%= f.submit "Poster", {class: 'btn btn-success'} %>
                 <% end %>
                 <h2>Commentaires</h2>
