@@ -8,9 +8,9 @@
 </div>
 <div class="flex-button-body">
     <div class="hero-index-tabs text-center">
-      <div class="hero-index-tab">
-        <%= link_to "Un nouvel héros ?", new_hero_path%>
-      </div>
+         <%= link_to  new_hero_path, class: "hero-index-tab" do %>
+          <i class="fa fa-plus"></i> <br> <p>Un nouvel héros ?</p>
+        <% end %>
     </div>
   </div>
 <!-- SECOND CONTAINER -->
