@@ -41,7 +41,6 @@
             <% else %>
               <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="<%= image_class %>">
               </div>
-
               <div class="<%= hidden_class %> adventure-card-description text-center">
               </div>
             <% end %>
@@ -50,28 +49,20 @@
         <div class="modal fade" id="adventure-<%= adventure.id %>" tabindex="-1" role="dialog" aria-labelledby="<%= adventure.title %>" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header darkblue-background">
-                <h2 class="modal-title text-center" id="<% adventure.title %>"><%= adventure.title %></h2>
-              </div>
               <div class="modal-body current-adventure-content">
                 <%= cl_image_tag adventure.photos.first.picture, width: 600, class: 'current-adventure-img' %>
+                <h2><%= adventure.title %></h2>
                 <p><%= adventure.description %></p>
-                <p>
-                  À <%= adventure.location %> le <%= adventure.date %>
+                <p class="adventure-info-description">
+                  À <%= adventure.location %> le <%= l(adventure.date) %>
                 </p>
-                <% if adventure.comments.count == 0 %>
-                  <p>Il y a actuellement <strong> <%= adventure.comments.count %> </strong> commentaire sur cette photo. Soyez le/la premier(e) !</p>
-                <% else %>
-                  <p> Il y a actuellement <strong> <%= adventure.comments.count %> </strong> commentaires sur cette photo.</p>
-                <% end %>
               </div>
               <!-- Comments -->
               <div class="comments-container">
                 <%= simple_form_for([adventure, @comment]) do |f| %>
-                  <%= f.input :content, label: 'Rédiger un commentaire', input_html: {class: ''} %>
-                  <%= f.submit "Poster", {class: 'btn btn-success'} %>
+                  <%= f.input :content, label: "Rédiger un commentaire (#{pluralize adventure.comments.count, 'commentaires'})", label_html: {class: 'label-comments'} %>
+                  <%= f.submit "Poster", {class: 'btn btn-info btn-xs'} %>
                 <% end %>
-                <h2>Commentaires</h2>
                 <ul id="comments-list" class="comments-list">
                   <% adventure.comments.order(created_at: :desc).each do |comment| %>
                     <li>
@@ -90,7 +81,7 @@
                             </h6>
                             <div class="like-delete">
                               <i class="fa fa-heart"></i>
-                              <%= link_to adventure_comment_path(adventure, comment), method: :delete do %>
+                              <%= link_to adventure_comment_path(adventure, comment), method: :delete, data: {confirm: 'Etes vous sûr de vouloir supprimer cette aventure' } do %>
                                 <i class="fa fa-trash-o"></i>
                               <% end %>
                             </div>
@@ -107,10 +98,14 @@
               <!-- Comments -->
               <div class="modal-footer text-right">
                 <% if policy(adventure).edit? %>
-                  <%= link_to 'Éditer', edit_hero_adventure_path(@hero, adventure), class: 'btn btn-primary modal-btn' %>
+                  <%= link_to edit_hero_adventure_path(@hero, adventure) do %>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                  <% end %>
                 <% end %>
                 <% if policy(adventure).destroy? %>
-                  <%= link_to 'Supprimer', hero_adventure_path(@hero, adventure), method: :delete, class: 'btn btn-danger modal-btn' %>
+                  <%= link_to hero_adventure_path(@hero, adventure), method: :delete, data: {confirm: 'Etes vous sûr de vouloir supprimer cette aventure' } do %>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  <% end %>
                 <% end %>
               </div>
             </div>

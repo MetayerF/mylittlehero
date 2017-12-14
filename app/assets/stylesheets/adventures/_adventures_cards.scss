@@ -150,13 +150,15 @@
 /*** Current adventure ***/
 
 .current-adventure-content {
+  padding: 0;
+
   img {
     width: 100%;
   }
 
    h2 {
-    font-size: 25px;
-    font-family: 'Schoolbell', cursive;
+    color: $darkblue;
+    font-size: 40px;
     text-align: center;
     padding: 0 10px;
   }
@@ -165,7 +167,14 @@
     font-size: 16px;
     text-align: justify;
     margin-top: 20px;
+    padding: 0 15px;
+    font-weight: lighter;
    }
+
+   .adventure-info-description {
+    font-size: italic;
+    font-size: 14px;
+  }
 
    a {
     text-decoration: none;
@@ -182,7 +191,7 @@
   }
 
   .modal-footer {
-    .btn-xs {
+    .fa {
       margin-left: 15px;
     }
 
