@@ -15,8 +15,7 @@
             <h3><strong> Qui êtes vous ?</strong></h3>
               <div class="col-xs-12 text-center">
                 <%= p.input :family_link, label: 'je suis...', collection: Relative::FAMILY_LINKS, input_html: { class: 'input-radius'} %>
-                <P style="font-size: 17px"> Plutôt proche de : </P>
-                <%= p.input :mother_side, as: :radio_buttons, collection: [['papa', false], ['maman', true]], label: false %>
+                <%= p.input :mother_side, label: 'Plutôt proche de :', as: :radio_buttons, collection: [['papa', false], ['maman', true]], label: false %>
                 <%= p.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
                 <%= p.input :role, as: :hidden, input_html: { value: 'admin' } %>
               </div>
