@@ -6,7 +6,7 @@
 <div class="relative-infos text-center" style="background-image: url('<%= image_path('background1.jpg') %>');">
   <h1>Bienvenue sur le profil de <%= @relative.user.nickname%></h1>
   <div class="relatives-avatar-show">
-    <%= image_tag @relative.user.photo %>
+    <%= cl_image_tag @relative.user.photo, height: 100, width: 100, crop: :fill, gravity: :face %>
   </div>
   <h3><%= @relative.user.firstname%> <%= @relative.user.lastname %></h3>
   <div class="flex-button-body">

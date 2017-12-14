@@ -19,7 +19,7 @@
               </div>
               <div class="col-xs-12 col-md-5 col-md-offset-2 ">
                 <div class="form-group">
-                  <label class="control-label string required" for="adventure_title"><abbr title="required">*</abbr> Date</label>
+                  <label class="control-label string required" for="adventure_title"><abbr title="required">*</abbr> Date de l'aventure</label>
                   <div class='input-group date' id='date'>
                       <input type='text' name="adventure[date]" class="form-control input-blue-background date-radius" />
                       <span class="input-group-addon input-blue-background glyphicon-radius">
@@ -28,7 +28,7 @@
                   </div>
                 </div>
                 <%= f.simple_fields_for :photos do |p| %>
-                  <%= p.input :picture, label_html: { class: "btn btn-success input-radius" }, input_html: { class: 'js-picture-upload-input-with-preview hidden'} %>
+                  <%= p.input :picture, label: 'Ajoute ta photo', label_html: { class: "btn btn-success input-radius" }, input_html: { class: 'js-picture-upload-input-with-preview hidden'} %>
                 <% end %>
                 <div class="hidden preview-thumbnails js-preview-thumbnails">
                 </div>
@@ -36,7 +36,7 @@
             </div>
             <div class="row">
               <div class="col-xs-12 text-center">
-                <%= f.submit "Créer une nouvelle aventure", class: 'btn btn-success input-radius schoolbell' %>
+                <%= f.submit "Crée une nouvelle aventure", class: 'btn btn-info input-radius' %>
               </div>
             </div>
           <% end %>
@@ -53,7 +53,8 @@
   <script type="text/javascript">
       $(function () {
           $('#date').datetimepicker({
-              format: "D-M-YYYY"
+              format: "D-M-YYYY",
+              locale: 'fr'
             }
           );
       });

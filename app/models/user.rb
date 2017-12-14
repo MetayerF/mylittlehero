@@ -14,5 +14,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  validates :firstname, :lastname, :gender, presence: true, on: :update
+  validates :firstname, :lastname, :gender, :date_of_birth, presence: true, on: :update
+
+  def profile_completed?
+    required_profile_attributes = [
+      :firstname,
+      :lastname,
+      :date_of_birth,
+      :gender
+    ]
+
+    required_profile_attributes.all? { |attribute_name| self[attribute_name].present? }
+  end
 end

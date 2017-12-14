@@ -3,7 +3,8 @@ class AdventuresController < ApplicationController
   before_action :set_adventure, only: [:show, :edit, :update, :destroy]
 
   def index
-    @adventures = policy_scope(@hero.adventures)
+    @adventures = policy_scope(@hero.adventures).order(date: :desc)
+    @adventures_presenter = AdventuresPresenter.new(@adventures)
     @comment = Comment.new
   end
 
