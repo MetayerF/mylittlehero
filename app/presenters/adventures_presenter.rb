@@ -4,14 +4,18 @@ class AdventuresPresenter
 
   public
   attr_reader :grid_rules
+
   def initialize(adventures)
     @adventures = adventures
     @grid_rules = build_grid_rules
   end
 
   def adventures_groups
-    only_12_adventures_for_now = adventures[0..11].compact
-    only_12_adventures_for_now.each_slice(4)
+    adventures.in_groups_of(12)
+  end
+
+  def adventures_slice_of_4(adventures_group)
+    adventures_group.compact.each_slice(4)
   end
 
   def build_grid_rules
