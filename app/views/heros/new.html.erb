@@ -15,7 +15,7 @@
             <h3><strong> Qui êtes vous ?</strong></h3>
               <div class="col-xs-12 text-center">
                 <%= p.input :family_link, label: 'je suis...', collection: Relative::FAMILY_LINKS, input_html: { class: 'input-radius'} %>
-                <%= p.input :mother_side, as: :boolean, checked_value: true, unchecked_value: false, label: 'Côté maternel' %>
+                <%= p.input :mother_side, as: :radio_buttons, collection: [['papa', false], ['maman', true]], label: false %>
                 <%= p.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
                 <%= p.input :role, as: :hidden, input_html: { value: 'admin' } %>
               </div>
@@ -48,7 +48,7 @@
             </div>
             <div class="row">
               <div class="col-xs-12 text-center">
-                <%= f.submit "Créer mon héros", class: 'btn btn-success input-radius schoolbell' %>
+                <%= f.submit "Créer mon héros", class: 'btn btn-info input-radius' %>
               </div>
             </div>
           <% end %>
@@ -62,19 +62,22 @@
   <script type="text/javascript">
       $(function () {
           $('#date_of_birth').datetimepicker({
-              format: "D-M-YYYY"
+              format: "D-M-YYYY",
+              locale: 'fr'
             }
           );
       });
       $(function () {
           $('#first_teeth').datetimepicker({
-              format: "D-M-YYYY"
+              format: "D-M-YYYY",
+              locale: 'fr'
             }
           );
       });
       $(function () {
           $('#first_steps').datetimepicker({
-              format: "D-M-YYYY"
+              format: "D-M-YYYY",
+              locale: 'fr'
             }
           );
       });

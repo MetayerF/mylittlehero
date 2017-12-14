@@ -14,12 +14,6 @@
     margin-bottom: 20px
   }
 
-  .schoolbell {
-    font-family: 'Schoolbell', cursive;
-    font-size: 18px;
-    letter-spacing: 1px;
-  }
-
   input.form-control.input-blue-background {
     background-color: #98dff5;
     border: none;
@@ -33,11 +27,9 @@
 
    a {
     text-decoration: none;
-    font-family: 'Schoolbell', cursive;
    }
 
    p {
-    font-family: 'Schoolbell', cursive;
     font-size: 18px;
     letter-spacing: 1px;
    }
@@ -76,7 +68,6 @@
 
   label {
     font-weight: lighter;
-    font-family: 'Schoolbell', cursive;
     font-size: 18px;
     letter-spacing: 1px;
   }
@@ -92,11 +83,6 @@
     background-color: #fff;
   }
 
-  .schoolbell {
-    font-family: 'Schoolbell', cursive;
-    font-size: 18px;
-    letter-spacing: 1px;
-  }
 
   .input-group-addon: {
     background-color: #98dff5;
@@ -120,11 +106,13 @@
   .glyphicon {
     color: $black;
   }
+
+  .hero_relatives_mother_side .radio {
+    display: inline-block;
+    margin-left: 10px;
+
+
+  }
 }
 
-  #schoolbell {
-    font-family: 'Schoolbell', cursive;
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-weight:100;
-}
+

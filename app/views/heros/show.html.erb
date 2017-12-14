@@ -5,9 +5,9 @@
     <div class="col-xs-12 col-md-8-col-md-offset-2">
         <div class="hero-image-background text-center">
           <% if @hero.photo.blank? %>
-            <%= image_tag("smiling_baby.png", height: 100) %>
+            <%= image_tag("smiling_baby.png", height: 200) %>
             <% else %>
-            <%= cl_image_tag @hero.photo, class: 'avatar-show-bordered' %>
+            <%= cl_image_tag @hero.photo, height: 200, width: 200, crop: :fill, gravity: :face, class: 'avatar-show-bordered' %>
           <% end %>
           <h2> Le Livre bébé de <%= @hero.firstname.capitalize %></h2>
           <p> Compléter et afficher toutes les informations de votre héros </p>

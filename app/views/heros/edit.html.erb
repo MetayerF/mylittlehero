@@ -57,7 +57,7 @@
             </div>
             <div class="row">
               <div class="col-xs-12 text-center">
-                <%= f.submit "Modifier mon héros", class: 'btn btn-success input-radius schoolbell' %>
+                <%= f.submit "Modifier mon héros", class: 'btn btn-info input-radius' %>
               </div>
               <div class="col-xs-12 text-center hero-destroy-button">
                 <%= link_to hero_path(@hero), data: { confirm: "Êtes-vous sûr de vouloir supprimer le profil de votre héros?" }, method: :delete do %>
@@ -75,19 +75,22 @@
   <script type="text/javascript">
       $(function () {
           $('#date_of_birth').datetimepicker({
-              format: "D-M-YYYY"
+              format: "D-M-YYYY",
+              locale: 'fr'
             }
           );
       });
       $(function () {
           $('#first_teeth').datetimepicker({
-              format: "D-M-YYYY"
+              format: "D-M-YYYY",
+              locale: 'fr'
             }
           );
       });
       $(function () {
           $('#first_steps').datetimepicker({
-              format: "D-M-YYYY"
+              format: "D-M-YYYY",
+              locale: 'fr'
             }
           );
       });

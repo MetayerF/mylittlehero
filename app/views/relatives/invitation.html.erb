@@ -5,7 +5,7 @@
 <div class="relative-infos text-center" style="background-image: url('<%= image_path('background1.jpg') %>');">
   <div class="invitation-header">
     <div class="relatives-avatar-show">
-      <%= image_tag(@relative.inviter.photo) %>
+      <%= cl_image_tag(@relative.inviter.photo, height: 100, width: 100, crop: :fill, gravity: :face) %>
     </div>
     <h1>Vous avez reçu une invitation de <%= @relative.inviter.firstname%> <%= @relative.inviter.lastname%></h1>
   </div>
@@ -19,7 +19,7 @@
       <div class="col-xs-12 col-md-6">
         <div class="invitation" style="background-image: url('<%= image_path('book-baby.png') %>');">
           <div class= "text-center">
-            <%= image_tag(@hero.photo, class: 'avatar-show-bordered') %>
+            <%= cl_image_tag(@hero.photo, height: 200, width: 200, crop: :fill, gravity: :face, class: 'avatar-show-bordered') %>
             <br>
             <%= link_to "Le livre de  #{@hero.firstname}" %>
           </div>

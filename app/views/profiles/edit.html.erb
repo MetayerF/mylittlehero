@@ -13,9 +13,9 @@
                 <%= f.input :lastname, placeholder: "Nom", input_html: {class: 'input-radius input-blue-background'} %>
                 <%= f.input :nickname, placeholder: "Surnom", input_html: {class: 'input-radius input-blue-background'} %>
                 <div class="form-group">
-                  <label class="control-label string required" for="adventure_title"><abbr title="required">*</abbr> Date</label>
+                  <label class="control-label string required" for="date_of_birth"><abbr title="required">*</abbr>Date de naissance</label>
                   <div class='input-group date' id='date'>
-                      <input type='text' name="profil[date]" class="form-control input-blue-background date-radius" />
+                      <input type='text' name="user[date_of_birth]" class="form-control input-blue-background date-radius" />
                       <span class="input-group-addon input-blue-background glyphicon-radius">
                           <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -36,7 +36,7 @@
             </div>
             <div class="row">
               <div class="col-xs-12 text-center">
-                <%= f.submit "Modifier votre profil", class: 'btn hero-index-button input-radius schoolbell' %>
+                <%= f.submit "Modifier votre profil", class: 'btn hero-index-button input-radius' %>
               </div>
             </div>
           <% end %>
@@ -50,7 +50,8 @@
   <script type="text/javascript">
       $(function () {
           $('#date').datetimepicker({
-              format: "D-M-YYYY"
+              format: "D-M-YYYY",
+              locale: 'fr'
             }
           );
       });

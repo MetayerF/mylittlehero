@@ -5,16 +5,16 @@
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <div class="form-login">
-          <h2 class="text-center schoolbell">Mot de passe oublié?</h2>
+          <h2 class="text-center">Mot de passe oublié?</h2>
             <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
               <%= f.error_notification %>
 
               <div class="form-inputs">
-                <%= f.input :email, required: true, autofocus: true, input_html: { class: 'input-blue-background input-radius' },label_html: { class: 'schoolbell' } %>
+                <%= f.input :email, required: true, autofocus: true, input_html: { class: 'input-blue-background input-radius' } %>
               </div>
 
               <div class="form-actions">
-                <%= f.button :submit, "Envoyer les instructions", class: 'btn btn-success input-radius schoolbell' %>
+                <%= f.button :submit, "Envoyer les instructions", class: 'btn btn-info input-radius' %>
               </div>
             <% end %>
 

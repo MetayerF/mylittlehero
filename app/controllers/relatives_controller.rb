@@ -1,5 +1,5 @@
 class RelativesController < ApplicationController
-  
+
   skip_before_action :authenticate_user!, only: [:invitation]
 
   before_action :get_hero
@@ -17,7 +17,8 @@ class RelativesController < ApplicationController
   end
 
   def new
-    @relative = Relative.new(hero: @hero)
+    @link = params[:link] if params[:link] && Relative::FAMILY_LINKS.include?(params[:link])
+    @relative = Relative.new(hero: @hero, family_link: @link)
     authorize @relative
   end
 

@@ -1,18 +1,28 @@
 <div class="colorup"></div>
 <div class="navbar-wagon <%= yield(:navbar_class) %>">
   <!-- Logo -->
-  <%= link_to root_path do %>
-    <%= image_tag('logo.png', size: '40x50', alt: 'logo', class: 'navbar-wagon-brand')%>
+  <% if user_signed_in? %>
+    <%= link_to heros_path do %>
+      <%= image_tag('logo.png', size: '40x50', alt: 'logo', class: 'navbar-wagon-brand')%>
+    <% end %>
+  <% else %>
+    <%= link_to root_path do %>
+      <%= image_tag('logo.png', size: '40x50', alt: 'logo', class: 'navbar-wagon-brand')%>
+    <% end %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <% if @hero && @hero.id %>
+        <% if policy(@hero.relatives.new).create? %>
+          <%= link_to 'Inviter un proche', new_hero_relative_path(@hero), class: 'navbar-wagon-item navbar-wagon-link' %>
+        <% end %>
+        <% if policy(@hero.adventures.new).create? %>
+          <%= link_to 'Ajouter une aventure', new_hero_adventure_path(@hero), class: 'navbar-wagon-item navbar-wagon-link' %>
+        <% end %>
         <%= link_to 'Ma famille', hero_relatives_path(@hero), class: 'navbar-wagon-item navbar-wagon-link' %>
-        <%= link_to 'Nouvelle aventure', new_hero_adventure_path(@hero), class: 'navbar-wagon-item navbar-wagon-link' %>
       <% end %>
-      <%= link_to 'Mes héros', heros_path, class: 'navbar-wagon-item navbar-wagon-link' %>
     <% else %>
       <%= link_to 'Se connecter', new_user_session_path, class: 'navbar-wagon-item navbar-wagon-link' %>
     <% end %>
@@ -23,11 +33,12 @@
       <div class="dropdown">
         <% if user_signed_in? %>
           <% if current_user.photo.url.nil? %>
-            <%= image_tag('user.png', class: 'avatar-nav dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
+            <%= image_tag('user.png', height: 70, class: 'avatar-nav dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
           <% else %>
-            <%= cl_image_tag(current_user.photo, class: 'avatar-nav dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
+            <%= cl_image_tag(current_user.photo, height: 70, width: 70, crop: :fill, gravity: :face, class: 'avatar-nav dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
           <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><%= link_to 'Mes héros', heros_path %></li>
           <li><%= link_to 'Mon profil', profile_path %></li>
           <li><%= link_to 'Déconnexion',  destroy_user_session_path, method: :delete %></li>
         </ul>
