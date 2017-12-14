@@ -32,6 +32,11 @@ fr:
         location: "Lieu"
       photo:
         picture: "Photo"
+  relatives:
+    role:
+      admin: "administrateur"
+      editor: "éditeur"
+      viewer: "participant"
 
 
 
