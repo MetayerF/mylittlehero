@@ -101,14 +101,20 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin: 10px;
-  border: 2px dashed $darkblue;
+  border: 15px solid white;
+  border-bottom: 90px solid white;
+  box-shadow: 1px 2px 8px #e8e8e8;
+
 }
 .medium-portrait{
   height: 380px;
   background-size: cover;
   background-repeat: no-repeat;
   margin: 10px;
-  border: 2px dashed $darkblue;
+  border: 10px solid white;
+  // border-bottom: 40px solid white;
+  box-shadow: 1px 2px 8px #e8e8e8;
+
 }
 
 .medium-paysage{
@@ -116,7 +122,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin: 10px;
-  border: 2px dashed $darkblue;
+  border: 10px solid white;
+  // border-bottom: 40px solid white;
+  box-shadow: 1px 2px 8px #e8e8e8;
 }
 
 .small-paysage{
@@ -124,10 +132,17 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin: 10px;
-  border: 2px dashed $darkblue;
+  border: 10px solid white;
+  box-shadow: 1px 2px 8px #e8e8e8;
 
 }
 
+// .card-border {
+//   padding: 15px;
+//   background-color: white;
+//   box-shadow: 4px 10px 5px lightgrey;
+//    border: 1px dashed $darkblue;
+// }
 /*** Current adventure ***/
 
 .current-adventure-content {
@@ -169,4 +184,10 @@
 
   }
 
+}
+.index-adventure-title{
+  h1{
+    font-size: 80px;
+    color: #f19e70;
+  }
 }
