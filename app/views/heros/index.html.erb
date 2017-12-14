@@ -32,7 +32,7 @@
                 <% end %>
               </div>
               <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
-              <p><%= hero.relatives.where(user_id: current_user.id).first.role %> </p>
+              <p><%=t("relatives.role.#{hero.relatives.where(user_id: current_user.id).first.role}")  %> </p>
               <%= link_to  hero_path(hero), class: "btn hero-show-button" do %>
                   <i class="fa fa-eye"></i> <br> profil
               <% end %>
