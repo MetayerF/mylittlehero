@@ -6,6 +6,11 @@
 <% adventures_presenter = AdventuresPresenter.new(@adventures) %>
 <div class="wrapper background-custom">
   <div class="container">
+    <div class="index-adventure-title text-center">
+  <h1> Les aventures de <%= @hero.firstname.capitalize %></h1>
+  <%= link_to  new_hero_adventure_path(@hero), class: "btn banner-button" do %> Ajouter une nouvelle aventure
+  <% end %>
+  </div>
   <% adventures_presenter.adventures_groups.each_with_index do |adventures_group, index| %>
     <% grid_rules = adventures_presenter.grid_rules[index] %>
     <% grid_class = grid_rules[:grid_class] %>
@@ -16,24 +21,29 @@
         <% image_class = styling_rules[:image_class] %>
         <% hidden_class = styling_rules[:hidden] ? "hidden" : "" %>
 
-        <div class="<%= adventure_classes %> adventure-card" data-toggle="modal" data-target="#adventure-<%= adventure.id %>">
-          <% if styling_rules[:div_class] == "small-adv" %>
-            <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="<%= image_class %>">
+
+          <div class="<%= adventure_classes %> adventure-card" data-toggle="modal" data-target="#adventure-<%= adventure.id %>">
+            <% if styling_rules[:div_class] == "small-adv" %>
+
+                  <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="<%= image_class %>">
+                  <div class="<%= hidden_class %> adventure-card-description text-center">
+                  </div>
+                </div>
+
+            <% elsif styling_rules[:div_class] == "medium-adv" %>
+              <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="<%= image_class %>">
+              </div>
               <div class="<%= hidden_class %> adventure-card-description text-center">
               </div>
-            </div>
-          <% elsif styling_rules[:div_class] == "medium-adv" %>
-            <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="<%= image_class %>">
-            </div>
-            <div class="<%= hidden_class %> adventure-card-description text-center">
-            </div>
-          <% else %>
-            <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="<%= image_class %>">
-            </div>
-            <div class="<%= hidden_class %> adventure-card-description text-center">
-            </div>
-          <% end %>
-        </div>
+            <% else %>
+              <div style="background-image: url('<%= cl_image_path adventure.photos.first.picture %>');" class="<%= image_class %>">
+              </div>
+
+              <div class="<%= hidden_class %> adventure-card-description text-center">
+              </div>
+            <% end %>
+          </div>
+
         <div class="modal fade" id="adventure-<%= adventure.id %>" tabindex="-1" role="dialog" aria-labelledby="<%= adventure.title %>" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
