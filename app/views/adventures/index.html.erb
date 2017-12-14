@@ -6,7 +6,7 @@
   <div class="container">
     <div class="index-adventure-title text-center">
   <h1> Les aventures de <%= @hero.firstname.capitalize %></h1>
-  <%= link_to  new_hero_adventure_path(@hero), class: "btn banner-button" do %> Ajouter une nouvelle aventure
+  <%= link_to  new_hero_adventure_path(@hero), class: "btn banner-button" do %> <i class="fa fa-plus"></i>  <br>Ajouter une nouvelle aventure
   <% end %>
   </div>
   <%# @adventures_presenter.adventures_groups.each_with_index do |adventures_group, index| %>

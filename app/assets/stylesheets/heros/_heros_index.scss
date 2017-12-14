@@ -79,6 +79,9 @@
   display: flex;
   text-decoration: none;
   justify-content: center;
+  &:hover {
+    text-decoration:none;
+  }
 }
 .hero-index-tab a {
   text-decoration: none;
@@ -93,9 +96,33 @@
   margin: 0;
   padding: 20px 10px;
   transition: all 0.3s ease;
+  i{
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+  }
+  p{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+  }
 }
+
+a:hover {
+  text-decoration: none;
+}
+
 .hero-index-tab:hover {
   background-color: $yellow;
+  i{
+    text-decoration: none;
+  }
+  p{
+    text-decoration: none;
+  }
+  a{
+    text-decoration: none;
+  }
 }
 
 // BOUTON
