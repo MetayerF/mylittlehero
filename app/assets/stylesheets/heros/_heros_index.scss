@@ -17,7 +17,9 @@
   font-weight: lighter;
   color: $darkblue;
   margin-bottom: 0px;
+  padding-top: 10px;
   padding-bottom: 40px;
+  letter-spacing: 3px;
   }
 }
 
@@ -46,9 +48,7 @@
     color: $darkblue;
     font-size: 50px;
     margin-left: 10px;
-  }
-  p{
-    color: white;
+    padding-bottom: 40px;
   }
 }
 .hero-index-photo{
@@ -96,4 +96,23 @@
 }
 .hero-index-tab:hover {
   background-color: $yellow;
+}
+
+// BOUTON
+
+.hero-show-buttons {
+  background-color:$darkblue;
+  color: white;
+  font-weight: bolder;
+  border-radius: 10px 10px 10px 10px;
+  margin-top: 20px;
+  width: 170px;
+
+    i{
+  font-size: 30px;
+  }
+}
+
+.hero-show-buttons:hover {
+  color: black;
 }

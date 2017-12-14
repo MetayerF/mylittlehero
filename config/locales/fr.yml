@@ -16,7 +16,8 @@ fr:
         firstname: "Prénom"
         lastname: "Nom"
         nickname: "Surnom"
-        place_of_birth: "Date de naisssance"
+        date_of_birth: "Date de naisssance"
+        place_of_birth: "Lieu de naisssance"
         gender: "Genre"
         car: "Voiture"
         favorite_song: "Musique préférée"
@@ -31,6 +32,11 @@ fr:
         location: "Lieu"
       photo:
         picture: "Photo"
+  relatives:
+    role:
+      admin: "administrateur"
+      editor: "éditeur"
+      viewer: "participant"
 
 
 

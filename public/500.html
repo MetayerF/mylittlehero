@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> We're sorry, but something went wrong (500)</title>
+  <title>Désolé, nous ne pouvons vous afficher cette page</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
 </head>
@@ -479,29 +480,68 @@ body {
   }
 }
 
+.button-box {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  left: 44%;
+  bottom: 5%
+
+
+}
+
+a {
+  background-color: #ebba00;
+  padding: 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+h1 {
+  margin-top: 1%;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+p {
+  margin-top: 3%;
+  font-family: 'Montserrat', sans-serif;
+}
+
   </style>
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="conatiner"><span class="numer">5</span>
-  <div class="circle">
-    <div class="drops"></div>
-    <div class="drops"></div>
-    <div class="hand"></div>
-    <div class="hand rgt"></div>
-    <div class="holder">
-      <div class="bob">
-        <div class="nose"></div>
-        <div class="face">
-          <div class="mouth">
-            <div class="tongue"></div>
+    <div class="conatiner"><span class="numer">5</span>
+    <div class="circle">
+      <div class="drops"></div>
+      <div class="drops"></div>
+      <div class="hand"></div>
+      <div class="hand rgt"></div>
+      <div class="holder">
+        <div class="bob">
+          <div class="nose"></div>
+          <div class="face">
+            <div class="mouth">
+              <div class="tongue"></div>
+            </div>
           </div>
+          <div class="ear"></div>
+          <div class="ear rgt"></div>
+          <div class="neck"></div>
         </div>
-        <div class="ear"></div>
-        <div class="ear rgt"></div>
-        <div class="neck"></div>
       </div>
-    </div>
-  </div><span class="numer">0</span>
-</div>
+    </div><span class="numer">0</span>
+  </div>
+
+  <div class="button-box">
+    <a href="/">Revenir sur le site</a>
+  </div>
+  <h1> Oups...</h1>
+  <p>Nous sommes désolé, nous ne pouvons vous afficher cette page. Nous travaillons dessus pour améliorer votre expérience sur MyLittleHero.fr</p>
 </body>
 </html>

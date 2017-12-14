@@ -18,7 +18,11 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(user)
-    heros_path
+    if user.heros.any?
+      heros_path
+    else
+      new_hero_path
+    end
   end
 
   def skip_pundit?

@@ -25,19 +25,19 @@
               <div class="hero-index-photo">
                 <%= link_to hero_adventures_path(hero) do %>
                   <% if hero.photo.blank? %>
-                    <%= image_tag("smiling_baby.png", height: 300) %>
+                    <%= image_tag("smiling_baby.png", height: 250) %>
                   <% else %>
-                    <%= cl_image_tag hero.photo, height: 300, class: 'avatar-index-badge' %>
+                    <%= cl_image_tag hero.photo, height: 250, width: 250, crop: :fill, gravity: :face, class: 'avatar-index-badge' %>
                   <% end %>
                 <% end %>
               </div>
               <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
-              <p><%= hero.relatives.where(user_id: current_user.id).first.role %> </p>
-              <%= link_to  hero_path(hero), class: "btn hero-show-button" do %>
-                  <i class="fa fa-eye"></i> <br> profil
+              <p><%=t("relatives.role.#{hero.relatives.where(user_id: current_user.id).first.role}")  %> </p>
+              <%= link_to  hero_path(hero), class: "btn hero-show-buttons" do %>
+                  <i class="fa fa-book"></i> <br> Carnet de bord
               <% end %>
-              <%= link_to new_hero_adventure_path(hero), class: "btn hero-show-button-two" do %>
-                  <i class="fa fa-plus"></i> <br> aventures
+              <%= link_to new_hero_adventure_path(hero), class: "btn hero-show-buttons" do %>
+                  <i class="fa fa-rocket"></i> <br> Les aventures
               <% end %>
             </div>
           </div>

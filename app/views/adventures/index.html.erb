@@ -2,8 +2,6 @@
 <% content_for :meta_description %>
 <% content_for :meta_image %>
 
-<% adventure = @adventures.first %>
-<% adventures_presenter = AdventuresPresenter.new(@adventures) %>
 <div class="wrapper background-custom">
   <div class="container">
     <div class="index-adventure-title text-center">
@@ -11,9 +9,14 @@
   <%= link_to  new_hero_adventure_path(@hero), class: "btn banner-button" do %> Ajouter une nouvelle aventure
   <% end %>
   </div>
-  <% adventures_presenter.adventures_groups.each_with_index do |adventures_group, index| %>
-    <% grid_rules = adventures_presenter.grid_rules[index] %>
+  <%# @adventures_presenter.adventures_groups.each_with_index do |adventures_group, index| %>
+  <% @adventures_presenter.adventures_groups.each do |adventures_upper_group| %>
+  <% @adventures_presenter.adventures_slice_of_4(adventures_upper_group).each_with_index do |adventures_group, index| %>
+    <% next unless adventures_group %>
+    <% grid_rules = @adventures_presenter.grid_rules[index] %>
+
     <% grid_class = grid_rules[:grid_class] %>
+
     <div class="<%= grid_class %>">
       <% adventures_group.each_with_index do |adventure, index| %>
         <% styling_rules = grid_rules[:adventures_styling_rules][index] %>
@@ -51,7 +54,7 @@
                 <h2 class="modal-title text-center" id="<% adventure.title %>"><%= adventure.title %></h2>
               </div>
               <div class="modal-body current-adventure-content">
-                <%= cl_image_tag adventure.photos.first.picture, class: 'current-adventure-img' %>
+                <%= cl_image_tag adventure.photos.first.picture, width: 600, class: 'current-adventure-img' %>
                 <p><%= adventure.description %></p>
                 <p>
                   À <%= adventure.location %> le <%= adventure.date %>
@@ -65,7 +68,7 @@
               <!-- Comments -->
               <div class="comments-container">
                 <%= simple_form_for([adventure, @comment]) do |f| %>
-                  <%= f.input :content, label: 'Rédiger un commentaire', label_html: { id: 'schoolbell'}, input_html: {class: ''} %>
+                  <%= f.input :content, label: 'Rédiger un commentaire', input_html: {class: ''} %>
                   <%= f.submit "Poster", {class: 'btn btn-success'} %>
                 <% end %>
                 <h2>Commentaires</h2>
@@ -77,7 +80,7 @@
                           <div class="comment-head">
                             <div class="comment-avatar">
                               <%= link_to hero_relative_path(@hero, @hero.relatives.find_by_user_id(comment.user_id)), class: "relatives-hover" do %>
-                              <%= cl_image_tag comment.user.photo %>
+                              <%= cl_image_tag comment.user.photo, height: 100, width: 100, crop: :fill, gravity: :face %>
                               <% end %>
                             </div>
                             <h6 class="comment-name by-author">
@@ -115,6 +118,7 @@
         </div>
       <% end %>
     </div>
+  <% end %>
   <% end %>
   </div>
 </div>
