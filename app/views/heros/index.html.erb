@@ -17,7 +17,6 @@
 <div class="hero-index-cards-container">
   <div class="row">
     <div class="heros-index">
-
       <% @heros.each do |hero|%>
         <div class="col-xs-12 col-md-4">
           <div class="hero-index-content text-center">
@@ -32,7 +31,7 @@
                 <% end %>
               </div>
               <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
-              <p><%=t("relatives.role.#{hero.relatives.where(user_id: current_user.id).first.role}")  %> </p>
+              <p style="color: grey"> Vous êtes <strong><%= t("relatives.role.#{hero.relatives.where(user_id: current_user.id).first.role}")  %></strong> sur ce héro. </p>
               <%= link_to  hero_path(hero), class: "btn hero-show-buttons" do %>
                   <i class="fa fa-book"></i> <br> Carnet de bord
               <% end %>
