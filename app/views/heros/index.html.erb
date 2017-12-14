@@ -31,7 +31,7 @@
                 <% end %>
               </div>
               <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
-              <p style="color: grey"> Vous êtes <strong><%= t("relatives.role.#{hero.relatives.where(user_id: current_user.id).first.role}")  %></strong> sur ce héro. </p>
+                <div class="label label-info label-hero"><%= t("relatives.role.#{hero.relatives.where(user_id: current_user.id).first.role}") %></div>
               <%= link_to  hero_path(hero), class: "btn hero-show-buttons" do %>
                   <i class="fa fa-book"></i> <br> Carnet de bord
               <% end %>
