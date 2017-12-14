@@ -16,6 +16,7 @@ gem 'redis'
 #own gems
 gem "pundit"
 gem "letter_opener", group: :development
+gem 'postmark-rails'
 
 ## image upload
 gem 'cloudinary'
