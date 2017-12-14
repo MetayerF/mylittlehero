@@ -17,7 +17,7 @@
               </div>
               <div class="col-xs-12 col-md-5 col-md-offset-2 ">
                 <div class="form-group">
-                  <label class="control-label string required" for="adventure_title"><abbr title="required">*</abbr> Date</label>
+                  <label class="control-label string required" for="adventure_title"><abbr title="required">*</abbr> Date de l'aventure</label>
                   <div class='input-group date' id='date'>
                     <input type='text' name="adventure[date]" class="form-control input-blue-background date-radius" />
                     <span class="input-group-addon input-blue-background glyphicon-radius">
@@ -33,7 +33,7 @@
             </div>
             <div class="row">
               <div class="col-xs-12 text-center">
-                <%= f.submit "Éditer cette aventure", class: 'btn btn-success input-radius schoolbell' %>
+                <%= f.submit "Éditer cette aventure", class: 'btn btn-info input-radius' %>
               </div>
             </div>
           <% end %>
@@ -49,8 +49,8 @@
   <script type="text/javascript">
       $(function () {
           $('#date').datetimepicker({
-              minDate: moment(),
-              format: "D-M-YYYY"
+              format: "D-M-YYYY",
+              locale: 'fr'
             }
           );
       });

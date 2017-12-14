@@ -5,18 +5,18 @@
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <div class="form-login">
-          <h2 class="text-center schoolbell">Créer mon compte</h2>
+          <h2 class="text-center ">Créer mon compte</h2>
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= f.error_notification %>
 
               <div class="form-inputs">
-                <%= f.input :email, required: true, autofocus: true, input_html: { class: 'input-blue-background input-radius' }, label_html: { class: 'schoolbell' } %>
-                <%= f.input :password, required: true, hint: ("Minimun #{@minimum_password_length} caractères" if @minimum_password_length), input_html: { class: 'input-blue-background input-radius' },label_html: { class: 'schoolbell' } %>
-                <%= f.input :password_confirmation, required: true, input_html: { class: 'input-blue-background input-radius' }, label_html: { class: 'schoolbell' } %>
+                <%= f.input :email, required: true, autofocus: true, input_html: { class: 'input-blue-background input-radius' } %>
+                <%= f.input :password, required: true, hint: ("Minimun #{@minimum_password_length} caractères" if @minimum_password_length), input_html: { class: 'input-blue-background input-radius' } %>
+                <%= f.input :password_confirmation, required: true, input_html: { class: 'input-blue-background input-radius' } %>
               </div>
 
               <div class="form-actions">
-                <%= f.button :submit, "Inscription", class: 'input-radius schoolbell btn btn-success' %>
+                <%= f.button :submit, "Inscription", class: 'input-radius  btn btn-info' %>
               </div>
             <% end %>
 
