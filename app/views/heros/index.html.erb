@@ -33,7 +33,7 @@
               <h2><%= hero.firstname.capitalize %> <%= hero.lastname.capitalize %></h2>
                 <div class="label label-info label-hero"><%= t("relatives.role.#{hero.relatives.where(user_id: current_user.id).first.role}") %></div>
               <%= link_to  hero_path(hero), class: "btn hero-show-buttons" do %>
-                  <i class="fa fa-book"></i> <br> Carnet de bord
+                  <i class="fa fa-book"></i> <br> Livre de bébé
               <% end %>
               <%= link_to hero_adventures_path(hero), class: "btn hero-show-buttons" do %>
                   <i class="fa fa-rocket"></i> <br> Les aventures

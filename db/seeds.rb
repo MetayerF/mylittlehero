@@ -81,7 +81,7 @@ pauline = User.create!(
   favorite_song: 'Patrick Bruel - Place des grands Homme',
   favorite_movie: 'Dirty Dancing',
   job: 'Journaliste',
-  photo: File.open(Rails.root.join('db/fixtures/images/users/pauline.jpg'))
+ photo: File.open(Rails.root.join('db/fixtures/images/users/pauline.jpg'))
   )
 
 jacques = User.create!(
